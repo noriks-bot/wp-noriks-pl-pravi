@@ -42,7 +42,7 @@ $upsell_is_majice = $has_only_bokserice;
 if ( $upsell_is_majice ) {
     $upsell_product_id = 250; // Crna majica (variable)
     $upsell_name       = 'Czarne koszulki';
-    $upsell_qty_prices = array( 1 => 12.99, 3 => 29.99, 6 => 39.99 );
+    $upsell_qty_prices = array( 1 => 54.99, 3 => 129.99, 6 => 169.99 );
     $upsell_qty_names  = array( 1 => '1x Czarna koszulka', 3 => '3x Czarne koszulki', 6 => '6x Czarnych koszulek' );
     $upsell_qty_images = array(
         1 => 'https://noriks.com/pl/wp-content/uploads/2025/09/black-1.jpg',
@@ -53,7 +53,7 @@ if ( $upsell_is_majice ) {
 } else {
     $upsell_product_id = 2781; // Czarne bokserki
     $upsell_name       = 'Czarne bokserki';
-    $upsell_qty_prices = array( 1 => 7.99, 3 => 19.99, 5 => 29.99 );
+    $upsell_qty_prices = array( 1 => 34.99, 3 => 84.99, 5 => 129.99 );
     $upsell_qty_names  = array( 1 => '1x Czarne bokserki', 3 => '3x Czarne bokserki', 5 => '5x Czarnych bokserek' );
     $upsell_qty_images = array(
         1 => 'https://noriks.com/pl/wp-content/uploads/2025/11/crne-boksarice-produktna.jpg',
