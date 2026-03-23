@@ -872,7 +872,7 @@ body.woocommerce-order-received .woocommerce {
         });
     }
 
-    // ─── Step 1: "DODAJ" → add to order, then show grid ───
+    // ─── Step 1: "DODAJ" (add) → add to order, then show grid ───
     var addBtn = document.getElementById('ty-btn-add');
     if (addBtn) {
         addBtn.addEventListener('click', function() {

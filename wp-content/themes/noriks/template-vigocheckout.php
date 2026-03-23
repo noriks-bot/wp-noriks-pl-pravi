@@ -22,12 +22,12 @@ if (!defined('ABSPATH')) exit;
 <link rel='dns-prefetch' href='//static.klaviyo.com' />
 <link rel='dns-prefetch' href='//js.braintreegateway.com' />
 <meta name="title" content="Dokończ zakup" />
-<meta name="description" content="Sve što vam treba na jednom mjestu. Istražite veliki izbor proizvoda po najnižim cijenama. Kliknite sada i uživajte u najboljim ponudama i velikoj raznolikosti!" />
+<meta name="description" content="Wszystko, czego potrzebujesz, w jednym miejscu. Odkryj szeroki wybór produktów w najniższych cenach. Kliknij teraz i ciesz się najlepszymi ofertami!" />
 <meta name="image" content="https://vigoshop.pl/app/themes/hsplus/images/favicon/vigoshop/mstile-310x310.png" />
 <meta property="og:locale" content="pl" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Dokończ zakup" />
-<meta property="og:description" content="Sve što vam treba na jednom mjestu. Istražite veliki izbor proizvoda po najnižim cijenama. Kliknite sada i uživajte u najboljim ponudama i velikoj raznolikosti!" />
+<meta property="og:description" content="Wszystko, czego potrzebujesz, w jednym miejscu. Odkryj szeroki wybór produktów w najniższych cenach. Kliknij teraz i ciesz się najlepszymi ofertami!" />
 <meta property="og:image" content="https://vigoshop.pl/app/themes/hsplus/images/favicon/vigoshop/mstile-310x310.png" />
 <meta property="og:image:alt" content="Vigoshop - Dokończ zakup" />
 <style id='classic-theme-styles-inline-css' type='text/css'>
