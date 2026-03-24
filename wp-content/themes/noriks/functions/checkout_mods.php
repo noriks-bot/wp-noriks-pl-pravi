@@ -466,14 +466,14 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
     $fields['billing']['billing_last_name']['placeholder'] = 'Nazwisko';
     $fields['billing']['billing_address_1']['label'] = 'Ulica';
     $fields['billing']['billing_address_1']['placeholder'] = 'Ulica';
-    $fields['billing']['billing_address_2']['label'] = 'Numer domu';
-    $fields['billing']['billing_address_2']['placeholder'] = 'Numer domu';
+    $fields['billing']['billing_address_2']['label'] = 'Numer budynku / numer lokalu';
+    $fields['billing']['billing_address_2']['placeholder'] = 'Numer budynku / numer lokalu';
     $fields['billing']['billing_address_2']['required'] = true;
-    $fields['billing']['billing_postcode']['label'] = 'Kod pocztowy';
-    $fields['billing']['billing_postcode']['placeholder'] = 'Kod pocztowy';
+    $fields['billing']['billing_postcode']['label'] = 'Kod Pocztowy';
+    $fields['billing']['billing_postcode']['placeholder'] = 'Kod Pocztowy';
     $fields['billing']['billing_city']['label'] = 'Miasto';
-    $fields['billing']['billing_city']['placeholder'] = 'Wybierz miasto';
-    $fields['billing']['billing_phone']['label'] = 'Telefon';
+    $fields['billing']['billing_city']['placeholder'] = 'Miasto';
+    $fields['billing']['billing_phone']['label'] = 'Numer telefonu komórkowego';
     $fields['billing']['billing_phone']['placeholder'] = 'Numer telefonu komórkowego';
     $fields['billing']['billing_phone']['required'] = true;
     /* Description injected via JS to survive update_checkout AJAX re-renders */
@@ -509,7 +509,7 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
  */
 add_filter( 'woocommerce_form_field_text', function( $field, $key ) {
     if ( $key === 'billing_last_name' ) {
-        $field .= '<div class="form-row form-row-wide col-xs-12">Wpisz adres, pod którym będziesz <b>w godzinach 8:00–16:00</b>.</div>';
+        $field .= '<div class="form-row form-row-wide col-xs-12">Prosimy podać adres, pod którym znajduje się Pan/Pani <b>w godzinach 8:00–16:00</b>.</div>';
     }
     return $field;
 }, 10, 2 );
@@ -520,11 +520,11 @@ add_filter( 'woocommerce_form_field_text', function( $field, $key ) {
  * Billing title
  */
 add_action( 'woocommerce_before_checkout_billing_form', function() {
-    echo '<h3 class="checkout-billing-title">Płatność i Dostawa</h3>';
+    echo '<h3 class="checkout-billing-title">Płatność i wysyłka</h3>';
 });
 
 add_filter( 'default_checkout_billing_country', function() { return 'PL'; });
-add_filter( 'woocommerce_order_button_text', function() { return 'Zamów'; });
+add_filter( 'woocommerce_order_button_text', function() { return 'Zamawiam'; });
 
 /**
  * Payment gateway order: COD → Stripe → PayPal

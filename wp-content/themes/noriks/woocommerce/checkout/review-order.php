@@ -31,7 +31,7 @@ defined( 'ABSPATH' ) || exit;
 
       <!-- Shipping -->
       <div class="c--darkgray review-section-container review-addons shipping_order_review">
-        <div class="review-addons-title"><div>Kurier</div></div>
+        <div class="review-addons-title"><div>Standardowa dostawa</div></div>
                 <div class="review-addons-price review-sale-price" id="noriks-shipping-price"><?php
           $shipping_total = (float) WC()->cart->get_shipping_total();
           if ( $shipping_total > 0 ) {
@@ -67,7 +67,7 @@ defined( 'ABSPATH' ) || exit;
   </div>
   <div class="vigo-checkout-total__sum flex flex--middle border_price">
     <div class="flex__item f--l">
-      Razem: <span class="f--bold price_total_wrapper"><?php wc_cart_totals_order_total_html(); ?></span>
+      Łączna kwota: <span class="f--bold price_total_wrapper"><?php wc_cart_totals_order_total_html(); ?></span>
     </div>
   </div>
 </div>

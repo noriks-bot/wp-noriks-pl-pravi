@@ -252,7 +252,7 @@ body.woocommerce-checkout #payment .payment_box fieldset {
   position: relative !important;
 }
 #billing_phone_field::after {
-  content: 'Przykład: 501234567' !important;
+  content: 'Przykład: 512345678' !important;
   position: absolute !important;
   left: 0 !important;
   bottom: -20px !important;
@@ -261,7 +261,7 @@ body.woocommerce-checkout #payment .payment_box fieldset {
   line-height: 1.4 !important;
 }
 #billing_phone_field::before {
-  content: 'Aby pomóc w dostawie' !important;
+  content: 'Do pomocy w dostawie' !important;
   position: absolute !important;
   right: 0 !important;
   bottom: -20px !important;
@@ -407,3 +407,24 @@ body.woocommerce-checkout .noriks-order-summary .review-product-info div {
 
 /* More space between total and Naruči button */
 .noriks-order-summary .vigo-checkout-total__sum { margin-bottom: 10px !important; }
+
+/* PL: address fields full width, Kod Pocztowy + Miasto 50/50 */
+@media (min-width: 576px) {
+  p#billing_address_1_field,
+  p#billing_address_2_field {
+    float: none !important;
+    width: 100% !important;
+    clear: both !important;
+  }
+  p#billing_postcode_field {
+    clear: both !important;
+    float: left !important;
+    width: 49% !important;
+    margin-right: 2% !important;
+  }
+  p#billing_city_field {
+    clear: none !important;
+    float: left !important;
+    width: 49% !important;
+  }
+}

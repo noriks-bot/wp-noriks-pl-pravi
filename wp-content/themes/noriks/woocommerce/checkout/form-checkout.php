@@ -32,7 +32,7 @@ if ( WC()->cart->is_empty() ) return;
 
         <!-- SHIPPING -->
         <div id="custom_shipping">
-          <h3>Dostawa</h3>
+          <h3>Metoda dostawy</h3>
           <ul class="shipping_method_custom">
             <li class="standard-shipping shipping-tab">
               <input name="shipping_method[0]" data-index="0" id="shipping_method_0_standard_custom"
@@ -61,14 +61,14 @@ if ( WC()->cart->is_empty() ) return;
 
         <!-- COD prompt -->
         <div id="hs-cod-checkout-prompt" style="display:none;">
-          <div class="cod-prompt-text">Złóż zamówienie teraz, <strong>płatność za pobraniem 🙂</strong></div>
+          <div class="cod-prompt-text">Dokończ zamówienie teraz, <strong>zapłać przy odbiorze 🙂</strong></div>
           <img decoding="async" class="cod-prompt-image" src="https://images.vigo-shop.com/general/checkout/cod/uni_cash_on_delivery.svg">
         </div>
 
         <!-- VAT -->
         <div id="hs-vat-tax-checkout-prompt">
-          <span class="tax-and-vat-checkout-claims">Brak dodatkowych opłat celnych</span>
-          <span class="tax-and-vat-checkout-claims">VAT zawarty w cenie</span>
+          <span class="tax-and-vat-checkout-claims">Brak dodatkowych kosztów celnych</span>
+          <span class="tax-and-vat-checkout-claims">VAT wliczony w cenę</span>
         </div>
 
         <!-- PAYMENT + ORDER SUMMARY + BUTTON — via WC hooks -->
@@ -92,18 +92,18 @@ if ( WC()->cart->is_empty() ) return;
     <img decoding="async" src="https://images.vigo-shop.com/general/guarantee_money_back/satisfaction_icon_pl.png">
   </div>
   <div class="flex__item--autosize f--m checkout-warranty__text">
-    <strong>Kupuj bez obaw </strong><br>Zwrot pieniędzy w ciągu 90 dni
+    <strong>Kupuj bez obaw </strong><br>Możliwość zwrotu pieniędzy w ciągu 90 dni
   </div>
 </div>
 
 <!-- Terms -->
 <div class="agreed_terms_txt">
-  <span class="policy-agreement-obligation">Klikając przycisk <strong>Zamów</strong> akceptuję zamówienie z obowiązkiem zapłaty.</span><br>
+  <span class="policy-agreement-obligation">Klikając przycisk <strong>Zamawiam</strong> wyrażam zgodę na złożenie zamówienia z obowiązkiem zapłaty.</span><br>
   <div class="terms-checkbox-and-links">
     <label class="checkbox">
       <input type="checkbox" class="input-checkbox" name="agree_to_checkout_terms" id="agree_to_terms_checkbox" value="1">
     </label>
-    Przeczytałem i akceptuję <a href="#" id="terms_conditions_link">Ogólne warunki sprzedaży</a> i <a href="#" id="withdrawal_policy_link">prawo do odstąpienia</a>.
+    Poczytuałem i akceptuję <a href="#" id="terms_conditions_link">Warunki Ogólne Sprzedaży</a> i <a href="#" id="withdrawal_policy_link">Prawo Zwrotu</a>.
   </div>
 </div>
 
