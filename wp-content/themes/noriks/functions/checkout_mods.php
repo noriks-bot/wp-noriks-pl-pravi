@@ -528,6 +528,7 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
     $fields['billing']['billing_address_2']['required'] = true;
     $fields['billing']['billing_postcode']['label'] = 'Kod Pocztowy';
     $fields['billing']['billing_postcode']['placeholder'] = 'Kod Pocztowy';
+    $fields['billing']['billing_postcode']['maxlength'] = 6;
     $fields['billing']['billing_city']['label'] = 'Miasto';
     $fields['billing']['billing_city']['placeholder'] = 'Miasto';
     $fields['billing']['billing_phone']['label'] = 'Numer telefonu komórkowego';
