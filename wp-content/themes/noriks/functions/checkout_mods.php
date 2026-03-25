@@ -324,13 +324,14 @@ add_action( 'wp_footer', function() {
       $(document).on('click', '#place_order', function(){
         submitted = true;
         $('#billing_address_2_field').addClass('validate-required');
-        /* PL postcode auto-format: XX-XXX */
-        function initPostcode(){
-          var $pc = $('#billing_postcode');
-          $pc.attr('maxlength', '6').attr('pattern', '[0-9]{2}-[0-9]{3}');
-        }
-        initPostcode();
-        $(document.body).on('updated_checkout', initPostcode);
+        /* PL postcode auto-format: XX-XXX, max 5 digits */
+        $(document).on('keydown', '#billing_postcode', function(e){
+          var v = this.value.replace(/[^0-9]/g, '');
+          if (v.length >= 5 && e.key >= '0' && e.key <= '9') {
+            e.preventDefault();
+            return false;
+          }
+        });
         $(document).on('input', '#billing_postcode', function(){
           var v = this.value.replace(/[^0-9]/g, '').slice(0,5);
           if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2);
