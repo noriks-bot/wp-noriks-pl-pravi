@@ -32,7 +32,7 @@ if ( WC()->cart->is_empty() ) return;
 
         <!-- SHIPPING -->
         <div id="custom_shipping">
-          <h3>Dostawa</h3>
+          <h3>Dostawa - InPost</h3>
           <ul class="shipping_method_custom">
             <li class="standard-shipping shipping-tab">
               <input name="shipping_method[0]" data-index="0" id="shipping_method_0_standard_custom"
@@ -47,7 +47,7 @@ if ( WC()->cart->is_empty() ) return;
                     <span class="shipping_method_delivery_price tag tag--red">
                       <span class="woocommerce-Price-amount amount"><bdi>12,99<span class="woocommerce-Price-currencySymbol"> zł</span></bdi></span>
                     </span>
-                    <span class="delivery_img"><img decoding="async" class="poczta_polska standard" src="https://images.vigo-shop.com/general/curriers/home_small_paket24@2x.png"/></span>
+                    <span class="delivery_img"><img decoding="async" class="poczta_polska standard" src="https://images.vigo-shop.com/general/curriers/inpost.png"/></span>
                   </div>
                 </div>
               </label>

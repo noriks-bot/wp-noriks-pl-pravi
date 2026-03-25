@@ -323,11 +323,12 @@ add_action( 'wp_footer', function() {
       $('form.checkout').on('checkout_place_order', function(){ submitted = true; });
       $(document).on('click', '#place_order', function(){
         submitted = true;
+        $('#billing_address_2_field').addClass('validate-required');
         $(this).css('opacity','0.6').text('Przetwarzanie...');
         $('form.checkout').css({'opacity':'0.4','pointer-events':'none','transition':'opacity 0.3s'});
       });
       $(document.body).on('checkout_error', function(){
-        $('#place_order').css('opacity','1').text('Zamów');
+        $('#place_order').css('opacity','1').text('Zamawiam');
         $('form.checkout').css({'opacity':'1','pointer-events':''});
         /* Validate all fields after WC returns error */
         $('.woocommerce-checkout .form-row.validate-required').each(function(){
@@ -484,6 +485,7 @@ add_filter( 'woocommerce_checkout_fields', function( $fields ) {
     // $fields['billing']['billing_email']['description'] = 'Do potwierdzenia zamówienia i śledzenia przesyłki';
     $fields['billing']['billing_email']['required'] = true;
     $fields['billing']['billing_country']['default'] = 'PL';
+    $fields['billing']['billing_state']['required'] = false;
     unset( $fields['billing']['billing_company'] );
 
     // Vigoshop CSS classes

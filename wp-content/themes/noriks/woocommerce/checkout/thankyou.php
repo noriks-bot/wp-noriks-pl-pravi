@@ -51,7 +51,7 @@ if ( $upsell_is_majice ) {
     );
     $upsell_title_text = 'Dodaj koszulki teraz – 50% rabatu';
 } else {
-    $upsell_product_id = 2781; // Czarne bokserki
+    $upsell_product_id = 2698; // Czarne bokserki
     $upsell_name       = 'Czarne bokserki';
     $upsell_qty_prices = array( 1 => 34.99, 3 => 84.99, 5 => 129.99 );
     $upsell_qty_names  = array( 1 => '1x Czarne bokserki', 3 => '3x Czarne bokserki', 5 => '5x Czarnych bokserek' );
@@ -515,7 +515,7 @@ body.woocommerce-order-received .woocommerce {
                             $chk = $is_mid ? ' checked' : '';
                         ?>
                         <label class="ty-qty-btn<?php echo $cls; ?>" style="flex:1;text-align:center;padding:10px 0;border:2px solid <?php echo $border; ?>;border-radius:4px;font-weight:700;font-size:14px;cursor:pointer;background:<?php echo $bg; ?>;color:#000;">
-                            <input type="radio" name="ty_qty" value="<?php echo $q; ?>"<?php echo $chk; ?> style="display:none;"> <?php echo $q; ?>x kom
+                            <input type="radio" name="ty_qty" value="<?php echo $q; ?>"<?php echo $chk; ?> style="display:none;"> <?php echo $q; ?>x szt
                         </label>
                         <?php endforeach; ?>
                     </div>
