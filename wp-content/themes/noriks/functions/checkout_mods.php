@@ -330,7 +330,41 @@ add_action( 'wp_footer', function() {
       $(document.body).on('checkout_error', function(){
         $('#place_order').css('opacity','1').text('Zamawiam');
         $('form.checkout').css({'opacity':'1','pointer-events':''});
-        /* Validate all fields after WC returns error */
+        /* Parse WC error messages and show per-field */
+        var fieldMap = {
+          'ulica': 'billing_address_1_field',
+          'address_1': 'billing_address_1_field',
+          'numer': 'billing_address_2_field',
+          'address_2': 'billing_address_2_field',
+          'miasto': 'billing_city_field',
+          'city': 'billing_city_field',
+          'kod pocztowy': 'billing_postcode_field',
+          'postcode': 'billing_postcode_field',
+          'telefon': 'billing_phone_field',
+          'phone': 'billing_phone_field',
+          'e-mail': 'billing_email_field',
+          'email': 'billing_email_field',
+          'imię': 'billing_first_name_field',
+          'first name': 'billing_first_name_field',
+          'nazwisko': 'billing_last_name_field',
+          'last name': 'billing_last_name_field',
+        };
+        $('.woocommerce-NoticeGroup-checkout .woocommerce-error li').each(function(){
+          var msg = $(this).text().toLowerCase();
+          for (var key in fieldMap) {
+            if (msg.indexOf(key) !== -1) {
+              var $row = $('#' + fieldMap[key]);
+              if ($row.length) {
+                $row.removeClass('noriks-valid woocommerce-validated').addClass('noriks-invalid woocommerce-invalid');
+                if (!$row.find('.noriks-field-error').length) {
+                  $row.append('<span class="noriks-field-error">\u2715 ' + $(this).text() + '</span>');
+                }
+              }
+              break;
+            }
+          }
+        });
+        /* Also run standard validation */
         $('.woocommerce-checkout .form-row.validate-required').each(function(){
           var input = $(this).find('input, select, textarea').first();
           if (input.length) validateField(input[0], true);
@@ -376,6 +410,15 @@ add_action( 'wp_footer', function() {
         if (isRequired && !val) {
           showError($row, messages[id.replace('_field','')] || messages.required);
           return false;
+        }
+
+        /* Postcode format — PL requires XX-XXX (5 digits) */
+        if (id === 'billing_postcode_field' && val) {
+          var clean = val.replace(/[\s-]/g, '');
+          if (!/^\d{5}$/.test(clean)) {
+            showError($row, '\u2715 Wpisz prawidłowy kod pocztowy (np. 71-125)');
+            return false;
+          }
         }
 
         /* Email format */
