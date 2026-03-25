@@ -45,9 +45,9 @@ if ( $upsell_is_majice ) {
     $upsell_qty_prices = array( 1 => 54.99, 3 => 129.99, 6 => 169.99 );
     $upsell_qty_names  = array( 1 => '1x Czarna koszulka', 3 => '3x Czarne koszulki', 6 => '6x Czarnych koszulek' );
     $upsell_qty_images = array(
-        1 => 'https://noriks.com/pl/wp-content/uploads/2025/09/black-1.jpg',
-        3 => 'https://noriks.com/pl/wp-content/uploads/2025/09/black-3x.jpg',
-        6 => 'https://noriks.com/pl/wp-content/uploads/2026/01/15xcrnamajica.png',
+        1 => 'https://noriks.com/hr/wp-content/uploads/2025/09/black-1.jpg',
+        3 => 'https://noriks.com/hr/wp-content/uploads/2025/09/black-3x.jpg',
+        6 => 'https://noriks.com/hr/wp-content/uploads/2026/01/15xcrnamajica.png',
     );
     $upsell_title_text = 'Dodaj koszulki teraz – 50% rabatu';
 } else {
@@ -56,9 +56,9 @@ if ( $upsell_is_majice ) {
     $upsell_qty_prices = array( 1 => 34.99, 3 => 84.99, 5 => 129.99 );
     $upsell_qty_names  = array( 1 => '1x Czarne bokserki', 3 => '3x Czarne bokserki', 5 => '5x Czarnych bokserek' );
     $upsell_qty_images = array(
-        1 => 'https://noriks.com/pl/wp-content/uploads/2025/11/crne-boksarice-produktna.jpg',
-        3 => 'https://noriks.com/pl/wp-content/uploads/2025/11/boksarice_3x_crne.png',
-        5 => 'https://noriks.com/pl/wp-content/uploads/2026/01/boksarice_5x_crne.png',
+        1 => 'https://noriks.com/hr/wp-content/uploads/2025/11/crne-boksarice-produktna.jpg',
+        3 => 'https://noriks.com/hr/wp-content/uploads/2025/11/boksarice_3x_crne.png',
+        5 => 'https://noriks.com/hr/wp-content/uploads/2026/01/boksarice_5x_crne.png',
     );
     $upsell_title_text = 'Dodaj bokserki teraz – 50% rabatu';
 }
