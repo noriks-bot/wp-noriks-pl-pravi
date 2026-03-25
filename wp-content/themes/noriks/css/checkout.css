@@ -428,3 +428,13 @@ body.woocommerce-checkout .noriks-order-summary .review-product-info div {
     width: 49% !important;
   }
 }
+
+/* PL: postcode example below field */
+#billing_postcode_field::after {
+  content: 'Przykład: 71-125' !important;
+  display: block !important;
+  font-size: 13px !important;
+  color: #919293 !important;
+  margin-top: 5px !important;
+  padding-left: 8px !important;
+}
