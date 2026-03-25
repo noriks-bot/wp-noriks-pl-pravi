@@ -45,7 +45,7 @@ if ( WC()->cart->is_empty() ) return;
                   </div>
                   <div class="inner-wrapper-img">
                     <span class="shipping_method_delivery_price tag tag--red">
-                      <span class="woocommerce-Price-amount amount"><bdi>12,99<span class="woocommerce-Price-currencySymbol"> zł</span></bdi></span>
+                      <?php $ship = WC()->cart->get_shipping_total(); echo $ship ? number_format((float)$ship, 2, ",", " ") . " zł" : "Bezpłatnie"; ?>
                     </span>
                     <span class="delivery_img"><img decoding="async" class="poczta_polska standard" src="https://images.vigo-shop.com/general/curriers/inpost.png"/></span>
                   </div>
