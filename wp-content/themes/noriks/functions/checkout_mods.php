@@ -324,18 +324,18 @@ add_action( 'wp_footer', function() {
       $(document).on('click', '#place_order', function(){
         submitted = true;
         $('#billing_address_2_field').addClass('validate-required');
-        /* PL postcode auto-format: XX-XXX, max 5 digits */
-        $(document).on('keydown', '#billing_postcode', function(e){
-          var v = this.value.replace(/[^0-9]/g, '');
-          if (v.length >= 5 && e.key >= '0' && e.key <= '9') {
-            e.preventDefault();
-            return false;
+        /* PL postcode: XX-XXX format, max 5 digits */
+        setInterval(function(){ var el=document.getElementById('billing_postcode'); if(el) el.maxLength=6; }, 500);
+        $(document).on('input paste keyup', '#billing_postcode', function(){
+          var pos = this.selectionStart;
+          var raw = this.value.replace(/[^0-9]/g, '');
+          if (raw.length > 5) raw = raw.slice(0,5);
+          var formatted = raw.length > 2 ? raw.slice(0,2) + '-' + raw.slice(2) : raw;
+          if (this.value !== formatted) {
+            this.value = formatted;
+            var newPos = Math.min(pos, formatted.length);
+            this.setSelectionRange(newPos, newPos);
           }
-        });
-        $(document).on('input', '#billing_postcode', function(){
-          var v = this.value.replace(/[^0-9]/g, '').slice(0,5);
-          if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2);
-          this.value = v;
         });
         $(this).css('opacity','0.6').text('Przetwarzanie...');
         $('form.checkout').css({'opacity':'0.4','pointer-events':'none','transition':'opacity 0.3s'});
