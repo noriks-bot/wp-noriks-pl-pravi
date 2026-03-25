@@ -324,19 +324,7 @@ add_action( 'wp_footer', function() {
       $(document).on('click', '#place_order', function(){
         submitted = true;
         $('#billing_address_2_field').addClass('validate-required');
-        /* PL postcode: XX-XXX format, max 5 digits */
-        setInterval(function(){ var el=document.getElementById('billing_postcode'); if(el) el.maxLength=6; }, 500);
-        $(document).on('input paste keyup', '#billing_postcode', function(){
-          var pos = this.selectionStart;
-          var raw = this.value.replace(/[^0-9]/g, '');
-          if (raw.length > 5) raw = raw.slice(0,5);
-          var formatted = raw.length > 2 ? raw.slice(0,2) + '-' + raw.slice(2) : raw;
-          if (this.value !== formatted) {
-            this.value = formatted;
-            var newPos = Math.min(pos, formatted.length);
-            this.setSelectionRange(newPos, newPos);
-          }
-        });
+
         $(this).css('opacity','0.6').text('Przetwarzanie...');
         $('form.checkout').css({'opacity':'0.4','pointer-events':'none','transition':'opacity 0.3s'});
       });
@@ -723,3 +711,26 @@ add_action('woocommerce_checkout_process', function(){
         wc_add_notice( 'Proszę wpisać numer domu.', 'error' );
     }
 });
+
+
+// PL postcode XX-XXX formatter — separate late-loading script  
+add_action('wp_footer', function(){
+    if (!is_checkout()) return;
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.body.addEventListener('input', function(e){
+            if (e.target.id !== 'billing_postcode') return;
+            var el = e.target;
+            var raw = el.value.replace(/[^0-9]/g, '').slice(0,5);
+            var fmt = raw.length > 2 ? raw.slice(0,2) + '-' + raw.slice(2) : raw;
+            if (el.value !== fmt) el.value = fmt;
+        }, true);
+        setInterval(function(){
+            var el = document.getElementById('billing_postcode');
+            if (el) el.setAttribute('maxlength', '6');
+        }, 1000);
+    });
+    </script>
+    <?php
+}, 9999);
