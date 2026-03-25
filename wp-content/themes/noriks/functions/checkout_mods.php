@@ -325,9 +325,15 @@ add_action( 'wp_footer', function() {
         submitted = true;
         $('#billing_address_2_field').addClass('validate-required');
         /* PL postcode auto-format: XX-XXX */
-        $('#billing_postcode').attr('maxlength', '6').on('input', function(){
-          var v = this.value.replace(/[^0-9]/g, '');
-          if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2,5);
+        function initPostcode(){
+          var $pc = $('#billing_postcode');
+          $pc.attr('maxlength', '6').attr('pattern', '[0-9]{2}-[0-9]{3}');
+        }
+        initPostcode();
+        $(document.body).on('updated_checkout', initPostcode);
+        $(document).on('input', '#billing_postcode', function(){
+          var v = this.value.replace(/[^0-9]/g, '').slice(0,5);
+          if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2);
           this.value = v;
         });
         $(this).css('opacity','0.6').text('Przetwarzanie...');
