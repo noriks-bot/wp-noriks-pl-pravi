@@ -324,6 +324,12 @@ add_action( 'wp_footer', function() {
       $(document).on('click', '#place_order', function(){
         submitted = true;
         $('#billing_address_2_field').addClass('validate-required');
+        /* PL postcode auto-format: XX-XXX */
+        $('#billing_postcode').attr('maxlength', '6').on('input', function(){
+          var v = this.value.replace(/[^0-9]/g, '');
+          if (v.length > 2) v = v.slice(0,2) + '-' + v.slice(2,5);
+          this.value = v;
+        });
         $(this).css('opacity','0.6').text('Przetwarzanie...');
         $('form.checkout').css({'opacity':'0.4','pointer-events':'none','transition':'opacity 0.3s'});
       });
