@@ -461,7 +461,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
     
     
      
-     <!-- 2 - slika tablica velicina
+     <!-- 2 - slika tablica velicina -->
      <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3>Tabela rozmiarów</h3>
@@ -484,7 +484,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
                   
     <?php elseif(  $is_mixed_bundle ): ?>
     
-     <img src="https://noriks.com/pl/wp-content/uploads/2025/09/noriks_tablica_pl.jpg">
+     <img src="https://noriks.com/pl/wp-content/uploads/2026/04/pl_majice.jpeg">
      
      
     <img src="https://noriks.com/pl/wp-content/uploads/2026/02/boxers_size_Pl.png">
@@ -493,14 +493,14 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
           <?php else: ?>
       
       
-       <img src="https://noriks.com/pl/wp-content/uploads/2025/09/noriks_tablica_pl.jpg">
+       <img src="https://noriks.com/pl/wp-content/uploads/2026/04/pl_majice.jpeg">
         
             
         <?php endif; ?>
       </div>
     </div>
 
- -->
+ 
 
 
     <!-- 3 - savjeti za pranje-->
