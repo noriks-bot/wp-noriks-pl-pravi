@@ -53,7 +53,7 @@ if ( $upsell_is_majice ) {
 } else {
     $upsell_product_id = 2698; // Czarne bokserki
     $upsell_name       = 'Czarne bokserki';
-    $upsell_qty_prices = array( 1 => 34.99, 3 => 84.99, 5 => 129.99 );
+    $upsell_qty_prices = array( 1 => 19.00, 3 => 57, 5 => 95 );
     $upsell_qty_names  = array( 1 => '1x Czarne bokserki', 3 => '3x Czarne bokserki', 5 => '5x Czarnych bokserek' );
     $upsell_qty_images = array(
         1 => 'https://noriks.com/hr/wp-content/uploads/2025/11/crne-boksarice-produktna.jpg',
