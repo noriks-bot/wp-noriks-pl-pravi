@@ -1,69 +1,14 @@
+
 <?php
 /*
 Plugin Name: Orto Bundle Selector
 Description: Custom bundle radio buttons for Orto products (multiple pairs, supports 2 or 4+ custom attributes like 2 colors + 2 sizes).
-Version: 3.3.1
+Version: 3.3
 Author: Ante
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
-}
-
-// ============================================================
-// CONFIG (Majica swatch images)
-// ============================================================
-
-/**
- * Hardcode product ID for Majica where color "dots" should be replaced by
- * T-shirt thumbnail images (like in your screenshot).
- */
-function gck_is_majica_image_swatch_product( int $product_id ) : bool {
-    return ( $product_id === 3560 );
-}
-
-/**
- * Hardcoded image URLs per color (by slug of the color value).
- * ✅ You said you'll replace these with correct URLs.
- *
- * Keys should match sanitize_title($color_value) from Woo attribute option.
- * Examples:
- *  - "Czarny" => slug "czarny"
- *  - "Biały"  => slug "bialy"
- *  - "Granatowy" => "granatowy"
- */
-function gck_get_majica_swatch_image_map() : array {
-    return [
-        // PL examples
-        'czarny'      => 'https://noriks.com/pl/wp-content/uploads/2025/09/black-1.jpg',
-        'bialy'       => 'https://noriks.com/pl/wp-content/uploads/2025/09/white-1-600x600.jpg',
-        'szary'       => 'https://noriks.com/pl/wp-content/uploads/2025/09/grey-1-600x600.jpg',
-        'niebieski'   => 'https://example.com/majica-niebieski.jpg',
-        'granatowy'   => 'https://noriks.com/pl/wp-content/uploads/2025/09/blue-1-600x600.jpg',
-        'zielony'     => 'https://example.com/majica-zielony.jpg',
-        'czerwony'    => 'https://example.com/majica-czerwony.jpg',
-        'bezowy'      => 'https://example.com/majica-bezowy.jpg',
-        'brazowy'     => 'https://example.com/majica-brazowy.jpg',
-
-        // EN / other language examples (optional)
-        'black'       => 'https://example.com/majica-black.jpg',
-        'white'       => 'https://example.com/majica-white.jpg',
-        'gray'        => 'https://example.com/majica-gray.jpg',
-        'blue'        => 'https://example.com/majica-blue.jpg',
-        'green'       => 'https://example.com/majica-green.jpg',
-        'red'         => 'https://example.com/majica-red.jpg',
-        'beige'       => 'https://example.com/majica-beige.jpg',
-        'brown'       => 'https://example.com/majica-brown.jpg',
-    ];
-}
-
-/**
- * Get image URL for a given color option value.
- */
-function gck_get_majica_swatch_image_url( string $color_value ) : string {
-    $slug = sanitize_title( $color_value );
-    $map  = gck_get_majica_swatch_image_map();
-    return isset($map[$slug]) ? (string) $map[$slug] : '';
 }
 
 // ============================================================
@@ -95,6 +40,9 @@ function gck_get_bundle_offers( $product_id = null ) : array {
 
     $offers = [];
     $idx    = 0;
+    
+    
+   // var_dump($rows);
 
     foreach ( $rows as $row ) {
         $idx++;
@@ -122,16 +70,16 @@ function gck_get_bundle_offers( $product_id = null ) : array {
         // qty=1 exact
         if ( $qty === 1 ) {
             $offers[$offer_id] = [
-                "id"      => $offer_id,
-                "qty"     => $qty,
-                "title"   => $title,
-                "per"     => number_format($sale, 2, '.', ''),
-                "total"   => number_format($sale, 2, '.', ''),
+                "id"     => $offer_id,
+                "qty"    => $qty,
+                "title"  => $title,
+                "per"    => number_format($sale, 2, '.', ''),
+                "total"  => number_format($sale, 2, '.', ''),
                 "regular" => number_format($regular, 2, '.', ''), // cena_1
-                "saving"  => $saving_text,
-                "p1"      => $p1,
-                "p2"      => $p2,
-                "tip"     => $tip,
+                "saving" => $saving_text,
+                "p1"     => $p1,
+                "p2"     => $p2,
+                "tip"    => $tip,
             ];
             continue;
         }
@@ -141,16 +89,16 @@ function gck_get_bundle_offers( $product_id = null ) : array {
         $per_item_fixed = floor($per_item * 100) / 100;
 
         $offers[$offer_id] = [
-            "id"      => $offer_id,
-            "qty"     => $qty,
-            "title"   => $title,
-            "per"     => number_format($per_item_fixed, 2, '.', ''),
-            "total"   => number_format($sale, 2, '.', ''),
+            "id"     => $offer_id,
+            "qty"    => $qty,
+            "title"  => $title,
+            "per"    => number_format($per_item_fixed, 2, '.', ''),
+            "total"  => number_format($sale, 2, '.', ''),
             "regular" => number_format($regular, 2, '.', ''), // cena_1
-            "saving"  => $saving_text,
-            "p1"      => $p1,
-            "p2"      => $p2,
-            "tip"     => $tip,
+            "saving" => $saving_text,
+            "p1"     => $p1,
+            "p2"     => $p2,
+            "tip"    => $tip,
         ];
     }
 
@@ -189,18 +137,18 @@ function gck_split_attrs_color_size( array $custom_attrs ) : array {
 
         $hay = strtolower( $key . ' ' . $label );
 
-        $is_color = (
-            strpos($hay, 'barva') !== false ||      // CZ
-            strpos($hay, 'kolor') !== false ||      // PL
-            strpos($hay, 'color') !== false ||
-            strpos($hay, 'colour') !== false
-        );
+$is_color = (
+    strpos($hay, 'barva') !== false ||      // CZ
+    strpos($hay, 'kolor') !== false ||      // PL
+    strpos($hay, 'color') !== false ||
+    strpos($hay, 'colour') !== false
+);
 
-        $is_size = (
-            strpos($hay, 'vel') !== false ||        // CZ
-            strpos($hay, 'rozmiar') !== false ||    // PL
-            strpos($hay, 'size') !== false
-        );
+$is_size = (
+    strpos($hay, 'vel') !== false ||        // CZ
+    strpos($hay, 'rozmiar') !== false ||    // PL
+    strpos($hay, 'size') !== false
+);
 
         $values = $attr->get_options();
         if ( ! is_array($values) ) $values = [];
@@ -262,19 +210,19 @@ function gck_split_attrs_color_size( array $custom_attrs ) : array {
 function gck_attr_group_token( string $label, string $type ) : string {
     $l = strtolower( trim( $label ) );
 
-    if ( $type === 'color' ) {
-        $l = str_replace(
-            ['boja', 'barva', 'kolor', 'color', 'colour', ':'],
-            ' ',
-            $l
-        );
-    } else {
-        $l = str_replace(
-            ['veličina', 'velicina', 'rozmiar', 'size', ':'],
-            ' ',
-            $l
-        );
-    }
+   if ( $type === 'color' ) {
+    $l = str_replace(
+        ['boja', 'barva', 'kolor', 'color', 'colour', ':'],
+        ' ',
+        $l
+    );
+} else {
+    $l = str_replace(
+        ['veličina', 'velicina', 'rozmiar', 'size', ':'],
+        ' ',
+        $l
+    );
+}
 
     $l = trim( preg_replace('/\s+/', ' ', $l) );
     return sanitize_title( $l );
@@ -382,9 +330,6 @@ function gck_render_bundle_selector() {
     // "4-attribute case" in your implementation means we have 2 selector groups (majica + bokserica)
     $show_group_titles = ( count($attr_groups) > 1 );
 
-    // NEW: use image swatches only for Majica product ID 3560
-    $use_image_swatches = gck_is_majica_image_swatch_product( (int)$product_id );
-
     ?>
     <style>
       .single_add_to_cart_button {
@@ -438,121 +383,145 @@ function gck_render_bundle_selector() {
 
       .hidden { visibility: hidden !important; height: 0 !important; overflow: hidden !important; opacity: 0 !important; pointer-events: none !important; display: none; }
 
-      .color-swatches { display: flex; gap: 6px; align-items: center; }
+      .color-swatches { display: flex; gap: 2px; align-items: center; }
       .color-swatches .swatch {
-          width: 38px; height: 38px;
-          border-radius: 6px;
+          width: 33px; height: 34px;
+          border-radius: 4px;
           border: 2px solid #ddd;
           cursor: pointer;
           display: flex;
           justify-content: center;
           align-items: center;
           transition: all .15s;
-          background: #fff;
-          overflow: hidden;
       }
-      .color-swatches .swatch.active { border-color: #ff6d2e; transform: scale(1.05); }
+      .color-swatches .swatch.active { border-color: #ff6d2e; transform: scale(1.08); }
       .swatch-circle { width: 27px; height: 27px; border-radius: 50%; }
 
-      /* When using image swatches (Majica), make them look like thumbnail tiles */
-      .color-swatches.is-image-swatches .swatch{
-          width: 54px;
-          height: 54px;
-          border-radius: 6px;
-          background: #fff;
-      }
-      .color-swatches.is-image-swatches .swatch img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
-      }
-      
-      
-      .color-swatches.is-image-swatches + select.gck-size-select{
-    font-size: 22px !important;
+
+
+/* BLACK */
+.color-czarny {
+  background: #000;
+}
+
+/* WHITE */
+.color-bialy {
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+/* GRAY */
+.color-szary {
+  background: #706d78;
+}
+
+/* BLUE */
+.color-niebieski {
+  background: #203240;
+}
+
+/* DARK BLUE / NAVY */
+.color-granatowy {
+  background: #2a3262;
+}
+
+/* GREEN */
+.color-zielony {
+  background: #294d3b;
+}
+
+/* RED */
+.color-czerwony {
+  background: #ba212f;
+}
+
+/* BEIGE */
+.color-bezowy {
+  background: #e4e0cf;
+}
+
+/* BROWN */
+.color-brazowy {
+  background: #9f6f4e;
 }
 
 
-/* Make size select same height as image swatches (Majica only) */
-.color-swatches.is-image-swatches + select.gck-size-select{
-    height: 54px;
-    line-height: 54px;
-    padding-top: 0;
-    padding-bottom: 0;
+
+/* BLACK */
+.color-black,
+.color-crna,
+.color-cerna {
+  background: #000;
 }
 
+/* BLUE */
+.color-blue,
+.color-modra,
+.color-plava,
+.color-modra-cz,
+.color-modra,
+.color-modrá {
+  background: #203240;
+}
 
-      /* Color dot classes (kept for non-Majica products) */
-      /* BLACK */
-      .color-czarny { background: #000; }
-      /* WHITE */
-      .color-bialy { background: #fff; border: 1px solid #ccc; }
-      /* GRAY */
-      .color-szary { background: #706d78; }
-      /* BLUE */
-      .color-niebieski { background: #203240; }
-      /* DARK BLUE / NAVY */
-      .color-granatowy { background: #2a3262; }
-      /* GREEN */
-      .color-zielony { background: #294d3b; }
-      /* RED */
-      .color-czerwony { background: #ba212f; }
-      /* BEIGE */
-      .color-bezowy { background: #e4e0cf; }
-      /* BROWN */
-      .color-brazowy { background: #9f6f4e; }
+/* DARK BLUE */
+.color-tamnoplava,
+.color-tmavemodra,
+.color-tmavemodra,
+.color-tmave-modra{
+  background: #2a3262;
+}
 
-      /* BLACK */
-      .color-black,
-      .color-crna,
-      .color-cerna { background: #000; }
+/* GREEN */
+.color-green,
+.color-zelena,
+.color-zelena-cz,
+.color-zelená {
+  background: #294d3b;
+}
 
-      /* BLUE */
-      .color-blue,
-      .color-modra,
-      .color-plava,
-      .color-modra-cz,
-      .color-modrá { background: #203240; }
+/* GRAY */
+.color-gray,
+.color-siva,
+.color-seda,
+.color-šedá {
+  background: #706d78;
+}
 
-      /* DARK BLUE */
-      .color-tamnoplava,
-      .color-tmavemodra,
-      .color-tmave-modra { background: #2a3262; }
+/* RED */
+.color-crvena,
+.color-cervena,
+.color-červená {
+  background: #ba212f;
+}
 
-      /* GREEN */
-      .color-green,
-      .color-zelena,
-      .color-zelena-cz,
-      .color-zelená { background: #294d3b; }
+/* WHITE */
+.color-white,
+.color-bela,
+.color-bijela,
+.color-bila,
+.color-bílá {
+  background: #fff;
+  border: 1px solid #ccc;
+}
 
-      /* GRAY */
-      .color-gray,
-      .color-siva,
-      .color-seda,
-      .color-šedá { background: #706d78; }
+/* BEIGE */
+.color-bez,
+.color-bezova,
+.color-béžová {
+  background: #e4e0cf;
+}
 
-      /* RED */
-      .color-crvena,
-      .color-cervena,
-      .color-červená { background: #ba212f; }
+/* BROWN */
+.color-smeda,
+.color-hneda,
+.color-hnědá {
+  background: #9f6f4e;
+}
 
-      /* WHITE */
-      .color-white,
-      .color-bela,
-      .color-bijela,
-      .color-bila,
-      .color-bílá { background: #fff; border: 1px solid #ccc; }
-
-      /* BEIGE */
-      .color-bez,
-      .color-bezova,
-      .color-béžová { background: #e4e0cf; }
-
-      /* BROWN */
-      .color-smeda,
-      .color-hneda,
-      .color-hnědá { background: #9f6f4e; }
+      
+      
+      
 
       .bundle-option input[type="radio"] {
           -webkit-appearance: none;
@@ -640,16 +609,27 @@ function gck_render_bundle_selector() {
           margin-top: 10px;
       }
       .features { display: none !important; }
-
-      @media (max-width: 490px) { }
-
-      .gck-regular-price{
-          color:#c00;
-          text-decoration: line-through;
-          font-weight:700;
-          margin-right:6px;
+      
+      
+      
+      @media (max-width: 490px) {
+         .gck-divider span { 
+             }
+         
       }
+      
+      
+      .gck-regular-price{
+  color:#c00;
+  text-decoration: line-through;
+  font-weight:700;
+  margin-right:6px;
+}
     </style>
+    
+    
+    
+    
 
     <?php
     // Your extra conditional style block (kept)
@@ -662,55 +642,91 @@ function gck_render_bundle_selector() {
           .bundle-box select { border: 2px solid black !important; }
         </style>
     <?php endif; ?>
-
-    <?php
+    
+    
+    
+        <?php
     // Your extra conditional style block (kept)
     if (  has_term( array( 'orto-starter', 'startovaci-balicek' ), 'product_cat', $product_id )  )   :
     ?>
         <style>
+          
+          
             .price ins {
-                font-size: 25px !important;
-                font-weight: bold;
-            }
-            .price del {
-                font-size: 25px !important;
-            }
-            .price-badge {
-                font-size: 17px !important;
-                margin-top: -7px !important;
-            }
-            .gck-divider span {
-                font-size: 17px;
-                font-weight: 600;
-                color: black;
-                padding: 0 12px;
-                text-transform: uppercase;
-                letter-spacing: -0.2px;
-                text-align: center !important;
-                line-height: 1.3;
-            }
-            @media (max-width: 991px) {
-                .gck-divider span {
-                    font-size: 17px;
-                    font-weight: 600;
-                    color: black;
-                    padding: 0 12px;
-                    text-transform: uppercase;
-                    letter-spacing: -0.2px;
-                    text-align: center !important;
-                    line-height: 1.3;
-                }
-                #title-buy-now  {
-                    font-size: 35px !important;
-                    letter-spacing: 0.1px !important;
-                }
-            }
-            @media (min-width: 992px) {
-                .why-section img { float: right; max-width: 70%; }
-                .why-content{ padding-right: 30px; }
-            }
+                   
+                   font-size: 25px !important;
+                   font-weight: bold;
+               
+               }
+               
+                 .price del {
+                   
+                   font-size: 25px !important;
+               
+               }
+               
+               .price-badge {
+                   
+                   font-size: 17px !important;
+                   margin-top: -7px !important;
+               }
+               
+               
+                  .gck-divider span {
+        font-size: 17px;
+        font-weight: 600;
+        color: black;
+        padding: 0 12px;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+        text-align: center !important;
+        line-height: 1.3;
+    }
+          
+           @media (max-width: 991px) {
+               
+               
+                   .gck-divider span {
+        font-size: 17px;
+        font-weight: 600;
+        color: black;
+        padding: 0 12px;
+        text-transform: uppercase;
+        letter-spacing: -0.2px;
+        text-align: center !important;
+        line-height: 1.3;
+    }
+               
+               #title-buy-now  {
+                       font-size: 35px !important;
+                       letter-spacing: 0.1px !important;
+               
+               }
+               
+               
+               
+             
+               
+           }
+          
+           @media (min-width: 992px) {
+               .why-section img {
+               
+               float: right;
+               max-width: 70%;
+               }
+               
+               .why-content{
+               
+               padding-right: 30px;
+               
+               }
+           }
+          
         </style>
     <?php endif; ?>
+    
+    
 
     <div class="gck-benefits-box">
         <ul class="gck-benefits-list">
@@ -727,6 +743,18 @@ function gck_render_bundle_selector() {
             <?php endif; ?>
         </ul>
 
+
+    <!--
+    ✔ Idealne dopasowanie
+✔ Materiały premium i precyzyjny krój
+✔ Komfort bez kompromisów
+✔ Pakiet startowy dostępny tylko raz na osobę
+✔ Limitowane do 1 000 pakietów
+    
+    -->
+
+
+
         <a id="open-size-chartCustom" href="#size-chart" class="gck-size-link">
             <svg style="margin-right: 5px; width: 23px; height: 23px; display: inline-block; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 18 19" fill="none">
                 <path d="M11.4124 2.58464L2.08525 11.9118C1.86558 12.1315 1.86558 12.4876 2.08525 12.7073L5.78977 16.4118C6.00944 16.6315 6.3656 16.6315 6.58527 16.4118L15.9124 7.08466C16.1321 6.86499 16.1321 6.50883 15.9124 6.28916L12.2079 2.58464C11.9883 2.36497 11.6321 2.36497 11.4124 2.58464Z" stroke="#111213" stroke-width="0.84375"></path>
@@ -738,9 +766,14 @@ function gck_render_bundle_selector() {
 
     <div class="gck-top-banner-wrap">
         <?php if ( has_term( array( 'orto-starter' ), 'product_cat', $product_id ) ) : ?>
+            <!-- divider/timer removed in your current code -->
+            
             <div class="gck-divider">
-              <span>Zamów swój ekskluzywny <br/> pakiet startowy</span>
-            </div>
+           <!-- <span>Više komada, veća ušteda!</span>-->
+           <span>Zamów swój ekskluzywny <br/> pakiet startowy</span>
+        </div>
+        
+        
         <?php endif; ?>
     </div>
 
@@ -759,7 +792,7 @@ function gck_render_bundle_selector() {
     <?php endif; ?>
 
     <style>
-      .dev-banner{ font-size: 14px; color: black; max-width: 100%; margin-bottom: 12px; margin-top: 7px; }
+      .dev-banner{   font-size: 14px; color: black; max-width: 100%; margin-bottom: 12px; margin-top: 7px; }
       .dev-banner__text{ display: flex; align-items: center; gap: 8px; margin-bottom: 0px; padding-top: 10px; background: #e9f7f0; padding-bottom: 10px; justify-content: center; border-radius: 3px 0 0 3px; }
       .dev-banner__text b{ color:#333; font-weight:700; }
       .dev-banner__icon{ font-size: 14px; }
@@ -794,8 +827,8 @@ function gck_render_bundle_selector() {
 
             $is_default = ( $loop_index === $default_index );
 
-            $offer_p1  = trim((string)($data['p1'] ?? ''));
-            $offer_p2  = trim((string)($data['p2'] ?? ''));
+            $offer_p1 = trim((string)($data['p1'] ?? ''));
+            $offer_p2 = trim((string)($data['p2'] ?? ''));
             $offer_tip = strtolower(trim((string)($data['tip'] ?? ''))); // NEW
 
             // Decide which selector OPTIONS to show for each group in 4-attr case.
@@ -832,29 +865,49 @@ function gck_render_bundle_selector() {
                     data-total="<?php echo esc_attr( $data['total'] ); ?>"
                     data-qty="<?php echo esc_attr( $pairs ); ?>"
                     <?php checked( $is_default ); ?>>
+                    
+                    
+                    
+  
 
                 <span class="bundle-option-title"><?php echo esc_html( $data['title'] ); ?></span>
+                
+                  <?php
 
-                <?php
-                if (  !has_term( array( 'orto-starter' ), 'product_cat', $product_id )
-                   && !has_term( array( 'starter-paketi' ), 'product_cat', $product_id )
-                )  :  ?>
-                    — <span class="bundle-option-title"><?php echo number_format( (float) $data['per'], 2 ); ?> zł / szt.</span>
+    if (  !has_term( array( 'orto-starter' ), 'product_cat', $product_id ) 
+    
+    && !has_term( array( 'starter-paketi' ), 'product_cat', $product_id ) 
+    
+    )  :  ?>
+                — <span class="bundle-option-title"><?php echo number_format( (float) $data['per'], 2 ); ?> zł / szt.</span>
+                
+                
                 <?php endif; ?>
+                
 
                 <br/>
 
+                <!--
                 <div class="bundle-total-line">
-                    <span style="font-weight:normal;">Razem:</span>
-
-                    <?php if ( ! empty($data['regular']) && (float)$data['regular'] > (float)$data['total'] ) : ?>
-                        <span class="gck-regular-price">
-                            <?php echo number_format( (float) $data['regular'], 2 ); ?> zł
-                        </span>
-                    <?php endif; ?>
-
-                    <span class="line-total"><?php echo number_format( (float) $data['total'], 2 ); ?> zł</span>
+                    <span style="font-weight:normal;">Ukupno:</span>
+                    <span class="line-total"><?php echo number_format( (float) $data['total'], 2 ); ?>zł</span>
                 </div>
+
+-->
+
+<div class="bundle-total-line">
+    <span style="font-weight:normal;">Razem:</span>
+
+    <?php if ( ! empty($data['regular']) && (float)$data['regular'] > (float)$data['total'] ) : ?>
+        <span class="gck-regular-price">
+            <?php echo number_format( (float) $data['regular'], 2 ); ?> zł
+        </span>
+    <?php endif; ?>
+
+    <span class="line-total"><?php echo number_format( (float) $data['total'], 2 ); ?> zł</span>
+</div>
+
+
 
                 <div class="bundle-pairs <?php echo $is_default ? '' : 'hidden'; ?>"
                      data-offer-id="<?php echo esc_attr( $offer_id ); ?>"
@@ -902,20 +955,14 @@ function gck_render_bundle_selector() {
                                 <div class="bundle-attr-row">
 
                                     <?php if ( ! empty($color_values) && $target_color_field_key !== '' ) : ?>
-                                        <div class="color-swatches <?php echo $use_image_swatches ? 'is-image-swatches' : ''; ?>"
+                                        <div class="color-swatches"
                                              data-attr-key="<?php echo esc_attr($target_color_attr_key); ?>"
                                              data-name="pairs[<?php echo esc_attr( $offer_id ); ?>][<?php echo $i; ?>][<?php echo esc_attr( $target_color_field_key ); ?>]">
 
                                             <?php foreach ( $color_values as $val ) :
-                                                $slug = sanitize_title( $val );
-                                                $img  = $use_image_swatches ? gck_get_majica_swatch_image_url( (string)$val ) : '';
-                                                ?>
+                                                $slug = sanitize_title( $val ); ?>
                                                 <div class="swatch" data-value="<?php echo esc_attr( $val ); ?>" title="<?php echo esc_attr( $val ); ?>">
-                                                    <?php if ( $use_image_swatches && $img !== '' ) : ?>
-                                                        <img src="<?php echo esc_url( $img ); ?>" alt="<?php echo esc_attr( $val ); ?>">
-                                                    <?php else: ?>
-                                                        <span class="swatch-circle color-<?php echo esc_attr( $slug ); ?>"></span>
-                                                    <?php endif; ?>
+                                                    <span class="swatch-circle color-<?php echo esc_attr( $slug ); ?>"></span>
                                                 </div>
                                             <?php endforeach; ?>
 
@@ -944,6 +991,9 @@ function gck_render_bundle_selector() {
                             <?php endforeach; ?>
                         </div>
                     <?php endfor; ?>
+
+<!--
+                    <small style="display: block; line-height: 1;"><?php esc_html_e( 'Oferujemy 30 dni na zwrot pieniędzy lub bezpłatną wymianę produktu — zakupy bez ryzyka!', 'gift-card-kompetentnost' ); ?></small>-->
                 </div>
             </label>
         <?php
