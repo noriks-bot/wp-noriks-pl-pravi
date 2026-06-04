@@ -1243,10 +1243,10 @@ function gck_render_bundle_selector() {
                         <?php endif; ?>
                     <?php for ( $i = 1; $i <= $pairs; $i++ ) : ?>
                         <?php if ( $gck_pass['group'] === null && $gck_show_sections && $gck_paid > 0 && $i === 1 ) : ?>
-                            <div class="gck-pair-label">Wybierz <?php echo (int) $gck_paid; ?> <?php echo esc_html( gck_pl_majice_phrase( $gck_paid ) ); ?></div>
+                            <div class="gck-pair-label">Wybierz <?php echo (int) $gck_paid; ?> <?php echo esc_html( gck_pl_majice_phrase( $gck_paid, false, $gck_garment ) ); ?></div>
                         <?php endif; ?>
                         <?php if ( $gck_pass['group'] === null && $gck_show_sections && $gck_free > 0 && $i === ( $gck_paid + 1 ) ) : ?>
-                            <div class="gck-pair-label is-gratis">Wybierz jeszcze <?php echo (int) $gck_free; ?> <?php echo esc_html( gck_pl_majice_phrase( $gck_free, true ) ); ?></div>
+                            <div class="gck-pair-label is-gratis">Wybierz jeszcze <?php echo (int) $gck_free; ?> <?php echo esc_html( gck_pl_majice_phrase( $gck_free, true, $gck_garment ) ); ?></div>
                         <?php endif; ?>
                         <div class="bundle-pair">
                             <?php foreach ( $attr_groups as $g_index => $group ) :
