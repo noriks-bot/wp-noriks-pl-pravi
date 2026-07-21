@@ -443,11 +443,23 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 Okrągły dekolt został zaprojektowany z myślą o idealnym dopasowaniu, gwarantując schludny i komfortowy wygląd.
 
 To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tradyczny boczny szew zapewnia lepsze dopasowanie, a sitodrukowana metka eliminuje podrażnienia w okolicy szyi. Dzięki temu koszulki łączą maksymalny komfort z prostym, ponadczasowym stylem.  <br>
-        
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $current_product_id) ): ?>
+
+                NORIKS FisioRest to terapeutyczna poduszka na szyję, która łączy trakcję, ciepło i masaż wibracyjny w ergonomicznej konstrukcji z pianki pamięciowej. Delikatnie rozciąga szyję pod odpowiednim kątem, odciąża odcinek szyjny kręgosłupa oraz ciepłem i masażem rozluźnia napięcie mięśniowe. Bezprzewodowa, ładowana i otulona miękkim, chłodzącym jedwabiem — bezpieczna także do snu.
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type('bunion', $current_product_id) ): ?>
+
+                Korektor haluksa NORIKS z zaawansowaną terapią korekcji i opatentowanym mechanizmem przegubowym delikatnie przywraca paluch do naturalnego położenia, łagodzi dyskomfort i zapobiega dalszemu powiększaniu się wybrzuszenia. Elastyczna konstrukcja pozwala w nim chodzić. Dopasowuje się do każdego rozmiaru stopy, bez wersji na lewą i prawą stronę. Do stosowania w spoczynku — podczas odpoczynku, oglądania TV, czytania lub snu.
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) ): ?>
+
+                Ortopedyczny pas NORIKS celowo stabilizuje dolną część pleców dzięki ukierunkowanej kompresji, prawidłowo ustawia miednicę i odciąża nerw kulszowy. Cienki i niewidoczny pod ubraniem, z regulowanym stopniem podparcia. Odpowiedni przy bólu krzyża, rwie kulszowej, napięciu mięśniowym i problemach ze stawem krzyżowo-biodrowym.
+
         <?php else: ?>
-        
-        
-        
+
+
+
             <?php echo get_field("__overwrite_sekcije_bellow_1"); ?>
             
             
@@ -462,15 +474,24 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
     
      
      <!-- 2 - slika tablica velicina -->
+     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) ) ) ) : // brak tabeli rozmiarów dla bunion + fisiorest ?>
      <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3>Tabela rozmiarów</h3>
         <div class="toggle">+</div>
       </div>
       <div class="accordion-content">
-          
-           <?php if( $is_boxers ): ?>
-       
+
+           <?php if( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) ): ?>
+
+          <div style="line-height:1.9;">
+            <strong>S/M</strong> : obwód bioder 75–110 cm<br>
+            <strong>L/XL</strong> : obwód bioder 110–140 cm<br><br>
+            Zmierz obwód bioder, aby dobrać swój rozmiar.
+          </div>
+
+        <?php elseif( $is_boxers ): ?>
+
         
           <img src="https://noriks.com/pl/wp-content/uploads/2026/02/boxers_size_Pl.png">
           
@@ -499,11 +520,13 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         <?php endif; ?>
       </div>
     </div>
+    <?php endif; // /brak tabeli rozmiarów dla bunion + fisiorest ?>
 
- 
+
 
 
     <!-- 3 - savjeti za pranje-->
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>
@@ -535,6 +558,7 @@ Susz na płasko lub w suszarce w niskiej temperaturze.
         <?php endif; ?>
       </div>
     </div>
+    <?php endif; // /brak porad dot. prania dla pas/bunion/fisiorest ?>
 
 
 

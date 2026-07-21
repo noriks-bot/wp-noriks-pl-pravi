@@ -1,6 +1,19 @@
 
-<?php 
-if (  has_term( array( 'pakiety-startowe','orto-starter' ), 'product_cat', get_the_id() )  )   : 
+<?php
+/* Bunion / ortopas / fisiorest: dedykowane sekcje why (bez return — potem działa
+   wspólny system recenzji). Pozostałe produkty pozostają nietknięte. */
+if ( function_exists( 'noriks_is_type' ) ) {
+    if ( noriks_is_type( 'bunion' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-bunion' );
+    } elseif ( noriks_is_type( 'ortopas' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-ortopas' );
+    } elseif ( noriks_is_type( 'fisiorest' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-fisiorest' );
+    }
+}
+?>
+<?php
+if (  has_term( array( 'pakiety-startowe','orto-starter' ), 'product_cat', get_the_id() )  )   :
 ?>
 
 
@@ -645,8 +658,19 @@ endif;
   $current_product_id = (function_exists('is_product') && is_product()) ? get_queried_object_id() : get_the_id();
   $is_bokserice_page  = has_term( array( 'bokserki','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $current_product_id );
 
+  // Orto products: dedicated (text-only) review pools.
+  $is_ortopas_page    = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) );
+  $is_bunion_page     = ( function_exists('noriks_is_type') && noriks_is_type('bunion', $current_product_id) );
+  $is_fisiorest_page  = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $current_product_id) );
+
   // Include review pools
-  if ( ! $is_bokserice_page )  {
+  if ( $is_fisiorest_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_fisiorest.php';
+  } elseif ( $is_bunion_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_bunion.php';
+  } elseif ( $is_ortopas_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_ortopas.php';
+  } elseif ( ! $is_bokserice_page )  {
     include get_stylesheet_directory() . '/auto_reviews/'.$reviews_language.'.php';
   } else {
     include get_stylesheet_directory() . '/auto_reviews/HR_bokserice.php';
@@ -711,11 +735,17 @@ endif;
       }
 
       $is_bokserice = false;
+      $is_ortopas   = false;
+      $is_bunion    = false;
+      $is_fisiorest = false;
       if ( $product_id ) {
           $is_bokserice = has_term( array( 'bokserice','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $product_id );
+          $is_ortopas   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $product_id) );
+          $is_bunion    = ( function_exists('noriks_is_type') && noriks_is_type('bunion', $product_id) );
+          $is_fisiorest = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $product_id) );
       }
 
-      $cache_key = $transient_key . ( $is_bokserice ? '_bokserice' : '_all' );
+      $cache_key = $transient_key . ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) );
 
       if ( function_exists( 'get_transient' ) ) {
           $cached = get_transient( $cache_key );
@@ -732,7 +762,13 @@ endif;
           'order'   => 'DESC',
       ];
 
-      if ( $is_bokserice ) {
+      if ( $is_fisiorest ) {
+          $args['category'] = [ 'orto-fisiorest' ];
+      } elseif ( $is_bunion ) {
+          $args['category'] = [ 'orto-bunion' ];
+      } elseif ( $is_ortopas ) {
+          $args['category'] = [ 'orto-ortopas' ];
+      } elseif ( $is_bokserice ) {
           $args['category'] = [ 'bokserice' ];
       } else {
           $args['tax_query'] = [
@@ -977,7 +1013,8 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
 
   // Avatar pools based on page category
   $avatar_type = $is_bokserice_page ? 'bokserice' : 'majice';
-  $avatar_pool = get_review_avatar_pool($avatar_type);
+  // Belt + bunion + fisiorest: text-only reviews (no avatar images).
+  $avatar_pool = ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page ) ? array() : get_review_avatar_pool($avatar_type);
 
   $product_pool = get_wc_product_pool();
 
@@ -1021,6 +1058,9 @@ $auto_reviews_ship = assign_unique_avatars_first_n($auto_reviews_ship, $avatar_p
 
 
 
+<?php if ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page ) : ?>
+<style>/* belt + bunion + fisiorest: text-only reviews, no avatar */ #reviews-section .avatar { display: none !important; }</style>
+<?php endif; ?>
 <section id="reviews-section" class="basic-reviews-section" style="margin-bottom:40px!important;padding-bottom:40px!important;">
   <div class="container basic-reviews-section-container" style="width:100%;max-width:1440px;padding-top:20px!important;margin:0 auto;padding-left: 10px; padding-right: 10px;">
 
@@ -1432,10 +1472,58 @@ $auto_reviews_ship = assign_unique_avatars_first_n($auto_reviews_ship, $avatar_p
 
 
 
-<?php 
+<?php
 $faq_list = get_field('faq_list', 'option');
 $faq_list2 = get_field('faq_list_2', 'option');
 $faq_list3 = get_field('faq_list_3', 'option');
+
+$is_ortopas_faq   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas') );
+$is_bunion_faq    = ( function_exists('noriks_is_type') && noriks_is_type('bunion') );
+$is_fisiorest_faq = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') );
+
+// Korektor haluksa — FAQ o produkcie (NORIKS, polski).
+$bunion_faq = array(
+  array( 'questioon' => 'Jak szybko poczuję się lepiej?', 'answer' => 'Około 30 minut — tyle czasu potrzeba, aby złagodzić dyskomfort. Przy regularnym stosowaniu przez dwa tygodnie odczujesz znaczną ulgę podczas codziennych czynności, takich jak chodzenie, stanie czy sen.' ),
+  array( 'questioon' => 'Jak szybko zauważę różnicę w haluksie?', 'answer' => 'W zależności od nasilenia haluksa większość klientów zauważa widoczną poprawę po 4–8 tygodniach. Lekki haluks: 4 tygodnie. Umiarkowany haluks: 4 tygodnie. Silniejszy haluks: 8 tygodni.' ),
+  array( 'questioon' => 'Czy można go nosić w butach? Czy mogę w nim chodzić?', 'answer' => 'Nie, do buta się nie zmieści. Tak, możesz w nim chodzić. Jest jednak przeznaczony do odpoczynku — gdy leżysz na kanapie, oglądasz TV, czytasz lub śpisz.' ),
+  array( 'questioon' => 'Co jeśli będzie mi niewygodnie?', 'answer' => 'To zupełnie normalne! Korektor NORIKS jest zaprojektowany wystarczająco mocno, aby ustawić staw palucha, zatrzymać stan zapalny i zmniejszyć dyskomfort. Możesz potrzebować 1–2 sesji, aby się przyzwyczaić, a potem poczujesz się znacznie lepiej!' ),
+  array( 'questioon' => 'Jak długo powinienem go stosować?', 'answer' => 'Zalecamy rozpoczęcie od 30 minut dziennie i stopniowe wydłużanie sesji do 1–3 godzin. Gdy poczujesz się komfortowo, możesz nosić go także podczas snu. Noś go podczas odpoczynku — na kanapie, przy TV, czytaniu lub śnie.' ),
+  array( 'questioon' => 'Czy pomoże w moim konkretnym przypadku?', 'answer' => 'Korektor NORIKS jest idealny do: łagodzenia dyskomfortu wpływającego na codzienne czynności, takie jak chodzenie czy stanie; łagodzenia dyskomfortu związanego z haluksem podczas odpoczynku lub snu; leczenia haluksa we wczesnym stadium, który może postępować; haluksa, który powrócił po operacji; pomocy przy silniejszym haluksie kwalifikującym się do operacji; oraz jako skuteczna nieoperacyjna opcja.' ),
+  array( 'questioon' => 'Czy będzie pasował do mojej stopy? Czy są wersje na lewą i prawą stronę?', 'answer' => 'Niezależnie od rozmiaru stopy — od najmniejszej dziecięcej po dużą stopę osoby dorosłej — korektor NORIKS wygodnie się dopasowuje. Nie ma stron! Dzięki elastycznej konstrukcji równie łatwo dopasowuje się do lewej i prawej stopy.' ),
+);
+
+// Ortopedyczny pas na plecy — FAQ o produkcie (NORIKS, polski).
+$ortopas_faq = array(
+  array( 'questioon' => 'Jak szybko odczuję ulgę w bólu?', 'answer' => 'Wielu użytkowników odczuwa zauważalną ulgę w rwie kulszowej i bólu krzyża natychmiast po założeniu pasa NORIKS. Jego ukierunkowana kompresja zapewnia natychmiastowe podparcie, stabilizuje kręgosłup i zmniejsza nacisk na nerwy. Dla długotrwałego efektu zalecamy regularne noszenie pasa zgodnie z instrukcją przez co najmniej dwa tygodnie. Z czasem, przy prawidłowym stosowaniu i zdrowych nawykach, możesz odczuć trwałą ulgę i większą swobodę ruchów.' ),
+  array( 'questioon' => 'Jak prawidłowo założyć pas?', 'answer' => 'Pas NORIKS noś wokół bioder, nieco poniżej linii talii. Powinien znajdować się nad okolicą krzyżową (dolna część pleców, tuż nad pośladkami) i poniżej grzebienia miednicy (górna część bocznych bioder). Więcej informacji znajdziesz w instrukcji obsługi.' ),
+  array( 'questioon' => 'Czy pas osłabi moje mięśnie?', 'answer' => 'Nie, pas NORIKS nie osłabia mięśni tak jak gorset na plecy. Pomaga jedynie utrzymać stawy krzyżowo-biodrowe razem i przywraca prawidłowe napięcie więzadeł. Możesz nosić go tygodniami lub miesiącami bez obawy o zanik mięśni.' ),
+  array( 'questioon' => 'Czy mogę nosić pas także podczas snu?', 'answer' => 'Tak, pas możesz nosić również w nocy. Czas noszenia nie jest ograniczony, a dłuższe noszenie nie ma negatywnych skutków.' ),
+  array( 'questioon' => 'Jak mocno powinienem go zapiąć?', 'answer' => 'Pas powinien przylegać ciasno, ale nie za mocno, aby uniknąć dyskomfortu. Powinieneś swobodnie się poruszać, bez wrzynania się lub zsuwania pasa. Napięcie łatwo regulujesz elastycznymi taśmami.' ),
+  array( 'questioon' => 'Komu go polecacie?', 'answer' => 'Wszystkim, którzy zmagają się z bólem krzyża, rwą kulszową, napięciem mięśniowym, przepukliną krążka międzykręgowego, bólem bioder lub miednicy oraz problemami ze stawem krzyżowo-biodrowym. Niezależnie od wieku, płci, wzrostu i wagi.' ),
+  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Oferujemy gwarancję satysfakcji! Jeśli nie jesteś zadowolony z pasa NORIKS, skontaktuj się z nami pod adresem info@noriks.com w celu zwrotu i refundacji w ciągu 90 dni. Termin liczony jest od otrzymania pasa.' ),
+);
+
+// FisioRest — FAQ o produkcie (NORIKS, polski).
+$fisiorest_faq = array(
+  array( 'questioon' => 'Jak działa NORIKS FisioRest?', 'answer' => 'FisioRest łączy trakcję, ciepło i masaż wibracyjny z ergonomiczną konstrukcją z pianki pamięciowej. Ta technologia rozciąga szyję pod dokładnie odpowiednim kątem i odciąża odcinek szyjny kręgosłupa. Następnie kojący ciepły masaż pobudza dopływ bogatej w tlen i składniki odżywcze krwi do mięśni, wspomagając regenerację tkanek.' ),
+  array( 'questioon' => 'Czym FisioRest przewyższa inne urządzenia?', 'answer' => 'NORIKS FisioRest jest wyjątkowy, ponieważ łączy <strong>trzy terapie w jednym</strong> — ciepło, masaż i delikatną trakcję — które rozluźniają mięśnie i ponownie ustawiają szyję dla długotrwałej ulgi. Ponadto jest <strong>bezprzewodowy, bezpieczny do snu i otulony chłodzącym jedwabiem</strong>, zapewniając komfort, jakiego nie znajdziesz nigdzie indziej.' ),
+  array( 'questioon' => 'Jak używać FisioRest?', 'answer' => '1. Naładuj go dołączonym kablem USB-C i ładowarką przez około 4 do 6 godzin. 2. Przytrzymaj przycisk masażu lub ciepła przez 5 sekund, aż zapali się kontrolka. 3. Ponownym naciśnięciem przycisków zmieniasz prędkość masażu i ustawienia ciepła. 4. Ciesz się relaksującym masażem!' ),
+  array( 'questioon' => 'Jak długo powinienem używać FisioRest?', 'answer' => 'Zalecamy rozpoczęcie od 15 minut, aby szyja się przyzwyczaiła. Z czasem możesz przejść do pełnej sesji. Dla orientacji: cykl delikatnego ciepła, masażu i trakcji trwa 30 minut, co zwykle jest idealnym czasem, aby szyja się rozluźniła i odzyskała naturalną krzywiznę.' ),
+  array( 'questioon' => 'Czy FisioRest jest bezprzewodowy?', 'answer' => 'Tak! NORIKS FisioRest jest całkowicie bezprzewodowy i ładowany do codziennego użytku.' ),
+  array( 'questioon' => 'Jak czyścić FisioRest?', 'answer' => 'Tkanina jest odporna na oleje i kurz, jednak zalecamy przetarcie FisioRest po użyciu chusteczką dezynfekującą, ponieważ poszewka poduszki nie nadaje się do prania.' ),
+  array( 'questioon' => 'Czy jest bezpieczny dla wszystkich?', 'answer' => 'NORIKS FisioRest został zaprojektowany tak, aby odpowiadał wszystkim, niezależnie od wieku i płci. Jednak każda sytuacja jest inna. W celu uzyskania szczegółowych wskazówek dopasowanych do Twoich potrzeb zalecamy konsultację z lekarzem.' ),
+  array( 'questioon' => 'Czy mogę go zwrócić, jeśli nie widzę efektów?', 'answer' => 'Oczywiście! Oferujemy pełną gwarancję zwrotu pieniędzy w ciągu 90 dni od dostawy, jeśli nie jesteś zadowolony z produktu. Napisz do nas na info@noriks.com, a odpowiemy w ciągu 12 godzin od otrzymania wiadomości!' ),
+);
+
+// Swap ONLY the product-info FAQ container ("...produkcie/produkt") for these 3
+// products; delivery/returns/payment containers stay untouched.
+$faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq ) {
+  $is_info = ( stripos( (string) $title, 'produk' ) !== false );
+  if ( $is_fisiorest_faq && $is_info ) { return $fisiorest_faq; }
+  if ( $is_bunion_faq && $is_info )    { return $bunion_faq; }
+  if ( $is_ortopas_faq && $is_info )   { return $ortopas_faq; }
+  return $list;
+};
 ?>
 
 
@@ -1452,8 +1540,9 @@ $faq_list3 = get_field('faq_list_3', 'option');
             font-weight: 700;
             color: #222223;
             margin-bottom: 10px; "><?php echo get_field('faq_title_1', 'option'); ?></h4>
-            <?php 
-              if( $faq_list && is_array($faq_list) ): 
+            <?php
+              $faq_list = $faq_pick( get_field('faq_title_1', 'option'), $faq_list );
+              if( $faq_list && is_array($faq_list) ):
                       foreach( $faq_list as $faq_item ):
               ?>
                     <div class="faq-item">
@@ -1478,8 +1567,9 @@ $faq_list3 = get_field('faq_list_3', 'option');
             font-weight: 700;
             color: #001e36;
             margin-bottom: 10px; "><?php echo get_field('faq_title_2', 'option'); ?></h4>
-            <?php 
-              if( $faq_list2 && is_array($faq_list2) ): 
+            <?php
+              $faq_list2 = $faq_pick( get_field('faq_title_2', 'option'), $faq_list2 );
+              if( $faq_list2 && is_array($faq_list2) ):
                       foreach( $faq_list2 as $faq_item ):
               ?>
                     <div class="faq-item">
@@ -1504,8 +1594,9 @@ $faq_list3 = get_field('faq_list_3', 'option');
             font-weight: 700;
             color: #001e36;
             margin-bottom: 10px; "><?php echo get_field('faq_title_3', 'option'); ?></h4>
-            <?php 
-              if( $faq_list3 && is_array($faq_list3) ): 
+            <?php
+              $faq_list3 = $faq_pick( get_field('faq_title_3', 'option'), $faq_list3 );
+              if( $faq_list3 && is_array($faq_list3) ):
                       foreach( $faq_list3 as $faq_item ):
               ?>
                     <div class="faq-item">
