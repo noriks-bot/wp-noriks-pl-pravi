@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <?php if ($i === 0): ?>
                 <!-- FIRST ITEM WITH DROPDOWN -->
                 <div class="nav-item has-dropdown">
-                    <a href="<?php echo esc_url($link); ?>" class="nav-link">
+                    <a href="<?php echo esc_url($link); ?>" class="nav-link<?php echo !empty($item['pill']) ? ' nav-link--pill' : ''; ?>">
                         <?php echo esc_html($text); ?>
                     </a>
                         
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <?php elseif ($i === 1): ?>
 
                 <div class="nav-item has-dropdown">
-                    <a href="<?php echo esc_url($link); ?>" class="nav-link">
+                    <a href="<?php echo esc_url($link); ?>" class="nav-link<?php echo !empty($item['pill']) ? ' nav-link--pill' : ''; ?>">
                         <?php echo esc_html($text); ?>
                     </a>
                     <!--
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 
             <?php else: ?>
                 <!-- NORMAL ITEMS -->
-                <a href="<?php echo esc_url($link); ?>" class="nav-link">
+                <a href="<?php echo esc_url($link); ?>" class="nav-link<?php echo !empty($item['pill']) ? ' nav-link--pill' : ''; ?>">
                     <?php echo esc_html($text); ?>
                 </a>
             <?php endif; ?>
