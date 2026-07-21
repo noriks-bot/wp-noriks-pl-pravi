@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 7.0.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2026-07-03 07:42:21+0000\n"
+"PO-Revision-Date: 2026-07-07 14:52:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3235,7 +3235,7 @@ msgctxt "block description"
 msgid "Reuse this design across your site."
 msgstr "Użyj projektu ponownie w całej witrynie."
 
-#: wp-includes/js/dist/editor.js:67144 wp-admin/about.php:149
+#: wp-includes/js/dist/editor.js:67144 wp-admin/about.php:180
 msgid "Accessibility"
 msgstr "Dostępność"
 
@@ -3878,7 +3878,7 @@ msgstr "Zaktualizowano część szablonu."
 #: wp-includes/build/routes/connectors-home/route.js:53 wp-admin/menu.php:407
 #: wp-admin/options-connectors.php:30
 msgid "Connectors"
-msgstr "Połączenia"
+msgstr "Łączniki"
 
 #. translators: 1: PHP class name, 2: Version number, 3: Alternative class or
 #. function name.
