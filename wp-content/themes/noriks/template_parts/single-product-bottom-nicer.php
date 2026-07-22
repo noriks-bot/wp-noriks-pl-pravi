@@ -203,7 +203,7 @@ NAJŁATWIEJSZY I NAJPEWNIEJSZY START
 
 
 <?php 
-if (  has_term( array( 'koszulki' , 'orto-majica'), 'product_cat', get_the_id() )  ||  has_term( 'komplety', 'product_cat', get_the_id() )) : 
+if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'product_cat', get_the_id() )  ||  has_term( 'komplety', 'product_cat', get_the_id() )) : 
 ?>
 
 
