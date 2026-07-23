@@ -137,18 +137,9 @@ function gck_split_attrs_color_size( array $custom_attrs ) : array {
 
         $hay = strtolower( $key . ' ' . $label );
 
-$is_color = (
-    strpos($hay, 'barva') !== false ||      // CZ
-    strpos($hay, 'kolor') !== false ||      // PL
-    strpos($hay, 'color') !== false ||
-    strpos($hay, 'colour') !== false
-);
+$is_color = ( strpos($hay, 'boja') !== false || strpos($hay, 'barva') !== false || strpos($hay, 'farb') !== false || strpos($hay, 'culoare') !== false || strpos($hay, 'color') !== false || strpos($hay, 'colour') !== false || strpos($hay, 'colore') !== false || strpos($hay, 'kolor') !== false || strpos($hay, 'szín') !== false || strpos($hay, 'szin') !== false || strpos($hay, 'ρώμ') !== false || strpos($hay, 'цвят') !== false );
 
-$is_size = (
-    strpos($hay, 'vel') !== false ||        // CZ
-    strpos($hay, 'rozmiar') !== false ||    // PL
-    strpos($hay, 'size') !== false
-);
+$is_size = ( strpos($hay, 'vel') !== false || strpos($hay, 'size') !== false || strpos($hay, 'marime') !== false || strpos($hay, 'mărime') !== false || strpos($hay, 'rozmiar') !== false || strpos($hay, 'taglia') !== false || strpos($hay, 'größe') !== false || strpos($hay, 'grosse') !== false || strpos($hay, 'groesse') !== false || strpos($hay, 'meret') !== false || strpos($hay, 'méret') !== false || strpos($hay, 'εγεθ') !== false || strpos($hay, 'азмер') !== false || strpos($hay, 'размер') !== false );
 
         $values = $attr->get_options();
         if ( ! is_array($values) ) $values = [];
