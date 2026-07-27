@@ -19,6 +19,8 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kompresijske-majice' );
     } elseif ( noriks_is_type( 'kidsnest' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kidsnest' );
+    } elseif ( noriks_is_type( 'ortopedski-jastuk' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-ortopedski-jastuk' );
     }
 }
 ?>
@@ -601,6 +603,10 @@ endif;
 
           Nie jesteście sami w poszukiwaniu spokojnego dziecięcego snu.
 
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>
+
+          Nie jesteś sam w poszukiwaniu siedzenia bez bólu.
+
           <?php elseif ( !has_term( array( 'bokserice', 'bokserice-sastavi-paket' ), 'product_cat', get_the_ID() ) ): ?>
 
           <?php echo get_field("singlepp_content_standard_reviews_t2","options"); ?>
@@ -613,7 +619,7 @@ endif;
           
           
           </h1>
-    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
+    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
     </div>
   </section>
   </div>
@@ -692,16 +698,20 @@ endif;
   $is_leakboxers_page = ( function_exists('noriks_is_type') && noriks_is_type('leakboxers', $current_product_id) );
   $is_kompmajice_page = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice', $current_product_id) );
   $is_kidsnest_page   = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest', $current_product_id) );
+  $is_jastuk_page     = ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk', $current_product_id) );
 
   // Fallback product name shown in review cards.
   $rv_fallback_title = $is_kidsnest_page ? 'Poduszka NORIKS KidsNest'
+                     : ( $is_jastuk_page ? 'Poduszka ortopedyczna NORIKS ErgoSit'
                      : ( $is_leakboxers_page ? 'Bokserki chłonne NORIKS'
                      : ( $is_kompmajice_page ? 'Koszulka kompresyjna NORIKS FIT'
-                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) );
+                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) ) );
 
   // Include review pools
   if ( $is_kidsnest_page ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_kidsnest.php';
+  } elseif ( $is_jastuk_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_ortopedski_jastuk.php';
   } elseif ( $is_leakboxers_page ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_leakboxers.php';
   } elseif ( $is_kompmajice_page ) {
@@ -784,6 +794,7 @@ endif;
       $is_fisiorest = false;
       $is_norikshers = false;
       $is_kidsnest  = false;
+      $is_jastuk    = false;
       if ( $product_id ) {
           $is_bokserice = has_term( array( 'bokserice','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $product_id );
           $is_ortopas   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $product_id) );
@@ -791,9 +802,10 @@ endif;
           $is_fisiorest = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $product_id) );
           $is_norikshers = ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $product_id) );
           $is_kidsnest  = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest', $product_id) );
+          $is_jastuk    = ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk', $product_id) );
       }
 
-      $cache_key = $transient_key . ( $is_kidsnest ? '_kidsnest' : ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) ) ) );
+      $cache_key = $transient_key . ( $is_jastuk ? '_jastuk' : ( $is_kidsnest ? '_kidsnest' : ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) ) ) ) );
 
       if ( function_exists( 'get_transient' ) ) {
           $cached = get_transient( $cache_key );
@@ -810,7 +822,9 @@ endif;
           'order'   => 'DESC',
       ];
 
-      if ( $is_kidsnest ) {
+      if ( $is_jastuk ) {
+          $args['category'] = [ 'orto-ortopedski-jastuk' ];
+      } elseif ( $is_kidsnest ) {
           $args['category'] = [ 'orto-kidsnest' ];
       } elseif ( $is_norikshers ) {
           $args['category'] = [ 'orto-norikshers', 'orto-noriks-hers' ];
@@ -1065,8 +1079,8 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
 
   // Avatar pools based on page category
   $avatar_type = $is_bokserice_page ? 'bokserice' : 'majice';
-  // Belt + bunion + fisiorest + norikshers + leak boxers + kompresijske majice + kidsnest: text-only reviews (no avatar images).
-  $avatar_pool = ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page ) ? array() : get_review_avatar_pool($avatar_type);
+  // Belt + bunion + fisiorest + norikshers + leak boxers + kompresijske majice + kidsnest + ortopedski jastuk: text-only reviews (no avatar images).
+  $avatar_pool = ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page || $is_jastuk_page ) ? array() : get_review_avatar_pool($avatar_type);
 
   // On single-product landing pages (leak boxers / kompresijske majice) the cards should
   // reference THIS product (via $rv_fallback_title), not random pool products.
@@ -1112,8 +1126,8 @@ $auto_reviews_ship = assign_unique_avatars_first_n($auto_reviews_ship, $avatar_p
 
 
 
-<?php if ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page ) : ?>
-<style>/* belt + bunion + fisiorest + norikshers + leakboxers + kompresijske majice + kidsnest: text-only reviews, no avatar */ #reviews-section .avatar { display: none !important; }</style>
+<?php if ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page || $is_jastuk_page ) : ?>
+<style>/* belt + bunion + fisiorest + norikshers + leakboxers + kompresijske majice + kidsnest + ortopedski jastuk: text-only reviews, no avatar */ #reviews-section .avatar { display: none !important; }</style>
 <?php endif; ?>
 <section id="reviews-section" class="basic-reviews-section" style="margin-bottom:40px!important;padding-bottom:40px!important;">
   <div class="container basic-reviews-section-container" style="width:100%;max-width:1440px;padding-top:20px!important;margin:0 auto;padding-left: 10px; padding-right: 10px;">
@@ -1538,6 +1552,7 @@ $is_norikshers_faq = ( function_exists('noriks_is_type') && noriks_is_type('nori
 $is_leakboxers_faq = ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') );
 $is_kompmajice_faq = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') );
 $is_kidsnest_faq   = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') );
+$is_jastuk_faq     = ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') );
 
 // NORIKS FIT (koszulka kompresyjna/modelująca) — FAQ o produkcie (NORIKS FIT, polski).
 $kompmajice_faq = array(
@@ -1566,6 +1581,17 @@ $kidsnest_faq = array(
   array( 'questioon' => 'Czy moje dziecko naprawdę będzie z niej korzystać?', 'answer' => 'Tak. Ergonomiczny kształt odbiera się jako wsparcie, a nie coś dziwnego — większość dzieci przyzwyczaja się w 1–2 noce. Rodzice często piszą, że po pierwszym tygodniu dzieci nie chcą spać bez niej. Struktura 3-strefowa naturalnie przyjmuje głowę — nie ma „prawidłowego sposobu”, nie ma walki przed snem.' ),
   array( 'questioon' => 'Czy działa, jeśli moje dziecko już oddycha przez usta?', 'answer' => 'Tak — właśnie dla takich dzieci została zaprojektowana. Struktura 3-strefowa pomaga zapobiegać odchylaniu głowy do tyłu, przez które usta otwierają się we śnie. U większości dzieci w ciągu 7–14 nocy usta naturalnie się zamykają i wraca oddychanie przez nos.' ),
   array( 'questioon' => 'Co jeśli mojemu dziecku nie pomoże?', 'answer' => 'Pozwól dziecku spać na KidsNest przez 30 nocy. Jeśli nie zobaczysz różnicy — mniej oddychania przez usta, cichsze noce, spokojniejszy sen — napisz do nas, a zwrócimy pieniądze. Bez pytań i bez drobnego druku.' ),
+);
+
+// ErgoSit poduszka ortopedyczna — FAQ o produkcie (NORIKS, polski).
+$jastuk_faq = array(
+  array( 'questioon' => 'Jak NORIKS ErgoSit łagodzi ból przy siedzeniu?', 'answer' => 'ErgoSit ma wycięcie na kość ogonową, które eliminuje bezpośredni nacisk na kość ogonową i nerw kulszowy, a anatomiczny kształt z pianki memory o wysokiej gęstości równomiernie rozkłada ciężar na biodra i uda. W ten sposób odciąża wrażliwe punkty i wspiera zdrową, wyprostowaną postawę.' ),
+  array( 'questioon' => 'Gdzie mogę używać poduszki?', 'answer' => 'Wszędzie tam, gdzie siedzisz — w samochodzie, na krześle biurowym, krześle do jadalni, wózku inwalidzkim czy w domu. Stabilna antypoślizgowa podstawa utrzymuje ją na miejscu, więc komfort towarzyszy Ci przez cały dzień.' ),
+  array( 'questioon' => 'Czy pianka odkształca się z czasem?', 'answer' => 'Nie. ErgoSit wykorzystuje piankę memory o wysokiej gęstości, która zachowuje kształt i jędrność nawet po długim, codziennym użytkowaniu — w przeciwieństwie do tanich poduszek, które szybko się zapadają.' ),
+  array( 'questioon' => 'Czy poszewkę można prać?', 'answer' => 'Tak. Poszewkę można zdjąć i wyprać w pralce, dzięki czemu poduszka pozostaje świeża i czysta. Tkanina jest przewiewna, hipoalergiczna i posiada certyfikat OEKO-TEX®.' ),
+  array( 'questioon' => 'Czy będzie pasować do mojego krzesła lub fotela?', 'answer' => 'ErgoSit ma uniwersalny kształt i pasuje do większości foteli samochodowych, krzeseł biurowych i kuchennych oraz wózków inwalidzkich. Nie ma rozmiarów — jeden model pasuje wszystkim.' ),
+  array( 'questioon' => 'Po jakim czasie poczuję różnicę?', 'answer' => 'Większość użytkowników czuje mniejszy nacisk na kość ogonową i wygodniejsze siedzenie już od pierwszego dnia. Lepsza postawa i mniejszy ból pleców budują się dodatkowo wraz z regularnym użytkowaniem.' ),
+  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Tak, każda NORIKS ErgoSit objęta jest 60-dniową gwarancją komfortu. Jeśli nie poczujesz mniej bólu i więcej komfortu, skontaktuj się z nami, a wszystko załatwimy.' ),
 );
 
 // Korektor haluksa — FAQ o produkcie (NORIKS, polski).
@@ -1618,9 +1644,10 @@ $norikshers_faq = array(
 
 // Swap ONLY the product-info FAQ container ("...produkcie/produkt") for these
 // products; delivery/returns/payment containers stay untouched.
-$faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq ) {
+$faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_kidsnest_faq && $is_info ) { return $kidsnest_faq; }
+  if ( $is_jastuk_faq && $is_info ) { return $jastuk_faq; }
   if ( $is_leakboxers_faq && $is_info ) { return $leakboxers_faq; }
   if ( $is_kompmajice_faq && $is_info ) { return $kompmajice_faq; }
   if ( $is_norikshers_faq && $is_info ) { return $norikshers_faq; }

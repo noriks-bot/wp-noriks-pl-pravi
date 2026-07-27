@@ -459,8 +459,38 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
     <?php endif; ?>
 
 
-    <!-- 1 - detajli --> <!-- ukryte na norikshers -->
-    <?php if ( ! ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $current_product_id) ) ) : ?>
+    <!-- ErgoSit ortopedski jastuk: prva dva accordion mjesta (kopija originala, PL) -->
+    <?php if ( function_exists('noriks_is_type') && noriks_is_type( 'ortopedski-jastuk', $current_product_id ) ) : ?>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>Specyfikacja produktu</h3>
+        <div class="toggle">+</div>
+      </div>
+      <div class="accordion-content">
+        <ul style="margin:8px 0 12px; padding-left:18px;">
+          <li style="margin:0 0 8px;"><strong>Poszewka zewnętrzna:</strong> Przewiewna dzianina, zdejmowana i nadająca się do prania w pralce, hipoalergiczna</li>
+          <li style="margin:0 0 8px;"><strong>Rdzeń:</strong> Adaptacyjna pianka OrthoFlex™ | Nietoksyczna, z certyfikatem OEKO-TEX® | Zaprojektowana, by odciążać nacisk + wyrównywać postawę</li>
+        </ul>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>Co czyni ją tak wyjątkową?</h3>
+        <div class="toggle">+</div>
+      </div>
+      <div class="accordion-content">
+        <ul style="margin:8px 0 12px; padding-left:18px;">
+          <li style="margin:0 0 10px;"><strong>Pianka memory OrthoFlex™:</strong> Pianka o wysokiej gęstości, która odciąża nacisk i dopasowuje się bez odkształcania — podpiera kość ogonową, biodra i kręgosłup dla całodziennego komfortu.</li>
+          <li style="margin:0 0 10px;"><strong>Poszewka BreatheEase™:</strong> Miękka, przewiewna i delikatna dla skóry. Zdejmowana i nadająca się do prania w pralce, aby poduszka zawsze pozostała świeża.</li>
+          <li style="margin:0 0 10px;"><strong>Zrównoważone podparcie:</strong> Ani za miękko, ani za twardo. Zaprojektowana tak, aby wyrównywać postawę i łagodzić bolesne punkty po długich godzinach siedzenia.</li>
+        </ul>
+      </div>
+    </div>
+    <?php endif; ?>
+
+
+    <!-- 1 - detajli --> <!-- ukryte na norikshers + ortopedski jastuk -->
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) ) ) : ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_1","options"); ?></h3>
@@ -527,7 +557,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
      <!-- 2 - slika tablica velicina -->
-     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) ) ) ) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers ?>
+     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) ) ) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers + ortopedski jastuk ?>
      <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3>Tabela rozmiarów</h3>
@@ -653,7 +683,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
     <!-- 3 - savjeti za pranje--> <!-- ukryte też na kidsnest -->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest ?>
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>

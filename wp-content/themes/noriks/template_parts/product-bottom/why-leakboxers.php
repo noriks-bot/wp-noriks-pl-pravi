@@ -20,7 +20,7 @@ $lbv = get_template_directory_uri() . '/img/leakboxers-videos/';
       <p>Wkładki, które szeleszczą, pieluchy widoczne pod ubraniem i ciągły strach przed przeciekaniem. Zasługujesz na rozwiązanie, które wygląda i czuje się jak zwykła bielizna.</p>
       <ul class="lbx-check">
         <li><strong>250 kg</strong> odpadów rocznie na jednego użytkownika</li>
-        <li>Ponad <strong>800 €</strong> wyrzucone każdego roku</li>
+        <li>Ponad <strong>3 500 zł</strong> wyrzucone każdego roku</li>
         <li>Produkty jednorazowe są nieporęczne i pełne chemikaliów</li>
       </ul>
       <a class="lbx-cta lbx-cta-solid" href="#bundle-selector">Przywróć mi pewność siebie →</a>
@@ -124,7 +124,7 @@ $lbv = get_template_directory_uri() . '/img/leakboxers-videos/';
           <tr><td>Dyskretne pod ubraniem</td><td class="us ok">✓</td><td class="no">✕</td><td class="ok">✓</td></tr>
           <tr><td>Wielorazowe, do prania</td><td class="us ok">✓</td><td class="no">✕</td><td class="ok">✓</td></tr>
           <tr><td>Ochrona przed zapachem</td><td class="us ok">✓</td><td class="mid">chemikalia</td><td class="no">✕</td></tr>
-          <tr><td>Koszt roczny</td><td class="us ok">✓ niski</td><td class="mid">800 €+</td><td class="ok">niski</td></tr>
+          <tr><td>Koszt roczny</td><td class="us ok">✓ niski</td><td class="mid">3 500 zł+</td><td class="ok">niski</td></tr>
           <tr><td>Ekologiczne</td><td class="us ok">✓</td><td class="no">✕ 250 kg odpadów</td><td class="ok">✓</td></tr>
         </tbody>
       </table>
