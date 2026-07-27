@@ -51,14 +51,14 @@ if ( $upsell_is_majice ) {
     );
     $upsell_title_text = 'Dodaj koszulki teraz – 50% rabatu';
 } else {
-    $upsell_product_id = 2698; // Czarne bokserki
-    $upsell_name       = 'Czarne bokserki';
+    $upsell_product_id = 2720; // Szare bokserki (siva verzija, ista struktura kot crna)
+    $upsell_name       = 'Szare bokserki';
     $upsell_qty_prices = array( 1 => 19.00, 3 => 57, 5 => 95 );
-    $upsell_qty_names  = array( 1 => '1x Czarne bokserki', 3 => '3x Czarne bokserki', 5 => '5x Czarnych bokserek' );
+    $upsell_qty_names  = array( 1 => '1x Szare bokserki', 3 => '3x Szare bokserki', 5 => '5x Szarych bokserek' );
     $upsell_qty_images = array(
-        1 => 'https://noriks.com/hr/wp-content/uploads/2025/11/crne-boksarice-produktna.jpg',
-        3 => 'https://noriks.com/hr/wp-content/uploads/2025/11/boksarice_3x_crne.png',
-        5 => 'https://noriks.com/hr/wp-content/uploads/2026/01/boksarice_5x_crne.png',
+        1 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg',
+        3 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg', // TODO: 3x siva kompozitna, ko obstaja
+        5 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg', // TODO: 5x siva kompozitna, ko obstaja
     );
     $upsell_title_text = 'Dodaj bokserki teraz – 50% rabatu';
 }
