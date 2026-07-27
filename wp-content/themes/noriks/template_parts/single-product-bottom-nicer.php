@@ -13,6 +13,12 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-norikshers' );
     } elseif ( noriks_is_type( 'kompresijske-nogavice' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kompresijske' );
+    } elseif ( noriks_is_type( 'leakboxers' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-leakboxers' );
+    } elseif ( noriks_is_type( 'kompresijske-majice' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-kompresijske-majice' );
+    } elseif ( noriks_is_type( 'kidsnest' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-kidsnest' );
     }
 }
 ?>
@@ -583,6 +589,18 @@ endif;
 
           Nie jesteś sama w poszukiwaniu gładkiej skóry bez zmarszczek.
 
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>
+
+          Nie jesteś sam w poszukiwaniu niezawodnej ochrony przed wyciekaniem moczu.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>
+
+          Nie jesteś sam w poszukiwaniu ostrzejszej sylwetki i lepszej postawy.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>
+
+          Nie jesteście sami w poszukiwaniu spokojnego dziecięcego snu.
+
           <?php elseif ( !has_term( array( 'bokserice', 'bokserice-sastavi-paket' ), 'product_cat', get_the_ID() ) ): ?>
 
           <?php echo get_field("singlepp_content_standard_reviews_t2","options"); ?>
@@ -595,7 +613,7 @@ endif;
           
           
           </h1>
-    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
+    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
     </div>
   </section>
   </div>
@@ -671,12 +689,24 @@ endif;
   $is_bunion_page     = ( function_exists('noriks_is_type') && noriks_is_type('bunion', $current_product_id) );
   $is_fisiorest_page  = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $current_product_id) );
   $is_norikshers_review_page = ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $current_product_id) );
+  $is_leakboxers_page = ( function_exists('noriks_is_type') && noriks_is_type('leakboxers', $current_product_id) );
+  $is_kompmajice_page = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice', $current_product_id) );
+  $is_kidsnest_page   = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest', $current_product_id) );
 
   // Fallback product name shown in review cards.
-  $rv_fallback_title = $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica';
+  $rv_fallback_title = $is_kidsnest_page ? 'Poduszka NORIKS KidsNest'
+                     : ( $is_leakboxers_page ? 'Bokserki chłonne NORIKS'
+                     : ( $is_kompmajice_page ? 'Koszulka kompresyjna NORIKS FIT'
+                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) );
 
   // Include review pools
-  if ( $is_norikshers_review_page ) {
+  if ( $is_kidsnest_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_kidsnest.php';
+  } elseif ( $is_leakboxers_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_leakboxers.php';
+  } elseif ( $is_kompmajice_page ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_kompresijske-majice.php';
+  } elseif ( $is_norikshers_review_page ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_norikshers.php';
   } elseif ( $is_fisiorest_page ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_fisiorest.php';
@@ -753,15 +783,17 @@ endif;
       $is_bunion    = false;
       $is_fisiorest = false;
       $is_norikshers = false;
+      $is_kidsnest  = false;
       if ( $product_id ) {
           $is_bokserice = has_term( array( 'bokserice','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $product_id );
           $is_ortopas   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $product_id) );
           $is_bunion    = ( function_exists('noriks_is_type') && noriks_is_type('bunion', $product_id) );
           $is_fisiorest = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $product_id) );
           $is_norikshers = ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $product_id) );
+          $is_kidsnest  = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest', $product_id) );
       }
 
-      $cache_key = $transient_key . ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) ) );
+      $cache_key = $transient_key . ( $is_kidsnest ? '_kidsnest' : ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) ) ) );
 
       if ( function_exists( 'get_transient' ) ) {
           $cached = get_transient( $cache_key );
@@ -778,7 +810,9 @@ endif;
           'order'   => 'DESC',
       ];
 
-      if ( $is_norikshers ) {
+      if ( $is_kidsnest ) {
+          $args['category'] = [ 'orto-kidsnest' ];
+      } elseif ( $is_norikshers ) {
           $args['category'] = [ 'orto-norikshers', 'orto-noriks-hers' ];
       } elseif ( $is_fisiorest ) {
           $args['category'] = [ 'orto-fisiorest' ];
@@ -1031,10 +1065,12 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
 
   // Avatar pools based on page category
   $avatar_type = $is_bokserice_page ? 'bokserice' : 'majice';
-  // Belt + bunion + fisiorest + norikshers: text-only reviews (no avatar images).
-  $avatar_pool = ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page ) ? array() : get_review_avatar_pool($avatar_type);
+  // Belt + bunion + fisiorest + norikshers + leak boxers + kompresijske majice + kidsnest: text-only reviews (no avatar images).
+  $avatar_pool = ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page ) ? array() : get_review_avatar_pool($avatar_type);
 
-  $product_pool = get_wc_product_pool();
+  // On single-product landing pages (leak boxers / kompresijske majice) the cards should
+  // reference THIS product (via $rv_fallback_title), not random pool products.
+  $product_pool = ( $is_leakboxers_page || $is_kompmajice_page ) ? array() : get_wc_product_pool();
 
   // 1) Stable daily shuffle of review pools
   $auto_reviews_en   = shuffle_with_seed($auto_reviews_en,   'pool-en:'   . $daily_seed);
@@ -1076,8 +1112,8 @@ $auto_reviews_ship = assign_unique_avatars_first_n($auto_reviews_ship, $avatar_p
 
 
 
-<?php if ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page ) : ?>
-<style>/* belt + bunion + fisiorest + norikshers: text-only reviews, no avatar */ #reviews-section .avatar { display: none !important; }</style>
+<?php if ( $is_ortopas_page || $is_bunion_page || $is_fisiorest_page || $is_norikshers_review_page || $is_leakboxers_page || $is_kompmajice_page || $is_kidsnest_page ) : ?>
+<style>/* belt + bunion + fisiorest + norikshers + leakboxers + kompresijske majice + kidsnest: text-only reviews, no avatar */ #reviews-section .avatar { display: none !important; }</style>
 <?php endif; ?>
 <section id="reviews-section" class="basic-reviews-section" style="margin-bottom:40px!important;padding-bottom:40px!important;">
   <div class="container basic-reviews-section-container" style="width:100%;max-width:1440px;padding-top:20px!important;margin:0 auto;padding-left: 10px; padding-right: 10px;">
@@ -1499,6 +1535,38 @@ $is_ortopas_faq   = ( function_exists('noriks_is_type') && noriks_is_type('ortop
 $is_bunion_faq    = ( function_exists('noriks_is_type') && noriks_is_type('bunion') );
 $is_fisiorest_faq = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') );
 $is_norikshers_faq = ( function_exists('noriks_is_type') && noriks_is_type('norikshers') );
+$is_leakboxers_faq = ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') );
+$is_kompmajice_faq = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') );
+$is_kidsnest_faq   = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') );
+
+// NORIKS FIT (koszulka kompresyjna/modelująca) — FAQ o produkcie (NORIKS FIT, polski).
+$kompmajice_faq = array(
+  array( 'questioon' => 'Dla kogo jest NORIKS FIT?', 'answer' => 'NORIKS FIT powstał dla mężczyzn, którzy chcą wyglądać szczuplej, odzyskać pewność siebie we własnym ciele, poprawić postawę, czuć się bardziej energicznie w ciągu dnia i wyglądać smuklej pod każdym ubraniem.' ),
+  array( 'questioon' => 'Jak właściwie działa koszulka NORIKS FIT?', 'answer' => 'NORIKS FIT wykorzystuje zaawansowaną jonową tkaninę kompresyjną, która aktywuje naturalną reakcję organizmu. Mikrotkane włókna wspierają zdrowe krążenie i pomagają utrzymać wyprostowaną postawę od rana do wieczora. Przy regularnym noszeniu daje widocznie wymodelowany tors, lepsze ustawienie kręgosłupa i więcej pewności siebie.' ),
+  array( 'questioon' => 'Jak szybko zauważę efekty?', 'answer' => 'Każde ciało jest inne, ale większość klientów zgłasza widoczną zmianę w ciągu pierwszych 30 dni. Dla najlepszego efektu noś NORIKS FIT codziennie i łącz go ze zbilansowaną dietą oraz regularnym ruchem.' ),
+  array( 'questioon' => 'Czy widać ją pod koszulą?', 'answer' => 'Nie. NORIKS FIT jest cienka, dyskretna i niewidoczna pod każdą koszulą, a jednocześnie modeluje brzuch i klatkę piersiową oraz wspiera postawę.' ),
+  array( 'questioon' => 'Jak ją prać i z czego jest wykonana?', 'answer' => 'Wykonana jest w 80 % z nylonu i 20 % z elastanu. Pierz ją w zimnej wodzie, w delikatnym programie, aby zachować kompresję i przedłużyć żywotność tkaniny.' ),
+);
+
+// NORIKS LEAK BOXERS (bokserki na nietrzymanie moczu) — FAQ o produkcie (NORIKS, polski).
+$leakboxers_faq = array(
+  array( 'questioon' => 'Dlaczego ponad 123 000 mężczyzn wybrało NORIKS?', 'answer' => 'NORIKS to najbardziej chłonne bokserki wielorazowe na męskie wyciekanie moczu: mieszczą do 300 ml, mają certyfikat Oeko-Tex® i są wolne od szkodliwych substancji, nadają się do prania i wielokrotnego użytku (ekologiczna alternatywa dla jednorazowych wkładek), zaprojektowane z myślą o całodziennym komforcie i pewności siebie. Aż 87 % klientów zamawia ponownie po pierwszym zakupie.' ),
+  array( 'questioon' => 'Ile chłoną?', 'answer' => 'Do 300 ml — niemal 3 razy więcej niż większość produktów na rynku. Dzięki 7-warstwowemu rdzeniowi PureDry™ płyn jest natychmiast wchłaniany i zamykany głęboko w środku, więc skóra pozostaje sucha, a warstwa zewnętrzna jest wodoodporna.' ),
+  array( 'questioon' => 'Czy widać je pod ubraniem?', 'answer' => 'Nie. Bokserki NORIKS są cienkie, dyskretne i elastyczne — wyglądają i czują się jak zwykła bielizna, bez pogrubienia i bez uczucia „pieluchy”.' ),
+  array( 'questioon' => 'Jak je prać?', 'answer' => 'Pierz w 30–40 °C, bez płynu zmiękczającego i wybielacza, susz na powietrzu. Zachowują chłonność przez setki prań.' ),
+  array( 'questioon' => 'Czy dostawa jest dyskretna?', 'answer' => 'Tak. Wszystkie zamówienia wysyłamy w neutralnym, dyskretnym opakowaniu bez widocznych oznaczeń zawartości, aby chronić Twoją prywatność.' ),
+  array( 'questioon' => 'Z czego są wykonane?', 'answer' => 'Warstwa zewnętrzna z włókna bambusowego z elastanem, 7-warstwowy chłonny rdzeń z technicznych mikrowłókien oraz wodoodporna, oddychająca membrana.' ),
+);
+
+// Poduszka dziecięca KidsNest — FAQ o produkcie (NORIKS, złagodzone twierdzenia).
+$kidsnest_faq = array(
+  array( 'questioon' => 'Jak szybko zobaczę, że oddychanie przez usta ustaje?', 'answer' => 'Większość rodziców zauważa cichsze oddychanie i mniej przebudzeń z otwartymi ustami w ciągu pierwszych 5–7 nocy. Do 14. nocy u większości dzieci chrapanie się uspokaja, a usta pozostają zamknięte. Pełną różnicę — widocznie lepszą pozycję i spokojniejszy sen — rodzice najczęściej opisują około 21.–30. dnia. Używaj jej każdej nocy.' ),
+  array( 'questioon' => 'Dla jakiego wieku jest KidsNest?', 'answer' => 'KidsNest występuje w trzech rozmiarach: 1–3, 3–9 i 9–18 lat. Najważniejsze okno to wiek między 3. a 9. rokiem życia, kiedy podniebienie i żuchwa rozwijają się najintensywniej — ale każdy wiek ma swój rozmiar i swoją korzyść.' ),
+  array( 'questioon' => 'Czy jest bezpieczna? Co jest w środku?', 'answer' => 'KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA. Jest odporna na roztocza i przewiewna, a poszewkę można zdjąć i wyprać w pralce.' ),
+  array( 'questioon' => 'Czy moje dziecko naprawdę będzie z niej korzystać?', 'answer' => 'Tak. Ergonomiczny kształt odbiera się jako wsparcie, a nie coś dziwnego — większość dzieci przyzwyczaja się w 1–2 noce. Rodzice często piszą, że po pierwszym tygodniu dzieci nie chcą spać bez niej. Struktura 3-strefowa naturalnie przyjmuje głowę — nie ma „prawidłowego sposobu”, nie ma walki przed snem.' ),
+  array( 'questioon' => 'Czy działa, jeśli moje dziecko już oddycha przez usta?', 'answer' => 'Tak — właśnie dla takich dzieci została zaprojektowana. Struktura 3-strefowa pomaga zapobiegać odchylaniu głowy do tyłu, przez które usta otwierają się we śnie. U większości dzieci w ciągu 7–14 nocy usta naturalnie się zamykają i wraca oddychanie przez nos.' ),
+  array( 'questioon' => 'Co jeśli mojemu dziecku nie pomoże?', 'answer' => 'Pozwól dziecku spać na KidsNest przez 30 nocy. Jeśli nie zobaczysz różnicy — mniej oddychania przez usta, cichsze noce, spokojniejszy sen — napisz do nas, a zwrócimy pieniądze. Bez pytań i bez drobnego druku.' ),
+);
 
 // Korektor haluksa — FAQ o produkcie (NORIKS, polski).
 $bunion_faq = array(
@@ -1550,8 +1618,11 @@ $norikshers_faq = array(
 
 // Swap ONLY the product-info FAQ container ("...produkcie/produkt") for these
 // products; delivery/returns/payment containers stay untouched.
-$faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq ) {
+$faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
+  if ( $is_kidsnest_faq && $is_info ) { return $kidsnest_faq; }
+  if ( $is_leakboxers_faq && $is_info ) { return $leakboxers_faq; }
+  if ( $is_kompmajice_faq && $is_info ) { return $kompmajice_faq; }
   if ( $is_norikshers_faq && $is_info ) { return $norikshers_faq; }
   if ( $is_fisiorest_faq && $is_info ) { return $fisiorest_faq; }
   if ( $is_bunion_faq && $is_info )    { return $bunion_faq; }

@@ -420,6 +420,45 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
  <div class="accordion">
 
 
+    <!-- KidsNest: prva dva accordion mjesta (dugi sadrzaj iz summary-ja) -->
+    <?php if ( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ) : ?>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>Twarz Twojego dziecka kształtuje się właśnie teraz — a czas masz do 9. roku życia</h3>
+        <div class="toggle">+</div>
+      </div>
+      <div class="accordion-content">
+        <p>Badacze dróg oddechowych i stomatolodzy dziecięcy od lat ostrzegają przed tym samym schematem — o którym większość rodziców nigdy nie słyszała. Nazywa się <strong>zespołem wydłużonej twarzy</strong> (twarz adenoidalna).</p>
+        <p>Każdej nocy, gdy dziecko śpi z otwartymi ustami na niewłaściwej poduszce, dzieją się cztery rzeczy naraz: język opada do tyłu, żuchwa się cofa, podniebienie zwęża się w wysoki łuk, a twarz zaczyna rosnąć pionowo zamiast poziomo. Po tysiącach takich nocy między 3. a 9. rokiem życia zmiany się utrwalają.</p>
+        <p>Dlatego dzisiejsze 9-latki trafiają do ortodonty z cofniętą brodą, cieniami pod oczami, stłoczonymi zębami — i drogim rachunkiem za aparat. Sposób, w jaki dziecko oddycha między 3. a 9. rokiem życia, silnie wpływa na twarz, którą będzie nosić przez całe życie.</p>
+        <p>NORIKS <strong>KidsNest</strong> została zaprojektowana, aby działać na podstawową przyczynę — niewłaściwe ułożenie głowy i żuchwy przez 9 godzin snu — dzięki <strong>3-strefowej ergonomicznej strukturze</strong>, która utrzymuje głowę, szyję i żuchwę w prawidłowym ułożeniu od pierwszej nocy.</p>
+        <p><strong>Co zobaczysz u swojego dziecka:</strong></p>
+        <ul style="margin:6px 0 12px;padding-left:18px;">
+          <li style="margin:0 0 7px;"><strong>Mniej oddychania przez usta:</strong> usta zamknięte w nocy, powrót oddychania przez nos, koniec suchych ust rano.</li>
+          <li style="margin:0 0 7px;"><strong>Cichsze noce:</strong> chrapanie u większości dzieci uspokaja się w ciągu 1–2 tygodni.</li>
+          <li style="margin:0 0 7px;"><strong>Wsparcie rozwijającej się żuchwy:</strong> prawidłowe ułożenie noc po nocy, w latach, kiedy liczy się to najbardziej.</li>
+          <li style="margin:0 0 7px;"><strong>Mądra profilaktyka:</strong> jedna poduszka dziś — zamiast kosztownych korekt jutro.</li>
+        </ul>
+        <p><strong>Jedna poduszka dziś wieczorem. Albo tysiące później.</strong></p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <div class="accordion-header" onclick="toggleAccordion(this)">
+        <h3>Starsze niż 9 lat? Okno się zwęża. Szkody nie ustają.</h3>
+        <div class="toggle">+</div>
+      </div>
+      <div class="accordion-content">
+        <p>Rada, którą słyszałeś, jest tylko w połowie prawdziwa. Tak, górne podniebienie utrwala się około 9. roku życia. Ale twarz rozwija się do 20., żuchwa rośnie do 17., a drogi oddechowe stale się dostosowują.</p>
+        <p>Dlatego każda noc oddychania przez usta po 9. roku życia dokłada nowe szkody do starych: zgrzytanie zębami, bóle głowy, sen, który nie regeneruje, spadek koncentracji — i zmęczenie, które wszyscy mylą z lenistwem. Twój nastolatek nie jest leniwy. On ledwo oddycha przez sześć godzin każdej nocy.</p>
+        <p>KidsNest w rozmiarze <strong>9–18 lat</strong> została stworzona dla starszej głowy, szyi i ramion. Inny kontur, inna wysokość, inne podparcie. Ten sam podstawowy mechanizm: prawidłowe ułożenie głowy, szyi i żuchwy, przez całą noc, na ciele, które wciąż rośnie.</p>
+        <p>Co zauważają rodzice: chrapanie uspokaja się w 7 do 14 nocy, wraca prawdziwa poranna energia, bóle głowy bledną, koncentracja wraca.</p>
+        <p>Najlepsze okno to nadal wiek od 3 do 9 lat. Silne okno to od 8 do 18. Żadne nie jest całkiem zamknięte — ale każda noc czekania dodaje presji ciału, które próbuje się regenerować.</p>
+        <p><strong>Wczoraj minęło. Dzisiejszy wieczór wciąż należy do Ciebie.</strong></p>
+      </div>
+    </div>
+    <?php endif; ?>
+
+
     <!-- 1 - detajli --> <!-- ukryte na norikshers -->
     <?php if ( ! ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $current_product_id) ) ) : ?>
     <div class="accordion-item">
@@ -428,14 +467,26 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
         <div class="toggle">+</div>
       </div>
       <div class="accordion-content">
-          
-         <?php if( !$is_boxers &&  !$is_carape &&   !$is_mixed_bundle ): ?>
-         
-         
-         
+
+         <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
+
+                Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–18 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
+
+                Bokserki NORIKS na nietrzymanie moczu wykonane są z miękkiego, antybakteryjnego włókna bambusowego z wodoodporną warstwą zewnętrzną. W środku znajduje się 7-warstwowy rdzeń PureDry™, który natychmiast wchłania i zamyka do 300 ml płynu, dzięki czemu skóra pozostaje sucha, a wyciek zostaje w środku.<br><br>Krój jest cienki i dyskretny — wyglądają i czują się jak zwykła bielizna, bez pogrubienia i bez uczucia „pieluchy”. Ochrona przy nogawkach zapobiega bocznym przeciekom, a kontrola zapachu utrzymuje świeżość przez cały dzień.<br><br>Nadają się do prania i wielokrotnego użytku — zachowują chłonność przez setki prań, jako ekologiczna i opłacalna alternatywa dla jednorazowych wkładek i pieluch.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'kompresijske-majice', $current_product_id ) ): ?>
+
+                NORIKS FIT wykonany jest z zaawansowanej jonowej tkaniny kompresyjnej, która zapewnia dopasowany, podtrzymujący krój. Ukierunkowana kompresja równomiernie modeluje brzuch i boki, wygładza sylwetkę i wspiera wyprostowaną postawę — bez ucisku, który ogranicza oddychanie czy ruch.<br><br>Mikrotkane włókna wspierają krążenie i pomagają w ciągu dnia stać prościej i czuć się pewniej. Tkanina jest lekka, przewiewna i odprowadza wilgoć, więc pozostajesz suchy i komfortowy.<br><br>Cienki i dyskretny krój sprawia, że jest niewidoczny pod każdą koszulą, a jednocześnie może służyć jako koszulka sportowa. Efekt: ostrzejszy wygląd, lepsza postawa i pewność siebie — gdy tylko go założysz.
+
+         <?php elseif( !$is_boxers &&  !$is_carape &&   !$is_mixed_bundle ): ?>
+
+
+
         <?php echo get_field("singlepp_acc_t_1","options"); ?>
-        
-        
+
+
         <?php elseif(  has_term( array( 'orto-starter', 'orto-majica-bokserica' ), 'product_cat', $current_product_id )  ): ?>
         
         
@@ -484,7 +535,81 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
       </div>
       <div class="accordion-content">
 
-           <?php if( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) ): ?>
+           <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
+
+          <div class="kn-size">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/kidsnest/tablica-velicine.webp" alt="KidsNest — rozmiary według wieku" style="width:100%;height:auto;border-radius:10px;display:block;margin:0 0 12px;" loading="lazy">
+            <p style="margin:0;line-height:1.6;"><strong>Dziecko jest między dwoma rozmiarami?</strong> Zawsze wybierz większy. Poduszka została zaprojektowana, aby wspierać zdrowe ułożenie w miarę wzrostu dziecka — większy rozmiar daje więcej miejsca i dłuższy okres użytkowania.</p>
+          </div>
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
+
+          <div class="lbx-size">
+            <p style="margin:0 0 6px;font-weight:700;">Jak zmierzyć biodra</p>
+            <p style="margin:0 0 14px;line-height:1.6;">Owiń taśmę mierniczą wokół najszerszego miejsca bioder (przez pośladki), bez naciągania. Stój swobodnie i prosto, a następnie zapisz wynik w centymetrach.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead>
+                <tr style="background:#12233b;color:#fff;">
+                  <th style="padding:8px 10px;text-align:left;background:#e9e9e9 !important;color:#111 !important;">Rozmiar</th>
+                  <th style="padding:8px 10px;text-align:left;background:#e9e9e9 !important;color:#111 !important;">Biodra (cm)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $lbx_sizes = array(
+                  array('S','do 76 cm','do 30"'),
+                  array('M','77 – 85 cm','30 – 33"'),
+                  array('L','86 – 94 cm','34 – 37"'),
+                  array('XL','95 – 102 cm','37 – 40"'),
+                  array('2XL','103 – 114 cm','41 – 45"'),
+                  array('3XL','115 – 121 cm','45 – 48"'),
+                  array('4XL','122 – 129 cm','48 – 51"'),
+                  array('5XL','130 – 137 cm','51 – 54"'),
+                  array('6XL','138 – 145 cm','54 – 57"'),
+                  array('7XL','146 – 153 cm','57 – 60"'),
+                  array('8XL','154 cm i więcej','61" i więcej'),
+                );
+                foreach ( $lbx_sizes as $i => $r ) :
+                  $bg = ( $i % 2 ) ? '#f7fafb' : '#fff'; ?>
+                  <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #eee;">
+                    <td style="padding:8px 10px;font-weight:700;"><?php echo esc_html($r[0]); ?></td>
+                    <td style="padding:8px 10px;"><?php echo esc_html($r[1]); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <p style="margin:14px 0 0;line-height:1.6;"><strong>Między dwoma rozmiarami?</strong> Zawsze polecamy większy rozmiar dla optymalnego komfortu i maksymalnej chłonności.</p>
+          </div>
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'kompresijske-majice', $current_product_id ) ): ?>
+
+          <div class="kmf-size">
+            <table style="width:100%;border-collapse:collapse;font-size:15px;">
+              <thead>
+                <tr style="background:#111;color:#fff;">
+                  <th style="padding:9px 12px;text-align:left;background:#e9e9e9 !important;color:#111 !important;">Rozmiar</th>
+                  <th style="padding:9px 12px;text-align:left;background:#e9e9e9 !important;color:#111 !important;">Odpowiednia waga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $kmf_sizes = array(
+                  array('S','50 – 70 kg'), array('M','70 – 90 kg'), array('L','90 – 110 kg'), array('XL','110 – 130 kg'),
+                  array('2XL','130 – 150 kg'), array('3XL','150 – 170 kg'), array('4XL','170 – 190 kg'), array('5XL','190 – 210 kg'),
+                );
+                foreach ( $kmf_sizes as $i => $r ) :
+                  $bg = ( $i % 2 ) ? '#f4f4f4' : '#fff'; ?>
+                  <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #eaeaea;">
+                    <td style="padding:9px 12px;font-weight:800;"><?php echo esc_html($r[0]); ?></td>
+                    <td style="padding:9px 12px;font-weight:700;"><?php echo esc_html($r[1]); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <p style="margin:12px 0 0;line-height:1.6;">Wybierz rozmiar według swojej wagi. Między dwoma rozmiarami? Dla mocniejszej kompresji wybierz mniejszy rozmiar.</p>
+          </div>
+
+        <?php elseif( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) ): ?>
 
           <div style="line-height:1.9;">
             <strong>S/M</strong> : obwód bioder 75–110 cm<br>
@@ -527,15 +652,23 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
 
-    <!-- 3 - savjeti za pranje-->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers ?>
+    <!-- 3 - savjeti za pranje--> <!-- ukryte też na kidsnest -->
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>
         <div class="toggle">+</div>
       </div>
       <div class="accordion-content">
-             <?php if( !$is_boxers &&  !$is_carape &&   !$is_mixed_bundle ): ?>
+             <?php if( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
+
+                Pierz w 30–40 °C, w programie dla tkanin delikatnych. Bez płynu zmiękczającego i wybielacza. Susz na powietrzu. Zachowują chłonność przez setki prań.
+
+             <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'kompresijske-majice', $current_product_id ) ): ?>
+
+                Pranie w pralce w zimnej wodzie, w programie delikatnym. Bez wybielacza i płynu zmiękczającego. Nie suszyć w suszarce — susz na powietrzu, aby zachować kompresję i kształt.
+
+             <?php elseif( !$is_boxers &&  !$is_carape &&   !$is_mixed_bundle ): ?>
         <?php echo get_field("singlepp_acc_t_2","options"); ?>
         
          
