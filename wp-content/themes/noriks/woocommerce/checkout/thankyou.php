@@ -56,9 +56,9 @@ if ( $upsell_is_majice ) {
     $upsell_qty_prices = array( 1 => 19.00, 3 => 57, 5 => 95 );
     $upsell_qty_names  = array( 1 => '1x Szare bokserki', 3 => '3x Szare bokserki', 5 => '5x Szarych bokserek' );
     $upsell_qty_images = array(
-        1 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg',
-        3 => get_template_directory_uri() . '/img/upsell/siva-3x.png',
-        5 => get_template_directory_uri() . '/img/upsell/siva-5x.png',
+        1 => get_template_directory_uri() . '/img/upsell/siva-1x-v2.webp',
+        3 => get_template_directory_uri() . '/img/upsell/siva-3x-v2.png',
+        5 => get_template_directory_uri() . '/img/upsell/siva-5x-v2.png',
     );
     $upsell_title_text = 'Dodaj bokserki teraz – 50% rabatu';
 }
@@ -604,7 +604,7 @@ body.woocommerce-order-received .woocommerce {
         </div>
 
         <!-- ═══ STEP 1: VIGOSHOP UPSELL (COD only) ═══ -->
-        <?php if ( $order->get_payment_method() === 'cod' && (float)$order->get_total() <= 520 ) : ?>
+        <?php if ( $order->get_payment_method() === 'cod' ) : ?>
         <div class="ty_upsell_one_wrapper show" id="ty-upsell"
              style="position:static !important;display:block !important;width:100% !important;max-width:520px !important;height:auto !important;top:auto !important;left:auto !important;transform:none !important;opacity:1 !important;visibility:visible !important;z-index:auto !important;backdrop-filter:none !important;margin:0 !important;padding:0 !important;"
              data-order-id="<?php echo $order->get_id(); ?>"
