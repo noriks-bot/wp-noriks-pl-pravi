@@ -57,8 +57,8 @@ if ( $upsell_is_majice ) {
     $upsell_qty_names  = array( 1 => '1x Szare bokserki', 3 => '3x Szare bokserki', 5 => '5x Szarych bokserek' );
     $upsell_qty_images = array(
         1 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg',
-        3 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg', // TODO: 3x siva kompozitna, ko obstaja
-        5 => 'https://noriks.com/pl/wp-content/uploads/2026/01/sive-boksarice-produktna-1.jpg', // TODO: 5x siva kompozitna, ko obstaja
+        3 => get_template_directory_uri() . '/img/upsell/siva-3x.png',
+        5 => get_template_directory_uri() . '/img/upsell/siva-5x.png',
     );
     $upsell_title_text = 'Dodaj bokserki teraz – 50% rabatu';
 }
