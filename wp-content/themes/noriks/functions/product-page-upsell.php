@@ -41,6 +41,14 @@ function noriks_pp_upsell_register_fields() {
 				'instructions' => 'Dodaje ramkę "Kup razem i oszczędzaj" bezpośrednio pod przyciskiem Dodaj do koszyka. Klient wybiera rozmiar, a 4 sztuki są dodawane w cenie upsell. Dotyczy tylko tego produktu.',
 				'ui'           => 1,
 			),
+			array(
+				'key'          => 'field_noriks_pp_upsell2',
+				'label'        => 'Pokaż upsell #2 pod przyciskiem (2 koszulki: czarna + szara)',
+				'name'         => 'noriks_pp_upsell2',
+				'type'         => 'true_false',
+				'instructions' => 'Druga ramka upsell: zestaw 2 koszulek (1 czarna + 1 szara), klient wybiera jeden rozmiar dla obu. Niezależna od pierwszego przełącznika.',
+				'ui'           => 1,
+			),
 		),
 		'location'   => array(
 			array(
