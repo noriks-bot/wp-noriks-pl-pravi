@@ -578,7 +578,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
            <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
 
           <div class="kn-size">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/kidsnest/tablica-velicine.webp" alt="KidsNest — rozmiary według wieku" style="width:100%;height:auto;border-radius:10px;display:block;margin:0 0 12px;" loading="lazy">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/kidsnest/tablica-velicine-pl.webp" alt="KidsNest — rozmiary według wieku" style="width:100%;height:auto;border-radius:10px;display:block;margin:0 0 12px;" loading="lazy">
             <p style="margin:0;line-height:1.6;"><strong>Dziecko jest między dwoma rozmiarami?</strong> Zawsze wybierz większy. Poduszka została zaprojektowana, aby wspierać zdrowe ułożenie w miarę wzrostu dziecka — większy rozmiar daje więcej miejsca i dłuższy okres użytkowania.</p>
           </div>
 
