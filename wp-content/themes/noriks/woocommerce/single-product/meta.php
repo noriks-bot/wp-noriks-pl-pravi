@@ -665,6 +665,11 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
           
           
         
+        <?php // KOMZIPS: vlastna lokalizirana tabela velikosti (sicer pade v else = tabela za majice).
+        elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice', $current_product_id) ): ?>
+
+                  <img class="js-open-size-chart" style="cursor:pointer;" src="<?php echo get_template_directory_uri(); ?>/img/kompresijske-tabela-pl.webp" alt="Tabela rozmiarów — skarpety uciskowe">
+
         <?php elseif(  $is_carape ): ?>
         
         
