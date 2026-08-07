@@ -210,6 +210,16 @@
       
       
        
+      <?php elseif ( function_exists('noriks_is_type') && noriks_is_type( 'kompresijske-nogavice' ) ): ?>
+
+      <div style="line-height:1.9; text-align:left; margin:40px 0; padding:0 6px; font-size:15px; color:#111;">
+        <strong>S/M</strong> : rozmiar buta 36–40 / obwód łydki : 23–36 cm<br>
+        <strong>L/XL</strong> : rozmiar buta 40–44 / obwód łydki : 36–45 cm<br>
+        <strong>2XL</strong> : rozmiar buta 44–48 / obwód łydki : 45–56 cm<br><br>
+        Zmierz obwód łydki w najszerszym miejscu, aby dobrać swój rozmiar.<br><br>
+        Zalecamy dobór rozmiaru według obwodu łydki, a nie zwykłego rozmiaru buta.
+      </div>
+
       <?php elseif ( has_term( array( 'carape', 'zimske-carape	' ), 'product_cat', get_the_ID() ) ): ?>
       
       

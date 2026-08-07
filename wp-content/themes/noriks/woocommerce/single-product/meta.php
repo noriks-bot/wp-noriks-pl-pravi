@@ -665,6 +665,16 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
           
           
         
+        <?php elseif( noriks_is_type( 'kompresijske-nogavice', $current_product_id ) ): ?>
+
+          <div style="line-height:1.9;">
+            <strong>S/M</strong> : rozmiar buta 36–40 / obwód łydki : 23–36 cm<br>
+            <strong>L/XL</strong> : rozmiar buta 40–44 / obwód łydki : 36–45 cm<br>
+            <strong>2XL</strong> : rozmiar buta 44–48 / obwód łydki : 45–56 cm<br><br>
+            Zmierz obwód łydki w najszerszym miejscu, aby dobrać swój rozmiar.<br><br>
+            Zalecamy dobór rozmiaru według obwodu łydki, a nie zwykłego rozmiaru buta.
+          </div>
+
         <?php elseif(  $is_carape ): ?>
         
         
