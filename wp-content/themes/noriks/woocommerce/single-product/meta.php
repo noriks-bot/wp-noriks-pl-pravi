@@ -500,7 +500,7 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
 
     <!-- 1 - detajli --> <!-- ukryte na norikshers + ortopedski jastuk -->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) ) ) : ?>
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) )) : ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_1","options"); ?></h3>
@@ -511,6 +511,10 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
          <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
 
                 Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–18 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) ): ?>
+
+                NORIKS KneeFix to elastyczna orteza kolana, która łączy cztery funkcje w jednym systemie wsparcia: regulowaną kompresję za pomocą precyzyjnego pokrętła, podwójne stabilizatory boczne, żelową wkładkę odciążającą rzepkę oraz silikonową antypoślizgową krawędź, która utrzymuje ortezę na miejscu.<br><br>W przeciwieństwie do sztywnych ortez KneeFix nie unieruchamia kolana — wspiera je podczas naturalnego ruchu. Kompresję ustawisz w sekundę: rano mocniej, po południu luźniej, zależnie od tego, ile jesteś na nogach. Kolano zyskuje stabilność przy wstawaniu, na schodach, podczas spaceru i przy dłuższym staniu.<br><br>Materiał jest lekki, oddychający i odprowadza wilgoć, więc ortezę można nosić godzinami bez pocenia się i bez wrzynania. Jest cienka i dyskretna — pod spodniami prawie jej nie widać.<br><br>Dostępna jest w rozmiarach od S do 2XL według masy ciała oraz w wersji na lewe i prawe kolano, dzięki czemu dopasowanie jest precyzyjne.
 
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
 
@@ -703,7 +707,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
     <!-- 3 - savjeti za pranje--> <!-- ukryte też na kidsnest -->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) )) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>
