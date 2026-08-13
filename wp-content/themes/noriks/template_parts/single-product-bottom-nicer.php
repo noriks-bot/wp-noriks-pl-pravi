@@ -1612,7 +1612,7 @@ $kneefix_faq = array(
   ),
   array(
     'questioon' => 'Jak dobrać rozmiar?',
-    'answer'    => 'Rozmiary są dobierane według masy ciała: S (50–60 kg), M (61–75 kg), L (76–90 kg), XL (91–110 kg) i 2XL (110 kg+).',
+    'answer'    => 'Rozmiary są dobierane według masy ciała: M (50–75 kg), L (76–90 kg), XL (91–110 kg) i 2XL (110 kg+).',
   ),
 );
 
