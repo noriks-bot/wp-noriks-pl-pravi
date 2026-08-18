@@ -43,7 +43,7 @@ $kn = get_template_directory_uri() . '/img/kidsnest/';
       <p>Ergonomiczna poduszka dziecięca utrzymuje <strong>głowę i szyję w naturalnym ułożeniu i pomaga zapobiegać odchylaniu głowy</strong> w nocy. Dzięki temu kręgosłup pozostaje prawidłowo wyrównany — nawet jeśli dziecko dużo wierci się we śnie.</p>
       <p><strong>Efekt to spokojniejszy sen i lepsza regeneracja.</strong></p>
     </div>
-    <div class="kn-media"><img src="<?php echo esc_url( $kn.'02-san.jpg' ); ?>" alt="Dziecko spokojnie śpi na poduszce KidsNest" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="kn-media"><img src="<?php echo esc_url( $kn.'kn-pl-2.webp' ); ?>" alt="Dziecko spokojnie śpi na poduszce KidsNest" loading="lazy" onerror="this.style.display='none'"></div>
   </div>
 </section>
 
@@ -92,7 +92,7 @@ $kn = get_template_directory_uri() . '/img/kidsnest/';
 <!-- ============ 6) Kvaliteta materijala — slika LIJEVO, tekst DESNO ============ -->
 <section class="kn-sec">
   <div class="kn-wrap kn-row2">
-    <div class="kn-media"><img src="<?php echo esc_url( $kn.'03-detalj.webp' ); ?>" alt="KidsNest — struktura 3-strefowa i przewiewna tkanina z bliska" loading="lazy" onerror="this.style.display='none'"></div>
+    <div class="kn-media"><img src="<?php echo esc_url( $kn.'kn-pl-6.webp' ); ?>" alt="KidsNest — struktura 3-strefowa i przewiewna tkanina z bliska" loading="lazy" onerror="this.style.display='none'"></div>
     <div class="kn-copy">
       <h2 class="kn-h2 kn-h2-blue">Jakość, którą czuć — noc po nocy.</h2>
       <p>Gęsta, przewiewna dzianina i starannie wyprofilowana powierzchnia nie są tu dla wyglądu — <strong>każda strefa ma swoją rolę</strong>. Środek delikatnie przyjmuje głowę, brzegi podpierają szyję, a struktura zachowuje kształt nawet po miesiącach codziennego używania.</p>
