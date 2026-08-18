@@ -31,7 +31,7 @@ $kf_img = function( $file, $alt ) use ( $kf, $kf_path ) {
 <!-- ============ 1) Gdy każdy krok staje się nieprzyjemny ============ -->
 <section class="kfx-sec">
   <div class="kfx-wrap kfx-row2">
-    <div class="kfx-media"><?php echo $kf_img('13_stepenice.jpg','Ból kolana przy schodzeniu po schodach'); ?></div>
+    <div class="kfx-media"><?php echo $kf_img('kf-pl-3.webp','Ból kolana przy schodzeniu po schodach'); ?></div>
     <div class="kfx-copy">
       <h2 class="kfx-h2">Gdy każdy krok staje się nieprzyjemny</h2>
       <p class="kfx-lead">Na początku to często tylko lekkie pociąganie.</p>
@@ -133,14 +133,14 @@ $kf_img = function( $file, $alt ) use ( $kf, $kf_path ) {
       <p>NORIKS KneeFix powstał, aby codzienne ruchy były przyjemniejsze — bez zbędnych ograniczeń. Elastyczny materiał lepiej dopasowuje się do twojego dnia i wspiera kolano tam, gdzie tego potrzebujesz.</p>
       <a class="kfx-cta" href="#bundle-selector">Wybierz swój rozmiar →</a>
     </div>
-    <div class="kfx-media"><?php echo $kf_img('05_lifestyle_PL.webp','KneeFix na co dzień — spacer, rower, trening'); ?></div>
+    <div class="kfx-media"><?php echo $kf_img('kf-pl-1.webp','KneeFix na co dzień — spacer, rower, trening'); ?></div>
   </div>
 </section>
 
 <!-- ============ 7) Polecane do codziennego wsparcia kolana ============ -->
 <section class="kfx-sec">
   <div class="kfx-wrap kfx-row2">
-    <div class="kfx-media"><?php echo $kf_img('06_lekarz_PL.webp','Polecane do codziennego wsparcia kolana'); ?></div>
+    <div class="kfx-media"><?php echo $kf_img('kf-pl-2.webp','Polecane do codziennego wsparcia kolana'); ?></div>
     <div class="kfx-copy">
       <h2 class="kfx-h2">Polecane do codziennego wsparcia kolana</h2>
       <ul class="kfx-check">
