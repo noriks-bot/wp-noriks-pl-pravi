@@ -589,7 +589,27 @@ endif;
       <!--<h4 style="" class="highlight"><?php echo get_field("singlepp_content_standard_reviews_t1","options"); ?></h4>-->
       <h1 style="color:black;     margin-bottom: 4px;">
           
-          <?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>
+          <?php if ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>
+
+          Nie tylko Ty szukasz ulgi w napięciu karku.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>
+
+          Nie tylko Ty szukasz ulgi w bólu haluksów.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>
+
+          Nie tylko Ty szukasz odciążenia dla pleców.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>
+
+          Nie tylko Ty szukasz idealnych skarpet uciskowych.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bokserice') ): ?>
+
+          Nie tylko Ty szukasz idealnych bokserek.
+
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>
 
           Nie jesteś sama w poszukiwaniu gładkiej skóry bez zmarszczek.
 
@@ -625,7 +645,7 @@ endif;
           
           
           </h1>
-    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
+    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>Tysiące osób używa już NORIKS FisioRest, aby zmniejszyć ból i napięcie karku – trakcja, wibracje i ciepło w jednym urządzeniu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>Tysiące osób nosi już korektor haluksów NORIKS dla mniejszego bólu i prostszego ustawienia palucha – w domu, przed telewizorem albo podczas snu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>Tysiące osób nosi już pas ortopedyczny NORIKS dla mniejszego bólu i stabilniejszych pleców – w pracy, przy dźwiganiu i podczas długiego siedzenia.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>Tysiące mężczyzn nosi już skarpety uciskowe NORIKS dla lżejszych i mniej zmęczonych nóg – w pracy, w podróży i na treningu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
     </div>
   </section>
   </div>
