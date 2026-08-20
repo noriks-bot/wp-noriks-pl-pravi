@@ -714,7 +714,7 @@ endif;
 
   // Detect if current product belongs to bokserice group
   $current_product_id = (function_exists('is_product') && is_product()) ? get_queried_object_id() : get_the_id();
-  $is_bokserice_page  = has_term( array( 'bokserki','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $current_product_id );
+  $is_bokserice_page = ( function_exists('noriks_is_type') && noriks_is_type('bokserice') );
 
   // Orto products: dedicated (text-only) review pools.
   $is_ortopas_page    = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $current_product_id) );
@@ -833,7 +833,7 @@ endif;
       $is_jastuk    = false;
       $is_nogavice    = false;
       if ( $product_id ) {
-          $is_bokserice = has_term( array( 'bokserice','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $product_id );
+          $is_bokserice = ( function_exists('noriks_is_type') && noriks_is_type('bokserice', $product_id) );
           $is_ortopas   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $product_id) );
           $is_bunion    = ( function_exists('noriks_is_type') && noriks_is_type('bunion', $product_id) );
           $is_fisiorest = ( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $product_id) );
