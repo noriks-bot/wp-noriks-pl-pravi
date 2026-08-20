@@ -728,12 +728,16 @@ endif;
   $is_jastuk_page     = ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk', $current_product_id) );
 
   // Fallback product name shown in review cards.
-  $rv_fallback_title = $is_kneefix_page ? 'Orteza kolana NORIKS KneeFix'
+  $rv_fallback_title = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ) ? 'Skarpety uciskowe NORIKS'
+                     : ( $is_ortopas_page ? 'Pas ortopedyczny NORIKS'
+                     : ( $is_bunion_page ? 'Korektor haluksów NORIKS'
+                     : ( $is_fisiorest_page ? 'NORIKS FisioRest'
+                     : ( $is_kneefix_page ? 'Orteza kolana NORIKS KneeFix'
                      : ( $is_kidsnest_page ? 'Poduszka NORIKS KidsNest'
                      : ( $is_jastuk_page ? 'Poduszka ortopedyczna NORIKS ErgoSit'
                      : ( $is_leakboxers_page ? 'Bokserki chłonne NORIKS'
                      : ( $is_kompmajice_page ? 'Koszulka kompresyjna NORIKS FIT'
-                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) ) ) );
+                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) ) ) ) ) ) ) );
 
   // Include review pools
   if ( $is_kneefix_page ) {
