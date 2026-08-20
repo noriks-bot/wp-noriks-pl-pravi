@@ -825,6 +825,7 @@ endif;
       $is_norikshers = false;
       $is_kidsnest  = false;
       $is_jastuk    = false;
+      $is_nogavice    = false;
       if ( $product_id ) {
           $is_bokserice = has_term( array( 'bokserice','orto-bokserice', 'bokserice-sastavi-paket' ), 'product_cat', $product_id );
           $is_ortopas   = ( function_exists('noriks_is_type') && noriks_is_type('ortopas', $product_id) );
@@ -833,9 +834,10 @@ endif;
           $is_norikshers = ( function_exists('noriks_is_type') && noriks_is_type('norikshers', $product_id) );
           $is_kidsnest  = ( function_exists('noriks_is_type') && noriks_is_type('kidsnest', $product_id) );
           $is_jastuk    = ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk', $product_id) );
+          $is_nogavice    = ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice', $product_id) );
       }
 
-      $cache_key = $transient_key . ( $is_jastuk ? '_jastuk' : ( $is_kidsnest ? '_kidsnest' : ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : '_all' ) ) ) ) ) ) );
+      $cache_key = $transient_key . ( $is_jastuk ? '_jastuk' : ( $is_kidsnest ? '_kidsnest' : ( $is_norikshers ? '_norikshers' : ( $is_fisiorest ? '_fisiorest' : ( $is_bunion ? '_bunion' : ( $is_ortopas ? '_ortopas' : ( $is_bokserice ? '_bokserice' : ( $is_nogavice ? '_nogavice' : '_all' ) ) ) ) ) ) ) );
 
       if ( function_exists( 'get_transient' ) ) {
           $cached = get_transient( $cache_key );
@@ -866,6 +868,8 @@ endif;
           $args['category'] = [ 'orto-ortopas' ];
       } elseif ( $is_bokserice ) {
           $args['category'] = [ 'bokserice' ];
+      } elseif ( $is_nogavice ) {
+          $args['category'] = [ 'skarpety', 'orto-kompresijske-carape' ];
       } else {
           // Stranice majica: bazen SAMO iz kategorije majica (s podkategorijama).
           // Prije je uzimao sve osim bokserica, pa su recenzije o majicama
