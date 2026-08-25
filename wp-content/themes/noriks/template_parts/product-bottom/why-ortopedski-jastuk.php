@@ -83,7 +83,7 @@ $oj_img = function( $file, $alt ) use ( $oj ) {
 <section class="oj-sec oj-stills-sec">
   <div class="oj-trustbar" aria-hidden="true">
     <div class="oj-trustbar-track">
-      <?php $oj_trust = array('120 000+ KLIENTÓW','OCENA 4,8/5','OEKO-TEX®','POLECANA PRZEZ LEKARZY','60 DNI GWARANCJI','ORTOPEDYCZNA KONSTRUKCJA');
+      <?php $oj_trust = array('120 000+ KLIENTÓW','OCENA 4,8/5','OEKO-TEX®','POLECANA PRZEZ LEKARZY','30 DNI GWARANCJI','ORTOPEDYCZNA KONSTRUKCJA');
       for ( $r = 0; $r < 2; $r++ ) { foreach ( $oj_trust as $t ) { echo '<span class="oj-trust-item">'.esc_html($t).'</span><span class="oj-trust-dot">•</span>'; } } ?>
     </div>
   </div>
@@ -177,10 +177,10 @@ $oj_img = function( $file, $alt ) use ( $oj ) {
 <section class="oj-sec oj-guar-sec">
   <div class="oj-wrap">
   <div class="oj-guarantee oj-row2">
-    <div class="oj-guar-badge"><?php echo $oj_img('15_znacka_60_dana_HR.png','60 dni gwarancji zwrotu pieniędzy'); ?></div>
+    <div class="oj-guar-badge"><?php echo $oj_img('15_znacka_30_dana.png','30 dni gwarancji zwrotu pieniędzy'); ?></div>
     <div class="oj-guar-copy">
       <h2 class="oj-h2 oj-h2-light">Wypróbuj przez <em class="oj-pink-i">60 dni</em> bez ryzyka</h2>
-      <p>Znalezienie właściwej poduszki nie jest łatwe — wiele z nich się odkształca albo po prostu nie przynosi prawdziwej ulgi. Dlatego każda NORIKS <strong>ErgoSit</strong> objęta jest naszą <strong>60-dniową gwarancją komfortu</strong>.</p>
+      <p>Znalezienie właściwej poduszki nie jest łatwe — wiele z nich się odkształca albo po prostu nie przynosi prawdziwej ulgi. Dlatego każda NORIKS <strong>ErgoSit</strong> objęta jest naszą <strong>30-dniową gwarancją komfortu</strong>.</p>
       <p>Zabierz ją do biura, do auta lub na długie godziny w domu. Jeśli nie poczujesz mniej bólu i więcej komfortu w codziennym siedzeniu, nasz zespół zadba o to, aby wszystko było jak należy.</p>
       <p>Bo gdy chodzi o Twoje zdrowie i komfort, wierzymy, że różnicę powinno się <strong>poczuć</strong>, a nie tylko jej wyczekiwać.</p>
     </div>

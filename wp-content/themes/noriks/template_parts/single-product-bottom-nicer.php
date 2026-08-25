@@ -1697,7 +1697,7 @@ $jastuk_faq = array(
   array( 'questioon' => 'Czy poszewkę można prać?', 'answer' => 'Tak. Poszewkę można zdjąć i wyprać w pralce, dzięki czemu poduszka pozostaje świeża i czysta. Tkanina jest przewiewna, hipoalergiczna i posiada certyfikat OEKO-TEX®.' ),
   array( 'questioon' => 'Czy będzie pasować do mojego krzesła lub fotela?', 'answer' => 'ErgoSit ma uniwersalny kształt i pasuje do większości foteli samochodowych, krzeseł biurowych i kuchennych oraz wózków inwalidzkich. Nie ma rozmiarów — jeden model pasuje wszystkim.' ),
   array( 'questioon' => 'Po jakim czasie poczuję różnicę?', 'answer' => 'Większość użytkowników czuje mniejszy nacisk na kość ogonową i wygodniejsze siedzenie już od pierwszego dnia. Lepsza postawa i mniejszy ból pleców budują się dodatkowo wraz z regularnym użytkowaniem.' ),
-  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Tak, każda NORIKS ErgoSit objęta jest 60-dniową gwarancją komfortu. Jeśli nie poczujesz mniej bólu i więcej komfortu, skontaktuj się z nami, a wszystko załatwimy.' ),
+  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Tak, każda NORIKS ErgoSit objęta jest 30-dniową gwarancją komfortu. Jeśli nie poczujesz mniej bólu i więcej komfortu, skontaktuj się z nami, a wszystko załatwimy.' ),
 );
 
 // Korektor haluksa — FAQ o produkcie (NORIKS, polski).

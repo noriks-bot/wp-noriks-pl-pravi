@@ -25,7 +25,7 @@ $bun_results = array(
 
 // Dlaczego wybrać nas — porównanie (ten sam styl co knc-table na skarpetach z zamkiem)
 $bun_cmp = array(
-    '90-dniowa gwarancja zwrotu pieniędzy',
+    '30-dniowa gwarancja zwrotu pieniędzy',
     'Łagodzi dyskomfort',
     'Zapobiega powiększaniu się haluksa',
     'Z czasem poprawia stan haluksa',
@@ -116,7 +116,7 @@ $bun_steps = array(
         <li><strong>Regulowana</strong> intensywność rozciągania</li>
         <li>Zaprojektowany i polecany przez <strong>specjalistów medycznych</strong></li>
         <li><strong>Prosty w użyciu</strong> i przenośny</li>
-        <li><strong>90-dniowa gwarancja zwrotu pieniędzy</strong> („efekty albo pełny zwrot”), ponieważ jesteśmy tak pewni naszego produktu i wiemy, że Ci pomoże</li>
+        <li><strong>30-dniowa gwarancja zwrotu pieniędzy</strong> („efekty albo pełny zwrot”), ponieważ jesteśmy tak pewni naszego produktu i wiemy, że Ci pomoże</li>
       </ul>
     </div>
     <div class="bun-col bun-media">

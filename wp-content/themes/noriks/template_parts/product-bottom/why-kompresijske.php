@@ -60,7 +60,7 @@ $knv = get_template_directory_uri() . '/img/kompresijske-videos/';
           <tr><td>Wzmocniony zamek, nigdy się nie zacina</td><td class="mid">—</td><td class="no">✕</td><td class="us ok">✓</td></tr>
           <tr><td>Przewiewna tkanina</td><td class="mid">~</td><td class="no">✕</td><td class="us ok">✓</td></tr>
           <tr><td>Komfort przez cały dzień (+12 godzin)</td><td class="mid">~</td><td class="no">✕</td><td class="us ok">✓</td></tr>
-          <tr><td>Gwarancja zwrotu pieniędzy 60 dni</td><td class="no">✕</td><td class="no">✕</td><td class="us ok">✓</td></tr>
+          <tr><td>Gwarancja zwrotu pieniędzy 30 dni</td><td class="no">✕</td><td class="no">✕</td><td class="us ok">✓</td></tr>
           <tr class="knc-price"><td>Cena za parę</td><td>od 368 zł</td><td>~65 zł</td><td class="us">od 101 zł</td></tr>
         </tbody>
       </table>
