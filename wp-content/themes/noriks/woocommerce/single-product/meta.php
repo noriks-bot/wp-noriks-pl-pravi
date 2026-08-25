@@ -736,7 +736,7 @@ Program delikatny w zimnej wodzie.
 
 Susz na płasko lub w suszarce w niskiej temperaturze.
 
-Łatwe zwroty i darmowe wymiany
+Łatwe zwroty i wymiany
 
 
      
