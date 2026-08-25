@@ -105,9 +105,8 @@
 			<div class="nf-wrap nf-main-grid">
 
 				<div class="nf-brand-col">
-					<p class="nf-brand-tagline">Odzież dla mocniejszej sylwetki, skrojona tak, by naprawdę leżała.</p>
 					<p class="nf-brand-desc"><?php echo esc_html( $nf_brand ); ?></p>
-					<a class="nf-btn nf-btn-outline" href="/pl/shop">Zobacz kolekcję</a>
+					<a class="nf-btn nf-btn-outline" href="/pl/shop">Kup teraz</a>
 				</div>
 
 				<nav class="nf-links">
