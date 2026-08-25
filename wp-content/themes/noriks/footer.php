@@ -63,7 +63,7 @@
 	$nf_col4_c  = get_field( 'footer_midle_col4_content', 'option' );
 	$nf_brand   = get_field( 'footer_brand_desc', 'option' );
 	if ( ! $nf_brand ) {
-		$nf_brand = 'NORIKS projektuje ponadczasowe ubrania dla mocniejszej sylwetki — dłuższe, wygodniejsze i starannie dopracowane tam, gdzie ma to największe znaczenie.';
+		$nf_brand = 'NORIKS to europejska marka produktów codziennego użytku. Stawiamy na jakość, wygodę i uczciwe ceny — zaufało nam już ponad 120 000 klientów.';
 	}
 	$nf_bg      = get_field( 'footer_bg_image', 'option' ); // background photo behind the brand band
 	$nf_legal   = get_field( 'footer_legal_text', 'option' );
