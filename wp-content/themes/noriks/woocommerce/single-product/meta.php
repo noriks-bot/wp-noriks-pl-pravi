@@ -80,7 +80,7 @@ global $product;
         
         <div class="feature">
       <img src="https://noriks.com/hr/wp-content/uploads/2025/07/footer_icon1-1.png" alt="Shirt Icon" class="feature__icon info-icon">
-          <p class="feature__text">Wypróbuj przez 14 dni – bez ryzyka</p>
+          <p class="feature__text">Wypróbuj przez 30 dni – bez ryzyka</p>
         </div>
         
         
@@ -761,7 +761,7 @@ Susz na płasko lub w suszarce w niskiej temperaturze.
        <p></p>
        
        
-       Tak bardzo wierzymy, że NORIKS Ci się spodoba, że masz <b></b>14 dni</b> na zwrot lub bezpłatną wymianę. Bez formalności, bez stresu — wszystko załatwimy w kilku kliknięciach.
+       Tak bardzo wierzymy, że NORIKS Ci się spodoba, że masz <b></b>30 dni</b> na zwrot lub bezpłatną wymianę. Bez formalności, bez stresu — wszystko załatwimy w kilku kliknięciach.
 info@noriks.com
 Wystarczy, że napiszesz do nas maila z informacją, że chcesz wymiany, a my od razu się tym zajmiemy.
 
