@@ -1719,7 +1719,7 @@ $ortopas_faq = array(
   array( 'questioon' => 'Czy mogę nosić pas także podczas snu?', 'answer' => 'Tak, pas możesz nosić również w nocy. Czas noszenia nie jest ograniczony, a dłuższe noszenie nie ma negatywnych skutków.' ),
   array( 'questioon' => 'Jak mocno powinienem go zapiąć?', 'answer' => 'Pas powinien przylegać ciasno, ale nie za mocno, aby uniknąć dyskomfortu. Powinieneś swobodnie się poruszać, bez wrzynania się lub zsuwania pasa. Napięcie łatwo regulujesz elastycznymi taśmami.' ),
   array( 'questioon' => 'Komu go polecacie?', 'answer' => 'Wszystkim, którzy zmagają się z bólem krzyża, rwą kulszową, napięciem mięśniowym, przepukliną krążka międzykręgowego, bólem bioder lub miednicy oraz problemami ze stawem krzyżowo-biodrowym. Niezależnie od wieku, płci, wzrostu i wagi.' ),
-  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Oferujemy gwarancję satysfakcji! Jeśli nie jesteś zadowolony z pasa NORIKS, skontaktuj się z nami pod adresem info@noriks.com w celu zwrotu i refundacji w ciągu 90 dni. Termin liczony jest od otrzymania pasa.' ),
+  array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Oferujemy gwarancję satysfakcji! Jeśli nie jesteś zadowolony z pasa NORIKS, skontaktuj się z nami pod adresem info@noriks.com w celu zwrotu i refundacji w ciągu 14 dni. Termin liczony jest od otrzymania pasa.' ),
 );
 
 // FisioRest — FAQ o produkcie (NORIKS, polski).
@@ -1731,7 +1731,7 @@ $fisiorest_faq = array(
   array( 'questioon' => 'Czy FisioRest jest bezprzewodowy?', 'answer' => 'Tak! NORIKS FisioRest jest całkowicie bezprzewodowy i ładowany do codziennego użytku.' ),
   array( 'questioon' => 'Jak czyścić FisioRest?', 'answer' => 'Tkanina jest odporna na oleje i kurz, jednak zalecamy przetarcie FisioRest po użyciu chusteczką dezynfekującą, ponieważ poszewka poduszki nie nadaje się do prania.' ),
   array( 'questioon' => 'Czy jest bezpieczny dla wszystkich?', 'answer' => 'NORIKS FisioRest został zaprojektowany tak, aby odpowiadał wszystkim, niezależnie od wieku i płci. Jednak każda sytuacja jest inna. W celu uzyskania szczegółowych wskazówek dopasowanych do Twoich potrzeb zalecamy konsultację z lekarzem.' ),
-  array( 'questioon' => 'Czy mogę go zwrócić, jeśli nie widzę efektów?', 'answer' => 'Oczywiście! Oferujemy pełną gwarancję zwrotu pieniędzy w ciągu 90 dni od dostawy, jeśli nie jesteś zadowolony z produktu. Napisz do nas na info@noriks.com, a odpowiemy w ciągu 12 godzin od otrzymania wiadomości!' ),
+  array( 'questioon' => 'Czy mogę go zwrócić, jeśli nie widzę efektów?', 'answer' => 'Oczywiście! Oferujemy pełną gwarancję zwrotu pieniędzy w ciągu 14 dni od dostawy, jeśli nie jesteś zadowolony z produktu. Napisz do nas na info@noriks.com, a odpowiemy w ciągu 12 godzin od otrzymania wiadomości!' ),
 );
 
 // NORIKS HERS (silikonowe kolagenowe płatki na zmarszczki) — FAQ o produkcie (NORIKS HERS, polski).

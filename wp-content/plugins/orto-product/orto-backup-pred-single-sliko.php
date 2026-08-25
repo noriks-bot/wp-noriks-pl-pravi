@@ -993,7 +993,7 @@ function gck_render_bundle_selector() {
                     <?php endfor; ?>
 
 <!--
-                    <small style="display: block; line-height: 1;"><?php esc_html_e( 'Oferujemy 30 dni na zwrot pieniędzy lub bezpłatną wymianę produktu — zakupy bez ryzyka!', 'gift-card-kompetentnost' ); ?></small>-->
+                    <small style="display: block; line-height: 1;"><?php esc_html_e( 'Oferujemy 14 dni na zwrot pieniędzy lub bezpłatną wymianę produktu — zakupy bez ryzyka!', 'gift-card-kompetentnost' ); ?></small>-->
                 </div>
             </label>
         <?php

@@ -112,17 +112,17 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="marquee">
     <div class="marquee-content">
       <span><a href="/pl/shop"><?php echo $mq_ico_truck; ?>Darmowa dostawa dla zamówień powyżej 300 zł</a></span>
-      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>30 dni bez ryzyka – wypróbuj bez obaw</a></span>
+      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>14 dni bez ryzyka – wypróbuj bez obaw</a></span>
       <!--<span><a href="/hr/shop">Zimska ponuda: Do 70% popusta!</a></span>-->
 
       <!-- DUPLICATED for seamless infinite loop -->
       <span><a href="/pl/shop"><?php echo $mq_ico_truck; ?>Darmowa dostawa dla zamówień powyżej 300 zł</a></span>
-      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>30 dni bez ryzyka – wypróbuj bez obaw</a></span>
+      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>14 dni bez ryzyka – wypróbuj bez obaw</a></span>
      <!-- <span><a href="/hr/shop">Zimska ponuda: Do 70% popusta!</a></span>-->
       
        <!-- DUPLICATED for seamless infinite loop -->
       <span><a href="/pl/shop"><?php echo $mq_ico_truck; ?>Darmowa dostawa dla zamówień powyżej 300 zł</a></span>
-      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>30 dni bez ryzyka – wypróbuj bez obaw</a></span>
+      <span><a href="/pl/shop"><?php echo $mq_ico_shield; ?>14 dni bez ryzyka – wypróbuj bez obaw</a></span>
      <!-- <span><a href="/hr/shop">Zimska ponuda: Do 70% popusta!</a></span>-->
     </div>
   </div>

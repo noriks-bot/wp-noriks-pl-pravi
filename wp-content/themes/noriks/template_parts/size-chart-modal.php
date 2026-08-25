@@ -739,7 +739,7 @@
 
         <div class="noriks-sc-guarantee">
           <span class="noriks-sc-check">&#10003;</span>
-          <span>Nie jesteś pewien? Bezpłatna wymiana rozmiaru w ciągu 90 dni.</span>
+          <span>Nie jesteś pewien? Bezpłatna wymiana rozmiaru w ciągu 14 dni.</span>
         </div>
       </div>
 

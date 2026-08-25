@@ -92,7 +92,7 @@ if ( WC()->cart->is_empty() ) return;
     <img decoding="async" src="https://images.vigo-shop.com/general/guarantee_money_back/satisfaction_icon_pl.png">
   </div>
   <div class="flex__item--autosize f--m checkout-warranty__text">
-    <strong>Kupuj bez obaw </strong><br>Możliwość zwrotu pieniędzy w ciągu 90 dni
+    <strong>Kupuj bez obaw </strong><br>Możliwość zwrotu pieniędzy w ciągu 14 dni
   </div>
 </div>
 
