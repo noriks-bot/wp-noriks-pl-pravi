@@ -460,7 +460,7 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
       <div class="accordion-content">
         <p>Rada, którą słyszałeś, jest tylko w połowie prawdziwa. Tak, górne podniebienie utrwala się około 9. roku życia. Ale twarz rozwija się do 20., żuchwa rośnie do 17., a drogi oddechowe stale się dostosowują.</p>
         <p>Dlatego każda noc oddychania przez usta po 9. roku życia dokłada nowe szkody do starych: zgrzytanie zębami, bóle głowy, sen, który nie regeneruje, spadek koncentracji — i zmęczenie, które wszyscy mylą z lenistwem. Twój nastolatek nie jest leniwy. On ledwo oddycha przez sześć godzin każdej nocy.</p>
-        <p>KidsNest w rozmiarze <strong>9–18 lat</strong> została stworzona dla starszej głowy, szyi i ramion. Inny kontur, inna wysokość, inne podparcie. Ten sam podstawowy mechanizm: prawidłowe ułożenie głowy, szyi i żuchwy, przez całą noc, na ciele, które wciąż rośnie.</p>
+        <p>KidsNest w rozmiarze <strong>9–14 lat</strong> została stworzona dla starszej głowy, szyi i ramion. Inny kontur, inna wysokość, inne podparcie. Ten sam podstawowy mechanizm: prawidłowe ułożenie głowy, szyi i żuchwy, przez całą noc, na ciele, które wciąż rośnie.</p>
         <p>Co zauważają rodzice: chrapanie uspokaja się w 7 do 14 nocy, wraca prawdziwa poranna energia, bóle głowy bledną, koncentracja wraca.</p>
         <p>Najlepsze okno to nadal wiek od 3 do 9 lat. Silne okno to od 8 do 18. Żadne nie jest całkiem zamknięte — ale każda noc czekania dodaje presji ciału, które próbuje się regenerować.</p>
         <p><strong>Wczoraj minęło. Dzisiejszy wieczór wciąż należy do Ciebie.</strong></p>
@@ -510,7 +510,7 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
          <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
 
-                Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–18 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
+                Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–14 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
 
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) ): ?>
 
