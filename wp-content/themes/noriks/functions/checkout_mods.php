@@ -773,8 +773,12 @@ add_action( 'wp_footer', function () {
         return;
     }
     $labels = array(
+        'billing_first_name' => 'Imię',
+        'billing_last_name' => 'Nazwisko',
         'billing_address_1' => 'Ulica',
         'billing_address_2' => 'Numer budynku / numer lokalu',
+        'billing_postcode' => 'Kod Pocztowy',
+        'billing_city' => 'Miasto',
     );
     ?>
     <script id="noriks-address-labels">
