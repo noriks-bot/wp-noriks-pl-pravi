@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 define( 'NORIKS_TEL_CC',    '48' );
 define( 'NORIKS_TEL_TRUNK', '' );
 define( 'NORIKS_TEL_MIN',   9 );
-define( 'NORIKS_TEL_MAX',   11 );
+define( 'NORIKS_TEL_MAX',   13 );
 
 /**
  * Vrne nacionalno stevilko brez klicne in vodilne nicle,
@@ -100,7 +100,7 @@ add_action( 'wp_footer', function () {
     </style>
     <script id="noriks-tel-check">
     jQuery(function($){
-      var CC = '48', TRUNK = '', MIN = 9, MAX = 11;
+      var CC = '48', TRUNK = '', MIN = 9, MAX = 13;
       var MSG = <?php echo wp_json_encode( 'Sprawdź numer telefonu — wygląda na niekompletny.' . ' ' . 'np. 601 234 567' ); ?>;
       function national(raw){
         var s = (raw||'').trim();
