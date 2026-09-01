@@ -754,7 +754,7 @@ Susz na płasko lub w suszarce w niskiej temperaturze.
     <!-- 4 povrati in menjave -->
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
-        <h3><?php echo get_field("singlepp_acc_h_3","options"); ?></h3>
+        <h3><?php echo function_exists('noriks_strip_free') ? noriks_strip_free( get_field("singlepp_acc_h_3","options") ) : get_field("singlepp_acc_h_3","options"); ?></h3>
         <div class="toggle">+</div>
       </div>
       <div class="accordion-content">
