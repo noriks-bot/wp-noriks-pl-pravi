@@ -1786,7 +1786,7 @@ $faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_b
               ?>
                     <div class="faq-item">
                       <button class="faq-question">
-                         <?php echo $faq_item["questioon"]; ?>
+                         <?php echo function_exists('noriks_no_free_exchange') ? noriks_no_free_exchange( $faq_item["questioon"] ) : $faq_item["questioon"]; ?>
                         <span class="arrow">&#9660;</span>
                       </button>
                       <div class="faq-answer">
@@ -1813,7 +1813,7 @@ $faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_b
               ?>
                     <div class="faq-item">
                       <button class="faq-question">
-                         <?php echo $faq_item["questioon"]; ?>
+                         <?php echo function_exists('noriks_no_free_exchange') ? noriks_no_free_exchange( $faq_item["questioon"] ) : $faq_item["questioon"]; ?>
                         <span class="arrow">&#9660;</span>
                       </button>
                       <div class="faq-answer">
@@ -1840,7 +1840,7 @@ $faq_pick = function( $title, $list ) use ( $is_ortopas_faq, $ortopas_faq, $is_b
               ?>
                     <div class="faq-item">
                       <button class="faq-question">
-                         <?php echo $faq_item["questioon"]; ?>
+                         <?php echo function_exists('noriks_no_free_exchange') ? noriks_no_free_exchange( $faq_item["questioon"] ) : $faq_item["questioon"]; ?>
                         <span class="arrow">&#9660;</span>
                       </button>
                       <div class="faq-answer">
