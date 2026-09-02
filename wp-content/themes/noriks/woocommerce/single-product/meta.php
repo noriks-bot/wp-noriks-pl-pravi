@@ -512,7 +512,12 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
                 Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–14 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
 
-         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) ): ?>
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('controlpro', $current_product_id) ): ?>
+
+                NORIKS ControlPro to mechaniczny trenażer dna miednicy z prawdziwym oporem fizycznym. Zamiast ściskać w próżnię, dostajesz coś, na co możesz naciskać — ta sama zasada stopniowego obciążenia, dzięki której wzmacnia się każdy inny mięsień w ciele.<br><br>Używa się go na siedząco: urządzenie umieszczasz między kolanami i ściskasz z oporem — 3 serie po 10 powtórzeń dziennie, około pięciu minut. Bez sond i wprowadzania, bez kabli, żelu, baterii i aplikacji. Wbudowany licznik powtórzeń pokazuje, ile wykonałeś.<br><br>Konstrukcja jest solidna, z miękkimi podkładkami na podporach, które nie uciskają nawet po kilku seriach. Opór rośnie stopniowo wraz ze wzrostem siły mięśni.<br><br>Jest przeznaczony dla mężczyzn, którzy chcą odzyskać kontrolę nad pęcherzem — po operacji prostaty, przy wycieku podczas wysiłku lub po długich miesiącach ćwiczeń Kegla bez efektu. Dostawa jest dyskretna, w neutralnym pudełku bez oznaczeń.
+
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) ): ?>
 
                 NORIKS KneeFix to elastyczna orteza kolana, która łączy cztery funkcje w jednym systemie wsparcia: regulowaną kompresję za pomocą precyzyjnego pokrętła, podwójne stabilizatory boczne, żelową wkładkę odciążającą rzepkę oraz silikonową antypoślizgową krawędź, która utrzymuje ortezę na miejscu.<br><br>W przeciwieństwie do sztywnych ortez KneeFix nie unieruchamia kolana — wspiera je podczas naturalnego ruchu. Kompresję ustawisz w sekundę: rano mocniej, po południu luźniej, zależnie od tego, ile jesteś na nogach. Kolano zyskuje stabilność przy wstawaniu, na schodach, podczas spaceru i przy dłuższym staniu.<br><br>Materiał jest lekki, oddychający i odprowadza wilgoć, więc ortezę można nosić godzinami bez pocenia się i bez wrzynania. Jest cienka i dyskretna — pod spodniami prawie jej nie widać.<br><br>Dostępna jest w rozmiarach od S do 2XL według masy ciała oraz w wersji na lewe i prawe kolano, dzięki czemu dopasowanie jest precyzyjne.
 
@@ -571,7 +576,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
      <!-- 2 - slika tablica velicina -->
-     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) )) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers + ortopedski jastuk ?>
+     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) )) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers + ortopedski jastuk ?>
      <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3>Tabela rozmiarów</h3>
@@ -707,7 +712,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
     <!-- 3 - savjeti za pranje--> <!-- ukryte też na kidsnest -->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) )) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
+    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) )) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>
