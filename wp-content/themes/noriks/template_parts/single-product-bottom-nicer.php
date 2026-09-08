@@ -25,6 +25,12 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kidsnest' );
     } elseif ( noriks_is_type( 'ortopedski-jastuk' ) ) {
         get_template_part( 'template_parts/product-bottom/why-ortopedski-jastuk' );
+    } elseif ( noriks_is_type( 'cloath' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-cloath' );
+    } elseif ( noriks_is_type( 'cloud' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-cloud' );
+    } elseif ( noriks_is_type( 'hyd' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-hyd' );
     }
 }
 ?>
@@ -743,9 +749,18 @@ endif;
                      : ( $is_kompmajice_page ? 'Koszulka kompresyjna NORIKS FIT'
                      : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) ) ) ) ) ) ) );
   if ( function_exists('noriks_is_type') && noriks_is_type('controlpro') ) { $rv_fallback_title = 'NORIKS ControlPro trenażer dna miednicy'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('hyd') ) { $rv_fallback_title = 'NORIKS HYD'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) { $rv_fallback_title = 'NORIKS Cloud'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) { $rv_fallback_title = 'Polar NORIKS Cloth XXL'; }
 
   // Include review pools
-  if ( function_exists('noriks_is_type') && noriks_is_type('controlpro') ) {
+  if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_cloath.php';
+  } else  if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_cloud.php';
+  } else  if ( function_exists('noriks_is_type') && noriks_is_type('hyd') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_hyd.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('controlpro') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_controlpro.php';
   } elseif ( $is_kneefix_page ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_kneefix.php';
@@ -1772,8 +1787,45 @@ $controlpro_faq = array(
   array( 'questioon' => 'Czy mogę go zwrócić?', 'answer' => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy. Wystarczy e-mail, bez formularzy.' ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$is_cloath_faq = ( function_exists('noriks_is_type') && noriks_is_type('cloath') );
+$cloath_faq = array(
+  array(
+    'questioon' => 'Co jeśli nie będę zadowolony z zakupu?',
+    'answer'    => 'Masz 30 dni, żeby wypróbować ściereczkę bez ryzyka. Jeśli efekt Ci nie odpowiada, napisz do naszej obsługi i zwrócimy pieniądze — bez papierologii i bez tłumaczenia się.',
+  ),
+  array(
+    'questioon' => 'Z czego zrobiona jest ściereczka?',
+    'answer'    => 'Z gęstej tkaniny z mikrofibry o konstrukcji dwustronnej: puszysta strona zbiera brud i wodę, siateczkowa poleruje do połysku. Brzeg jest wzmocniony miękką lamówką, która nie rysuje.',
+  ),
+  array(
+    'questioon' => 'Dlaczego jest droższa od zwykłych ściereczek?',
+    'answer'    => 'Bo jest gęstsza i cięższa od standardowej mikrofibry — wchłania wielokrotnie więcej wody, nie zostawia włókien i wytrzymuje setki prań. Jedna zastępuje cały zestaw tanich, które po kilku praniach zaczynają się strzępić.',
+  ),
+  array(
+    'questioon' => 'Jak długo wytrzyma w porównaniu ze zwykłymi?',
+    'answer'    => 'Przy właściwej pielęgnacji wytrzyma setki użyć. Ściereczki ze sklepu zwykle po około 20 praniach tracą gęstość i zaczynają zostawiać smugi.',
+  ),
+  array(
+    'questioon' => 'Czy zostawia smugi lub plamy?',
+    'answer'    => 'Nie. Dzięki gęstości i dwustronnej konstrukcji woda jest wchłaniana, a nie rozmazywana, więc szkło i lustra pozostają bez smug — i bez włókien.',
+  ),
+  array(
+    'questioon' => 'Jak najlepiej ją prać?',
+    'answer'    => 'W pralce w 40 °C, detergentem bez płynu do płukania (płyn zatyka włókna i zmniejsza chłonność). Nie używaj wybielacza i nie susz w suszarce — susz na powietrzu.',
+  ),
+  array(
+    'questioon' => 'Dlaczego na niektórych zdjęciach ściereczka wygląda ciemniej?',
+    'answer'    => 'To kwestia oświetlenia. Ściereczka jest ciemnoszara z czarną lamówką; w mocnym świetle wydaje się jaśniejsza, a w pomieszczeniu ciemniejsza.',
+  ),
+  array(
+    'questioon' => 'Czy nadaje się na prezent?',
+    'answer'    => 'Tak — zestawy 3+3 i 8+4 to jedne z najczęstszych prezentów na parapetówkę i święta. Ściereczka przychodzi równo złożona i gotowa do wręczenia.',
+  ),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
+  if ( $is_cloath_faq && $is_info ) { return $cloath_faq; }
   if ( $is_kneefix_faq && $is_info )    { return $kneefix_faq; }
   if ( $is_controlpro_faq && $is_info ) { return $controlpro_faq; }
   if ( $is_kidsnest_faq && $is_info ) { return $kidsnest_faq; }
