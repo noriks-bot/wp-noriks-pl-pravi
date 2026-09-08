@@ -1823,8 +1823,82 @@ $cloath_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$is_cloud_faq = ( function_exists('noriks_is_type') && noriks_is_type('cloud') );
+$cloud_faq = array(
+  array(
+    'questioon' => 'Co jeśli poduszka mi nie odpowiada?',
+    'answer'    => 'Masz 60 nocy na wypróbowanie. Jeśli nie będziesz zadowolony, napisz do naszej obsługi i zwrócimy całą kwotę — bez warunków i bez papierologii.',
+  ),
+  array(
+    'questioon' => 'Jak prawidłowo używać poduszki?',
+    'answer'    => 'Połóż się na boku, umieść poduszkę między kolanami i zapnij pasek wokół górnej nogi. Biodra, miednica i kręgosłup powinny być w jednej linii. Pasek można zdjąć i używać poduszki pod kostki albo pod szyję.',
+  ),
+  array(
+    'questioon' => 'Czy naprawdę zostaje na miejscu, gdy się obrócę?',
+    'answer'    => 'Tak. Regulowany pasek z zatrzaskami obejmuje nogę i trzyma poduszkę przy kolanie, więc nie wypada jak zwykła poduszka. Pasek ma dwa położenia, w zależności od obwodu nogi.',
+  ),
+  array(
+    'questioon' => 'Z czego zrobiona jest poduszka?',
+    'answer'    => 'Rdzeń to pianka pamięciowa klasy medycznej z perforacjami zapewniającymi przepływ powietrza. Poszewka jest z oddychającej tkaniny, zdejmowana i do prania. Materiały mają certyfikaty OEKO-TEX® STANDARD 100 i CertiPUR-EU.',
+  ),
+  array(
+    'questioon' => 'Czy jest za twarda, czy za miękka?',
+    'answer'    => 'Ma średnią twardość — wystarczającą, by utrzymać odstęp nóg przez całą noc, ale pod naciskiem dopasowuje się do kształtu kolana. Nie spłaszcza się i wraca do formy po wstaniu.',
+  ),
+  array(
+    'questioon' => 'Jak ją prać?',
+    'answer'    => 'Poszewkę zdejmij i pierz w pralce w 40 °C, bez płynu do płukania i bez wybielacza, susz na powietrzu. Pianki nie pierz w pralce — w razie potrzeby przetrzyj wilgotną szmatką i zostaw do wyschnięcia.',
+  ),
+  array(
+    'questioon' => 'Ile trwa przyzwyczajenie się?',
+    'answer'    => 'Większość użytkowników czuje różnicę już pierwszej lub drugiej nocy. Jeśli przywykłeś spać ze złączonymi kolanami, pierwsze noce odstęp może być dziwny — ciało zwykle dostosowuje się w ciągu tygodnia.',
+  ),
+  array(
+    'questioon' => 'Czy nadaje się w ciąży?',
+    'answer'    => 'Tak. W ciąży zalecana jest pozycja na lewym boku, a poduszka między kolanami odciąża biodra i dolne plecy. W razie powikłań zdrowotnych skonsultuj się przed użyciem z lekarzem.',
+  ),
+);
+
+$is_hyd_faq = ( function_exists('noriks_is_type') && noriks_is_type('hyd') );
+$hyd_faq = array(
+  array(
+    'questioon' => 'Czym jest woda wodorowa?',
+    'answer'    => 'To zwykła woda pitna, w której rozpuszczono wodór cząsteczkowy (H₂). Wodór to najmniejsza cząsteczka, a badania wiążą go z selektywnym działaniem antyoksydacyjnym.',
+  ),
+  array(
+    'questioon' => 'Ile trwa jeden cykl?',
+    'answer'    => 'Krótki cykl trwa 3 minuty i daje około 1600 ppb wodoru, długi 10 minut i do 3000 ppb. Cykl wybierasz naciśnięciem przycisku.',
+  ),
+  array(
+    'questioon' => 'Czy woda styka się z plastikiem?',
+    'answer'    => 'Nie. Butelka jest ze szkła borokrzemowego z podstawą ze stali nierdzewnej, więc w wodzie nie ma smaku plastiku ani cząstek.',
+  ),
+  array(
+    'questioon' => 'Jakiej wody mogę używać?',
+    'answer'    => 'Dowolnej wody pitnej — z kranu, filtrowanej, butelkowanej lub destylowanej. Dzięki membranie PEM/SPE urządzenie nie potrzebuje minerałów do działania.',
+  ),
+  array(
+    'questioon' => 'Czy trzeba wymieniać filtr?',
+    'answer'    => 'Nie. Generator ma trwały filtr, więc nie ma materiałów eksploatacyjnych ani dodatkowych kosztów.',
+  ),
+  array(
+    'questioon' => 'Jak się ładuje?',
+    'answer'    => 'Kablem USB; pełne ładowanie trwa 30–60 minut i wystarcza na kilka cykli. Nie ładuj butelki, gdy jest w niej woda.',
+  ),
+  array(
+    'questioon' => 'Kiedy wypić wodę?',
+    'answer'    => 'Najlepiej zaraz po cyklu, w ciągu około 30 minut, bo stężenie wodoru z czasem spada.',
+  ),
+  array(
+    'questioon' => 'Co jeśli nie będę zadowolony?',
+    'answer'    => 'Masz 30 dni na zwrot pieniędzy. Dodatkowo na urządzenie otrzymujesz 1 rok gwarancji.',
+  ),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
+  if ( $is_hyd_faq && $is_info ) { return $hyd_faq; }
+  if ( $is_cloud_faq && $is_info ) { return $cloud_faq; }
   if ( $is_cloath_faq && $is_info ) { return $cloath_faq; }
   if ( $is_kneefix_faq && $is_info )    { return $kneefix_faq; }
   if ( $is_controlpro_faq && $is_info ) { return $controlpro_faq; }
