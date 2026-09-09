@@ -18,7 +18,7 @@ $fis_science = array(
 );
 $fis_v = get_template_directory_uri() . '/img/fisiorest-videos/';
 $fis_i = get_template_directory_uri() . '/img/fisiorest/';
-$fis_hero_video = $fis_v . 'hero.mp4';
+$fis_hero_video = $fis_v . 'hero-v2.mp4';
 
 // 3) Polecane przez ekspertów
 $fis_experts = array(
@@ -151,7 +151,7 @@ $fis_upgrades = array(
       <h2 class="fis-h2">Zaprojektowane przez inżynierów. Wykonane według standardów fizjoterapii</h2>
       <p>Zainwestowaliśmy ponad 50 000 € i 2 lata prac rozwojowych, aby NORIKS był czymś więcej niż tylko masażerem karku. To kompleksowe urządzenie do terapii szyi, które naprawdę leczy przyczynę. Każde zamówienie przechodzi dokładną kontrolę jakości, aby dotrzeć w idealnym stanie.</p>
     </div>
-    <div class="fis-row2-media"><video src="<?php echo esc_url( $fis_v.'hero.mp4' ); ?>" muted autoplay loop playsinline preload="metadata"></video></div>
+    <div class="fis-row2-media"><video src="<?php echo esc_url( $fis_v.'hero-v2.mp4' ); ?>" muted autoplay loop playsinline preload="metadata"></video></div>
   </div>
 </section>
 
