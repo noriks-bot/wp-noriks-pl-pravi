@@ -30,8 +30,8 @@ $fis_experts = array(
 $fis_ugc = array(
     array( 'img' => $fis_i.'fis-uporaba-1.jpg', 'cap' => '„Po raz pierwszy od dawna wreszcie nie odczuwam bólu…”' ),
     array( 'img' => $fis_i.'fis-uporaba-2.jpg', 'cap' => '„Poduszka NORIKS to mój nowy codzienny niezbędnik…”' ),
-    array( 'img' => $fis_i.'fis-uporaba-3.jpg', 'cap' => '„Świetnie pomaga mi rozładować napięcie w szyi i ramionach.”' ),
-    array( 'img' => $fis_i.'fis-uporaba-4.jpg', 'cap' => '„Jeśli właśnie zostałaś mamą, to może być dokładnie to, czego potrzebujesz…”' ),
+    array( 'img' => $fis_i.'fis-uporaba-3.jpg', 'cap' => '„Jeśli właśnie zostałaś mamą, to może być dokładnie to, czego potrzebujesz…”' ),
+    array( 'img' => $fis_i.'fis-uporaba-4.jpg', 'cap' => '„Świetnie pomaga mi rozładować napięcie w szyi i ramionach.”' ),
 );
 // 5) ThermoTrac 3-w-1
 $fis_thermo = array(
