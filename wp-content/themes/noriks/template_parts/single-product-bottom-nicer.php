@@ -31,6 +31,14 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-cloud' );
     } elseif ( noriks_is_type( 'hyd' ) ) {
         get_template_part( 'template_parts/product-bottom/why-hyd' );
+    } elseif ( noriks_is_type( 'snug' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-snug' );
+    } elseif ( noriks_is_type( 'kompwom' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-kompwom' );
+    } elseif ( noriks_is_type( 'pal' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-pal' );
+    } elseif ( noriks_is_type( 'red' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-red' );
     }
 }
 ?>
@@ -752,8 +760,21 @@ endif;
   if ( function_exists('noriks_is_type') && noriks_is_type('hyd') ) { $rv_fallback_title = 'NORIKS HYD'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) { $rv_fallback_title = 'NORIKS Cloud'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) { $rv_fallback_title = 'Polar NORIKS Cloth XXL'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) { $rv_fallback_title = 'NORIKS Snug poduszka na całe ciało'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) { $rv_fallback_title = 'NORIKS FIT Woman koszulka modelująca'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('pal') ) { $rv_fallback_title = 'NORIKS Pal laska do chodzenia'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('red') ) { $rv_fallback_title = 'NORIKS RedRelief terapia czerwonym światłem'; }
 
   // Include review pools
+  if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_snug.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_kompwom.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('pal') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_pal.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('red') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_red.php';
+  } else
   if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_cloath.php';
   } else  if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) {
@@ -1175,7 +1196,11 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
         noriks_is_type('bra') ||
         noriks_is_type('hyd') ||
         noriks_is_type('snore') ||
-        noriks_is_type('cloud')
+        noriks_is_type('cloud') ||
+        noriks_is_type('snug') ||
+        noriks_is_type('kompwom') ||
+        noriks_is_type('pal') ||
+        noriks_is_type('red')
   );
   // fotografije osoba: samo na odjeci (majice, bokserice, kompleti), ne na ortopedskim pomagalima
   $avatar_pool = $noriks_no_photos ? array() : get_review_avatar_pool($avatar_type);
@@ -1895,8 +1920,160 @@ $hyd_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$is_snug = ( function_exists('noriks_is_type') && noriks_is_type('snug') );
+$snug_faq = array(
+  array(
+    'questioon' => 'Jakie są wymiary poduszki?',
+    'answer'    => 'Jeden rozmiar: <strong>105 cm długości i 30 cm szerokości</strong>. Podpiera od barku po kolana, a nie zajmuje całego łóżka — dlatego łatwo ją trzymać i łatwo się z nią obrócić.',
+  ),
+  array(
+    'questioon' => 'Czy z czasem się zbije?',
+    'answer'    => 'Nie. Wypełnienie to tysiące cienkich, sprężystych włókien, które wracają do kształtu. Podparcie, które czujesz pierwszej nocy, jest takie samo po dziewięćdziesięciu nocach.',
+  ),
+  array(
+    'questioon' => 'Czym jest wypełniona?',
+    'answer'    => 'Wysokosprężystym wypełnieniem włóknowym — miękkim i przyjemnym na zewnątrz, sprężystym i podpierającym w środku. Bez pianki pamięciowej, która się nagrzewa.',
+  ),
+  array(
+    'questioon' => 'Jak się ją pierze?',
+    'answer'    => 'Poszewkę zdejmuje się i pierze w pralce w 40 °C. Samej poduszki nie pierz w pralce — w razie potrzeby przewietrz ją i wysusz na powietrzu.',
+  ),
+  array(
+    'questioon' => 'Czy nadaje się w ciąży?',
+    'answer'    => 'Tak. Kształt S podpiera brzuch z przodu i plecy z tyłu, a zalecana pozycja w ciąży to spanie na lewym boku. Przy powikłaniach zdrowotnych skonsultuj się z lekarzem.',
+  ),
+  array(
+    'questioon' => 'Ile trwa przyzwyczajenie?',
+    'answer'    => 'Większość osób znajduje swoją pozycję do drugiej nocy. Kształt S różni się od płaskiej poduszki, więc przez pierwsze noce ciało uczy się, gdzie się ułożyć.',
+  ),
+  array(
+    'questioon' => 'Jakie kolory są dostępne?',
+    'answer'    => 'Sześć kolorów: niebieski, różowy, szary, zielony, fioletowy i granatowy. Kolor wybierasz na tej stronie przed dodaniem do koszyka.',
+  ),
+  array(
+    'questioon' => 'Czy mogę ją zwrócić?',
+    'answer'    => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy albo wymianę. Wystarczy e-mail, bez formularzy.',
+  ),
+);
+
+$is_kompwom = ( function_exists('noriks_is_type') && noriks_is_type('kompwom') );
+$kompwom_faq = array(
+  array(
+    'questioon' => 'Jak dobrać rozmiar?',
+    'answer'    => 'Według obwodu biustu — to on decyduje, jak koszulka układa się na piersiach i barkach. Jeśli jesteś między dwoma rozmiarami, weź <strong>większy</strong>. Dostępne rozmiary od S do 3XL.',
+  ),
+  array(
+    'questioon' => 'Czy widać ją pod ubraniem?',
+    'answer'    => 'Nie. Dzianina jest bezszwowa, cienka i matowa, więc znika pod koszulą, marynarką albo dopasowaną sukienką. Nie ma brzegu, który by się odznaczał.',
+  ),
+  array(
+    'questioon' => 'Czy roluje się w ciągu dnia?',
+    'answer'    => 'Nie. Kompresja rozkłada się na szerokość, zamiast uciskać w jednym punkcie, więc koszulka zostaje na miejscu nawet po całym dniu.',
+  ),
+  array(
+    'questioon' => 'Czy linie 3D są nadrukowane?',
+    'answer'    => 'Nie. Splot jest <strong>wpleciony w samą tkaninę</strong>, więc nic nie pęka i nic się nie łuszczy z czasem, niezależnie od liczby prań.',
+  ),
+  array(
+    'questioon' => 'Jak mocno ściska?',
+    'answer'    => 'Zdecydowanie, ale nigdy ciasno. Musisz normalnie oddychać i jeść, nie myśląc o koszulce. Jeśli ślad na skórze widać dwadzieścia minut po zdjęciu, rozmiar jest za mały.',
+  ),
+  array(
+    'questioon' => 'Jak się ją pierze?',
+    'answer'    => 'W pralce w <strong>30 °C</strong>. Bez wybielaczy, bez prasowania i bez suszarki — susz na powietrzu.',
+  ),
+  array(
+    'questioon' => 'Jakie kolory są dostępne?',
+    'answer'    => 'Trzy kolory: czarny, ciemnoszary i różowy. Kolor i rozmiar wybierasz na tej stronie przed dodaniem do koszyka.',
+  ),
+  array(
+    'questioon' => 'Czy mogę ją zwrócić?',
+    'answer'    => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy albo wymianę rozmiaru. Wystarczy e-mail, bez formularzy.',
+  ),
+);
+
+$is_pal = ( function_exists('noriks_is_type') && noriks_is_type('pal') );
+$pal_faq = array(
+  array(
+    'questioon' => 'Do czego służy drugi uchwyt?',
+    'answer'    => 'Do <strong>wstawania</strong>. Dolny uchwyt chwytasz, gdy wstajesz z fotela, z łóżka albo z niskiego krzesła — nacisk idzie pionowo w dół, więc nie musisz się pochylać do przodu ani prosić kogoś o pomoc.',
+  ),
+  array(
+    'questioon' => 'Czy naprawdę stoi sama?',
+    'answer'    => 'Tak. Podstawa ma <strong>cztery gumowe stopki</strong>, które trzymają laskę pionowo, gdy ją puścisz. Nie upada na podłogę, więc nie musisz się po nią schylać.',
+  ),
+  array(
+    'questioon' => 'Czy ślizga się na gładkich podłogach?',
+    'answer'    => 'Nie. Stopki są z antypoślizgowej gumy i trzymają na płytkach, parkiecie i panelach. Podstawa dopasowuje się też do nierównego terenu na zewnątrz.',
+  ),
+  array(
+    'questioon' => 'Jak działa latarka?',
+    'answer'    => 'Latarka jest wbudowana w uchwyt i włącza się przyciskiem. Oświetla drogę przed tobą — na nocne wyjście do łazienki albo spacer o zmierzchu.',
+  ),
+  array(
+    'questioon' => 'Co robi alarm?',
+    'answer'    => 'Naciśnięcie przycisku uruchamia <strong>głośny sygnał dźwiękowy</strong>, który ostrzega domowników, jeśli upadniesz albo będziesz potrzebować pomocy.',
+  ),
+  array(
+    'questioon' => 'Czy wysokość jest regulowana?',
+    'answer'    => 'Tak. Wysokość ustawia się w kilka sekund, bez narzędzi, więc laska pasuje do każdego wzrostu.',
+  ),
+  array(
+    'questioon' => 'Czy jest składana?',
+    'answer'    => 'Tak. Składa się na kilka części i mieści w torbie albo w schowku w aucie — praktyczne w podróży i przy wizytach u lekarza.',
+  ),
+  array(
+    'questioon' => 'Czy mogę ją zwrócić?',
+    'answer'    => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy albo wymianę. Wystarczy e-mail, bez formularzy.',
+  ),
+);
+
+$is_red = ( function_exists('noriks_is_type') && noriks_is_type('red') );
+$red_faq = array(
+  array(
+    'questioon' => 'Jak terapia czerwonym światłem pomaga przy zespole cieśni nadgarstka?',
+    'answer'    => 'Czerwone i podczerwone światło wnika w tkankę i pobudza <strong>produkcję energii komórkowej (ATP)</strong>, co pomaga wyciszyć stan zapalny wokół nerwu pośrodkowego, poprawić krążenie i wesprzeć naturalną regenerację.',
+  ),
+  array(
+    'questioon' => 'Ile czasu do pierwszych efektów?',
+    'answer'    => 'Większość użytkowników odczuwa mniej nocnego mrowienia w ciągu <strong>1 – 2 tygodni</strong>. Wyraźniejsza zmiana w sile chwytu zwykle przychodzi około czwartego tygodnia. Zalecamy regularne, codzienne używanie przez co najmniej osiem tygodni.',
+  ),
+  array(
+    'questioon' => 'Czy można używać codziennie?',
+    'answer'    => 'Tak. Urządzenie jest przeznaczone do <strong>codziennych sesji po 15 minut</strong>. Światło przy tych dawkach nie nagrzewa tkanki. Urządzenie samo wyłącza się na koniec sesji.',
+  ),
+  array(
+    'questioon' => 'Czy działa na obie ręce?',
+    'answer'    => 'Tak, opaska pasuje <strong>i na lewą, i na prawą rękę</strong>. Jeśli obie ręce są zajęte, zrób dwie kolejne sesje po 15 minut albo wybierz zestaw z dwoma urządzeniami.',
+  ),
+  array(
+    'questioon' => 'Na jakie rozmiary dłoni pasuje?',
+    'answer'    => 'Elastyczna opaska z regulowanym paskiem pasuje na <strong>większość rozmiarów dłoni dorosłego</strong>, także te większe. Otwór na kciuk trzyma urządzenie na miejscu przez całą sesję.',
+  ),
+  array(
+    'questioon' => 'Co jest w zestawie?',
+    'answer'    => '1× opaska NORIKS RED, <strong>1× kabel USB-C do ładowania</strong> i instrukcja z zalecanym protokołem terapii.',
+  ),
+  array(
+    'questioon' => 'Jak długo trzyma bateria?',
+    'answer'    => 'Jedno ładowanie wystarcza na <strong>do 4 zabiegów</strong>. Urządzenie ładuje się przez kabel USB-C, więc naładujesz je z ładowarki do telefonu albo z laptopa.',
+  ),
+  array(
+    'questioon' => 'Czy zastępuje lekarza?',
+    'answer'    => 'Nie. NORIKS RED to urządzenie do użytku domowego i <strong>nie zastępuje badania lekarskiego</strong> ani zaleconej terapii. Przy utrzymujących się lub silnych dolegliwościach zgłoś się do lekarza.',
+  ),
+  array(
+    'questioon' => 'Czy mogę je zwrócić?',
+    'answer'    => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy albo wymianę. Wystarczy e-mail, bez formularzy.',
+  ),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
+  if ( $is_snug && $is_info ) { return $snug_faq; }
+  if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
+  if ( $is_pal && $is_info ) { return $pal_faq; }
+  if ( $is_red && $is_info ) { return $red_faq; }
   if ( $is_hyd_faq && $is_info ) { return $hyd_faq; }
   if ( $is_cloud_faq && $is_info ) { return $cloud_faq; }
   if ( $is_cloath_faq && $is_info ) { return $cloath_faq; }

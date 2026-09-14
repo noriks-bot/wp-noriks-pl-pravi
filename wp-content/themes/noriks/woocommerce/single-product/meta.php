@@ -508,7 +508,23 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
       </div>
       <div class="accordion-content">
 
-         <?php if( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
+                  <?php if( function_exists('noriks_is_type') && noriks_is_type('snug', $current_product_id) ): ?>
+
+                <strong>NORIKS Snug</strong> to poduszka na całe ciało w kształcie litery S. Większość poduszek na ciało jest prosta — Twoje ciało nie jest. Dlatego Snug podąża za linią ciała i podpiera jednocześnie barki, biodra i kolana.<br><br>Kiedy śpisz na boku bez podparcia, bark dźwiga cały ciężar, biodro się zapada, a kręgosłup się skręca. Trzy punkty podparcia rozkładają ciężar, więc żadne miejsce nie dźwiga całego obciążenia.<br><br>Wymiary to 105 cm długości i 30 cm szerokości — dość, by podpierać od barku po kolana, a jednocześnie nie zająć całego łóżka. Wypełnienie to tysiące cienkich, sprężystych włókien, które wracają do kształtu i nie zbijają się nawet po miesiącach używania.<br><br>Chłodząca poszewka zdejmuje się i pierze w pralce w 40 °C, a tkanina przepuszcza powietrze przez całą noc. Dostępna w sześciu kolorach: niebieskim, różowym, szarym, zielonym, fioletowym i granatowym.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kompwom', $current_product_id) ): ?>
+
+                <strong>NORIKS FIT Woman</strong> to koszulka modelująca, w której splot jest wpleciony w samą tkaninę, a nie na niej nadrukowany. Szeroki pas przechodzi przez brzuch i biodra, a drugi przez plecy.<br><br>Kompresja rozkłada się na szerokość, zamiast ściskać w jednym punkcie, więc nic się nie wrzyna. Brzuch pozostaje wygładzony, talia węższa, a plecy dostają podparcie, które pomaga stać prosto.<br><br>Dzianina jest bezszwowa, cienka i matowa — znika pod koszulą, marynarką albo dopasowaną sukienką. Nie roluje się w ciągu dnia i nie odznacza się pod ubraniem.<br><br>Pierz w pralce w 30 °C, bez wybielaczy, prasowania i suszarki. Dostępna w trzech kolorach (czarny, ciemnoszary, różowy) i rozmiarach od S do 3XL. Jeśli jesteś między dwoma rozmiarami, weź większy.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('pal', $current_product_id) ): ?>
+
+                <strong>NORIKS Pal</strong> to laska zaprojektowana wokół jednego problemu: wstawania. Poza górnym uchwytem ma drugi, niżej, za który chwytasz, wstając z fotela, z łóżka albo z niskiego krzesła — bez pochylania się do przodu i bez cudzej pomocy.<br><br>Cztery gumowe stopki trzymają laskę pionowo, gdy ją puścisz. Nie upada na podłogę, więc nie musisz się po nią schylać. Podstawa jest antypoślizgowa i pozostaje stabilna na płytkach, parkiecie i na nierównym terenie.<br><br>W uchwyt wbudowana jest latarka, która oświetla drogę przed Tobą — na nocne wyjście do łazienki albo spacer o zmierzchu. Obok niej jest alarm dźwiękowy, który ostrzega domowników, jeśli upadniesz albo będziesz potrzebować pomocy.<br><br>Laska jest składana i mieści się w torbie albo w schowku w aucie, a wysokość ustawia się w kilka sekund, bez narzędzi, dla każdego wzrostu.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('red', $current_product_id) ): ?>
+
+                <strong>NORIKS RedRelief</strong> to opaska na nadgarstek, która łączy dwie najlepiej przebadane długości fal w terapii czerwonym światłem: czerwone światło 660 nm wycisza stan zapalny przy powierzchni, a podczerwień 850 nm sięga głębiej, do tkanki wokół nerwu pośrodkowego.<br><br>Światło zamienia się w tkance w energię komórkową (ATP) i pobudza miejscowy przepływ krwi — dwa procesy będące częścią naturalnej regeneracji organizmu. Dlatego stosuje się je przy zespole cieśni nadgarstka, zapaleniu ścięgien, artretyzmie oraz bólach dłoni i nadgarstka.<br><br>W opaskę wbudowano 48 podwójnych diod LED rozłożonych po całej wewnętrznej stronie, więc światło obejmuje cały nadgarstek, a nie tylko jeden punkt. Dostępne są 4 tryby pracy i 3 poziomy mocy.<br><br>Urządzenie jest bezprzewodowe i ładuje się przez kabel USB-C — jedno ładowanie wystarcza na do 4 zabiegów. Waży zaledwie 126 g, ma otwór na kciuk i regulowany pasek, więc pasuje i na lewą, i na prawą rękę. Zalecana jest jedna 15-minutowa sesja dziennie; urządzenie samo wyłącza się na koniec sesji.
+
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'kidsnest', $current_product_id ) ): ?>
 
                 Poduszka NORIKS KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA — z przewiewną, nadającą się do prania poszewką, którą łatwo zdjąć.<br><br>Jej 3-strefowa ergonomiczna struktura delikatnie przyjmuje głowę, podpiera szyję i pomaga utrzymać kręgosłup w naturalnym ułożeniu — nawet gdy dziecko dużo obraca się w nocy. W ten sposób wspiera oddychanie przez nos oraz spokojniejszy, głębszy sen.<br><br>Dostępna w trzech rozmiarach (1–3, 3–9 i 9–14 lat), rośnie razem z dzieckiem i zapewnia właściwą wysokość podparcia na każdym etapie rozwoju.
 
@@ -576,7 +592,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
      <!-- 2 - slika tablica velicina -->
-     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) )) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers + ortopedski jastuk ?>
+     <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) ) && ! ( function_exists('noriks_is_type') && noriks_is_type('snug', $current_product_id) ) && ! ( function_exists('noriks_is_type') && noriks_is_type('pal', $current_product_id) ) && ! ( function_exists('noriks_is_type') && noriks_is_type('red', $current_product_id) )) : // brak tabeli rozmiarów dla bunion + fisiorest + norikshers + ortopedski jastuk ?>
      <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3>Tabela rozmiarów</h3>
@@ -689,7 +705,55 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         
                   <img class="js-open-size-chart" style="cursor:pointer;" src="/hr/wp-content/uploads/2025/11/Nogavice_tabela_velikosti.jpg">
                   
-    <?php elseif(  $is_mixed_bundle ): ?>
+    <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kompwom', $current_product_id) ): ?>
+
+          <div class="kwm-size">
+            <p style="margin:0 0 14px;line-height:1.6;">Rozmiar dobierz według <strong>obwodu biustu</strong> — to on decyduje, jak koszulka układa się na piersiach i barkach. Jeśli jesteś między dwoma rozmiarami, weź <strong>większy</strong>.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead>
+                <tr style="background:#a8536b;color:#fff;">
+                  <th style="padding:9px 10px;text-align:left;">Rozmiar</th>
+                  <th style="padding:9px 10px;text-align:left;">Obwód biustu</th>
+                  <th style="padding:9px 10px;text-align:left;">Obwód talii</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr style="background:#fff;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">S<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 0–4</span></td>
+                    <td style="padding:9px 10px;">78 – 83 cm</td>
+                    <td style="padding:9px 10px;">65 – 71 cm</td>
+                  </tr>
+                  <tr style="background:#fbf7f8;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">M<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 6–8</span></td>
+                    <td style="padding:9px 10px;">83 – 89 cm</td>
+                    <td style="padding:9px 10px;">71 – 77 cm</td>
+                  </tr>
+                  <tr style="background:#fff;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">L<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 10–12</span></td>
+                    <td style="padding:9px 10px;">89 – 95 cm</td>
+                    <td style="padding:9px 10px;">77 – 83 cm</td>
+                  </tr>
+                  <tr style="background:#fbf7f8;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">XL<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 14</span></td>
+                    <td style="padding:9px 10px;">95 – 102 cm</td>
+                    <td style="padding:9px 10px;">83 – 88 cm</td>
+                  </tr>
+                  <tr style="background:#fff;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">2XL<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 16–18</span></td>
+                    <td style="padding:9px 10px;">102 – 108 cm</td>
+                    <td style="padding:9px 10px;">88 – 94 cm</td>
+                  </tr>
+                  <tr style="background:#fbf7f8;border-bottom:1px solid #f0e6ea;">
+                    <td style="padding:9px 10px;font-weight:700;">3XL<span style="display:block;font-size:11.5px;font-weight:600;color:#a08d95;">US 20</span></td>
+                    <td style="padding:9px 10px;">108 – 115 cm</td>
+                    <td style="padding:9px 10px;">94 – 100 cm</td>
+                  </tr>
+              </tbody>
+            </table>
+            <p style="margin:14px 0 0;line-height:1.6;"><strong>Jak mierzyć:</strong> biust w najszerszym miejscu, talię w najwęższym. Mierz na bieliźnie, taśma przylegająca, ale nie ściśnięta.</p>
+          </div>
+
+        <?php elseif(  $is_mixed_bundle ): ?>
     
      <img class="js-open-size-chart" style="cursor:pointer;" src="<?php echo get_template_directory_uri(); ?>/img/tabela-velikosti-majice.jpg">
      
