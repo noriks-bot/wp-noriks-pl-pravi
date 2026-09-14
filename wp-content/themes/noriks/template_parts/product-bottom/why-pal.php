@@ -1,0 +1,230 @@
+<?php
+/**
+ * product-bottom: NORIKS Pal — stap s dvije rucke, svjetiljkom i alarmom (orto-pal).
+ * Pravilo: svaka sekcija ima TOCNO JEDNU sliku, naizmjenicno lijevo/desno,
+ * pozadine se izmjenjuju (prva tonirana). Iznimka je galerija kupaca (12).
+ */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+$pl      = get_template_directory_uri() . '/img/pal/';
+$pl_path = get_template_directory() . '/img/pal/';
+$pl_vid  = function( $file, $poster, $alt ) use ( $pl, $pl_path ) {
+  if ( ! file_exists( $pl_path . $file ) ) { return ''; }
+  return '<video class="npl-video" autoplay muted loop playsinline preload="metadata" poster="'
+       . esc_url( $pl . $poster ) . '" aria-label="' . esc_attr( $alt ) . '">'
+       . '<source src="' . esc_url( $pl . $file ) . '" type="video/mp4"></video>';
+};
+$pl_img  = function( $file, $alt, $cls = '' ) use ( $pl, $pl_path ) {
+  if ( ! file_exists( $pl_path . $file ) ) { return ''; }
+  return '<img class="' . esc_attr( $cls ) . '" src="' . esc_url( $pl . $file ) . '" alt="' . esc_attr( $alt ) . '" loading="lazy">';
+};
+?>
+
+<!-- 1) USTAJANJE -->
+<!-- 1) PROBLEM — slika lijevo -->
+<section class="npl-sec npl-tint">
+  <div class="npl-wrap npl-row2">
+    <div class="npl-media"><?php echo $pl_img( 'pal-rucke.jpg', 'Ortopedyczne uchwyty do podparcia' ); ?></div>
+    <div class="npl-copy">
+      <p class="npl-kicker">Drugi uchwyt</p>
+      <h2 class="npl-h2">Podparcie dokładnie tam, gdzie go potrzebujesz</h2>
+      <p>Oprócz górnego uchwytu laska ma też <strong>drugi uchwyt niżej</strong>. Chwytasz go, gdy wstajesz z fotela, z łóżka albo z niskiego krzesła.</p>
+      <p>Nacisk idzie pionowo w dół, w stabilną podstawę — nie do przodu, gdzie wyciągnąłby cię z równowagi. Dlatego wstajesz jednym ruchem, bez pochylania się i bez cudzej pomocy.</p>
+      <ul class="npl-check">
+        <li>Wstawanie z fotela, łóżka albo z ławki</li>
+        <li>Uchwyty nie obcierają dłoni nawet po dłuższym spacerze</li>
+        <li>Bez czekania, aż ktoś ci pomoże</li>
+      </ul>
+      <a class="npl-cta" href="#bundle-selector">Zobacz ofertę</a>
+    </div>
+  </div>
+</section>
+
+<!-- 3) PREGLED ŠTAPA — slika lijevo -->
+<section class="npl-sec">
+  <div class="npl-wrap npl-row2 npl-row2--rev">
+    <div class="npl-copy">
+      <p class="npl-kicker">Stabilność</p>
+      <h2 class="npl-h2">Stoi sama — nie musisz się schylać po laskę</h2>
+      <p>Cztery gumowe stopki trzymają laskę pionowo, gdy ją puścisz. Nie upada na podłogę przy kanapie, przy stole ani w poczekalni, więc nie musisz się po nią schylać.</p>
+      <p>To drobiazg, który zauważysz już pierwszego dnia: laska czeka tam, gdzie ją zostawiłeś.</p>
+    </div>
+    <div class="npl-media"><?php echo $pl_vid( 'pal-video.mp4', 'pal-video.jpg', 'Laska stoi sama na czterech stopkach' ); ?></div>
+  </div>
+</section>
+
+<!-- 5) PROTUKLIZNA BAZA — slika lijevo -->
+<section class="npl-sec npl-tint">
+  <div class="npl-wrap npl-row2">
+    <div class="npl-media"><?php echo $pl_img( 'pal-pregled.jpg', 'Przegląd laski: dwa uchwyty, latarka, alarm, cztery stopki' ); ?></div>
+    <div class="npl-copy">
+      <p class="npl-kicker">Co dostajesz</p>
+      <h2 class="npl-h2">Pięć rzeczy w jednej lasce</h2>
+      <div class="npl-points">
+        <div class="npl-point"><h3>Dwa uchwyty</h3><p>Górny do chodzenia, dolny do wstawania.</p></div>
+        <div class="npl-point"><h3>Cztery stopki</h3><p>Laska stoi sama i nie upada na podłogę.</p></div>
+        <div class="npl-point"><h3>Latarka</h3><p>Oświetla drogę przed tobą w ciemności.</p></div>
+        <div class="npl-point"><h3>Alarm</h3><p>Głośny sygnał, który usłyszą domownicy.</p></div>
+        <div class="npl-point"><h3>Wersja składana</h3><p>Mieści się w torbie i w schowku w aucie.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4) STOJI SAM (video) — video desno -->
+<section class="npl-sec">
+  <div class="npl-wrap npl-row2 npl-row2--rev">
+    <div class="npl-copy">
+      <p class="npl-kicker">Podstawa</p>
+      <h2 class="npl-h2">Trzyma na płytkach, parkiecie i na zewnątrz</h2>
+      <p>Gumowe stopki są <strong>antypoślizgowe</strong> i nie ślizgają się na gładkich podłogach. Na zewnątrz podstawa dopasowuje się do nierównego terenu i pozostaje stabilna.</p>
+      <ul class="npl-check">
+        <li>Nie ślizga się na płytkach, parkiecie i panelach</li>
+        <li>Dopasowuje się do nierównego terenu</li>
+        <li>Stopki można wymienić, gdy się zużyją</li>
+      </ul>
+    </div>
+    <div class="npl-media"><?php echo $pl_img( 'pal-nozice.jpg', 'Cztery antypoślizgowe gumowe stopki' ); ?></div>
+  </div>
+</section>
+
+<!-- 6) SVJETILJKA — slika desno -->
+<section class="npl-sec npl-tint">
+  <div class="npl-wrap npl-row2">
+    <div class="npl-media"><?php echo $pl_img( 'pal-sklopivo.jpg', 'Składana i regulowana laska' ); ?></div>
+    <div class="npl-copy">
+      <p class="npl-kicker">Przenośność</p>
+      <h2 class="npl-h2">Składa się w sekundę i mieści w torbie</h2>
+      <p>Części są połączone wewnętrzną gumą, więc laskę rozkładasz i składasz <strong>jednym ruchem</strong>, bez narzędzi i bez cudzej pomocy. Złożona mieści się w torbie albo w schowku w aucie.</p>
+      <p>Wysokość ustawiasz w kilka sekund, więc ta sama laska pasuje osobie o wzroście 155 cm i 190 cm.</p>
+      <ul class="npl-check">
+        <li>Rozkładanie i składanie bez narzędzi</li>
+        <li>Regulowana długość do każdego wzrostu</li>
+        <li>Części pozostają połączone — nic się nie gubi</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="npl-sec npl-rev">
+  <div class="npl-wrap">
+    <p class="npl-kicker npl-center">U naszych klientów</p>
+    <h2 class="npl-h2 npl-center">Laska w prawdziwych domach</h2>
+    <p class="npl-sub">Zdjęcia i komentarze klientów — przy fotelu, w przedpokoju, w ciemności i złożona na wyjazd.</p>
+    <div class="npl-rev__grid">
+      <?php
+      $pl_reviews = array(
+        array( 'img' => 'pal-ugc-1.jpg',    'name' => 'Maria K.',  'meta' => 'Warszawa · kupiła 2 miesiące temu',
+               'text' => '„Trzymam ją przy fotelu. Kiedyś wstawałam za trzecim razem, teraz chwytam dolny uchwyt i wstaję za pierwszym.”' ),
+        array( 'img' => 'pal-ugc-3.jpg',    'name' => 'Zdzisław P.', 'meta' => 'Kraków · kupił 3 miesiące temu',
+               'text' => '„Stoi sama przy stole i nie przewraca się. Dla mnie to największa rzecz — nie schylam się po laskę co pięć minut.”' ),
+        array( 'img' => 'pal-noc.jpg',      'name' => 'Anna M.',  'meta' => 'Gdańsk · kupiła miesiąc temu',
+               'text' => '„Latarkę włączam, gdy idę w nocy do łazienki. Nie budzę męża dużym światłem, a widzę podłogę przed sobą.”' ),
+        array( 'img' => 'pal-ugc-baza.jpg', 'name' => 'Jan Ś.',    'meta' => 'Wrocław · kupił 6 tygodni temu',
+               'text' => '„Podstawa jest szeroka i nie ślizga się. Sprawdziłem na płytkach w łazience i na mokrym tarasie — trzyma.”' ),
+        array( 'img' => 'pal-ugc-6.jpg',    'name' => 'Nadia B.',    'meta' => 'Poznań · kupiła 2 miesiące temu',
+               'text' => '„Kupiłam ją mamie na 78. urodziny. Sama ustawia wysokość i sama ją składa, bez niczyjej pomocy.”' ),
+        array( 'img' => 'pal-ugc-5.jpg',    'name' => 'Stefan L.', 'meta' => 'Katowice · kupił 4 miesiące temu',
+               'text' => '„Wożę ją w aucie, gdy jadę do lekarza. Składa się w sekundę i mieści w torbie, w poczekalni nie przeszkadza.”' ),
+      );
+      foreach ( $pl_reviews as $r ) : ?>
+      <article class="npl-rev__card">
+        <div class="npl-rev__img"><?php echo $pl_img( $r['img'], 'Fotografija kupca — NORIKS Pal' ); ?></div>
+        <div class="npl-rev__body">
+          <div class="npl-rev__stars" aria-label="Ocjena 5 od 5">★★★★★</div>
+          <p class="npl-rev__text"><?php echo esc_html( $r['text'] ); ?></p>
+          <p class="npl-rev__name"><?php echo esc_html( $r['name'] ); ?>
+            <svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="8" fill="#2f9e5f"/><path d="M5 8l2 2 4-4" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+          <p class="npl-rev__meta"><?php echo esc_html( $r['meta'] ); ?></p>
+        </div>
+      </article>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<section class="npl-sec npl-tint">
+  <div class="npl-wrap npl-row2 npl-row2--rev">
+    <div class="npl-copy">
+      <p class="npl-kicker">Różnica</p>
+      <h2 class="npl-h2">Od „potrzebuję pomocy” do „idę sam”</h2>
+      <p>Różnica nie leży w sile nóg, tylko w tym, że masz się czego chwycić. Drugi uchwyt niesie ciężar zamiast twoich barków i nadgarstków.</p>
+      <p class="npl-strong">Samodzielne wstawanie, a nawet spacer po parku.</p>
+      <a class="npl-cta" href="#bundle-selector">Zamów bez ryzyka — 30 dni</a>
+    </div>
+    <div class="npl-media"><?php echo $pl_img( 'pal-prije-poslije.jpg', 'Przed i po — samodzielne poruszanie się' ); ?></div>
+  </div>
+</section>
+
+<!-- 14) ŠEST RAZLOGA — slika desno -->
+<style>
+.npl-sec { padding: 62px 0; background: #fff; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: #12212b; }
+.npl-sec * { box-sizing: border-box; }
+.npl-tint { background: #eef6f8; }
+.npl-wrap { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.npl-kicker { font-size: 12.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #2b8fa6; margin: 0 0 10px; }
+.npl-h2 { font-size: clamp(25px, 3.2vw, 36px); font-weight: 800; line-height: 1.18; letter-spacing: -.01em; margin: 0 0 16px; }
+.npl-center { text-align: center; }
+.npl-copy p { font-size: 16px; line-height: 1.7; color: #465863; margin: 0 0 14px; }
+.npl-strong { font-weight: 800; color: #12212b !important; font-size: 17px !important; }
+.npl-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+.npl-media img { width: 100%; display: block; border-radius: 14px; box-shadow: 0 2px 4px rgba(18,33,43,.05), 0 14px 40px rgba(18,33,43,.10); }
+.npl-check { list-style: none; padding: 0; margin: 4px 0 0; display: flex; flex-direction: column; gap: 11px; }
+.npl-check li { position: relative; padding-left: 28px; font-size: 15.5px; line-height: 1.5; }
+.npl-check li::before { content: "✓"; position: absolute; left: 0; top: -1px; width: 20px; height: 20px; border-radius: 50%; background: #2f9e5f; color: #fff; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.npl-points { display: flex; flex-direction: column; gap: 16px; margin-top: 4px; }
+.npl-point h3 { font-size: 16.5px; font-weight: 800; margin: 0 0 4px; color: #2b8fa6; }
+.npl-point p { font-size: 15px; color: #465863; line-height: 1.6; margin: 0; }
+.npl-six { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
+.npl-reason { background: #fff; border: 1px solid #d9e8ec; border-radius: 12px; padding: 18px 16px; }
+.npl-reason span { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #2b8fa6; color: #fff; font-weight: 800; font-size: 13px; margin-bottom: 9px; }
+.npl-reason h3 { font-size: 15.5px; font-weight: 800; margin: 0 0 5px; line-height: 1.3; }
+.npl-reason p { font-size: 14px; color: #465863; line-height: 1.55; margin: 0; }
+.npl-cta { display: inline-block; background: #12212b; color: #fff !important; font-size: 15px; font-weight: 700; padding: 15px 30px; border-radius: 8px; text-decoration: none; }
+.npl-cta:hover { background: #2b8fa6; color: #fff !important; }
+.npl-rev__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.npl-rev__card { background: #fff; border: 1px solid #d9e8ec; border-radius: 14px; overflow: hidden;
+  display: flex; flex-direction: column; box-shadow: 0 1px 2px rgba(18,33,43,.04), 0 8px 24px rgba(18,33,43,.06); }
+.npl-rev__img img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; border-radius: 0; box-shadow: none; }
+.npl-rev__body { padding: 16px 18px 18px; }
+.npl-rev__stars { color: #f0a020; font-size: 14px; letter-spacing: 1px; margin: 0 0 8px; }
+.npl-rev__text { font-size: 14.5px; line-height: 1.6; color: #46545e; margin: 0 0 12px; }
+.npl-rev__name { display: flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 800; color: #12212b; margin: 0; }
+.npl-rev__name svg { flex: 0 0 15px; }
+.npl-rev__meta { font-size: 12.5px; color: #7b8b94; margin: 3px 0 0; }
+.npl-sub { text-align: center; font-size: 16px; color: #5b6d78; max-width: 60ch; margin: 0 auto 34px; line-height: 1.6; }
+.npl-video { width: 100%; display: block; border-radius: 14px; }
+@media (max-width: 980px) {
+  .npl-rev__grid { grid-template-columns: 1fr 1fr; }
+    .npl-row2 { grid-template-columns: 1fr; gap: 30px; }
+  .npl-row2--rev .npl-media { order: -1; }
+  .npl-six { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .npl-rev__grid { grid-template-columns: 1fr; gap: 16px; }
+  .npl-sec { padding: 44px 0; }
+  .npl-wrap { padding: 0 16px; }
+  .npl-six { grid-template-columns: 1fr; gap: 14px; }
+  .npl-cta { width: 100%; text-align: center; }
+}
+
+/* ── kratek opis izdelka: kljukice namesto pik ─────────────────────── */
+.woocommerce div.product .woocommerce-product-details__short-description ul,
+.woocommerce-product-details__short-description ul {
+  list-style: none !important; margin: 10px 0 14px !important; padding-left: 0 !important; }
+.woocommerce div.product .woocommerce-product-details__short-description ul li,
+.woocommerce-product-details__short-description ul li {
+  list-style: none !important; text-indent: 0 !important; margin: 0 0 7px !important;
+  line-height: 1.45 !important; font-size: 15.5px !important;
+  display: block !important; position: relative !important; padding-left: 31px !important; }
+.woocommerce-product-details__short-description ul li::marker { content: "" !important; }
+.woocommerce-product-details__short-description ul li::before { content: none !important; }
+.woocommerce-product-details__short-description .nsg-tick {
+  position: absolute !important; left: 0 !important; top: 1px !important;
+  width: 21px; height: 21px; border-radius: 50%;
+  background: #2f9e5f !important; color: #fff !important;
+  font-size: 12px !important; font-weight: 800 !important; line-height: 21px !important;
+  text-align: center !important; display: inline-block !important; }
+.woocommerce-product-details__short-description p:first-of-type { font-size: 16px; line-height: 1.55; }
+</style>
