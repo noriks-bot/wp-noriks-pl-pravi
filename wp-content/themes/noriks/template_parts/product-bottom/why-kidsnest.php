@@ -15,7 +15,7 @@ $kn = get_template_directory_uri() . '/img/kidsnest/';
 <!-- ============ 1) Trust marquee (plava traka, vrti se) ============ -->
 <div class="kn-marquee" aria-hidden="true">
   <div class="kn-marquee-track">
-    <?php $kn_ticker = array('POLECANA PRZEZ PEDIATRÓW','PIANKA MEMORY OEKO-TEX®','STRUKTURA 3-STREFOWA','90 NOCY NA WYPRÓBOWANIE','HIPOALERGICZNA','POSZEWKA DO PRANIA');
+    <?php $kn_ticker = array('POLECANA PRZEZ PEDIATRÓW','PIANKA MEMORY OEKO-TEX®','STRUKTURA 3-STREFOWA','90 NOCY NA WYPRÓBOWANIE','HIPOALERGICZNA','PRZEWIEWNA DZIANINA');
     for ( $r = 0; $r < 2; $r++ ) { foreach ( $kn_ticker as $t ) { echo '<span class="kn-tick">'.esc_html($t).'</span><span class="kn-dot">•</span>'; } } ?>
   </div>
 </div>
@@ -96,7 +96,7 @@ $kn = get_template_directory_uri() . '/img/kidsnest/';
     <div class="kn-copy">
       <h2 class="kn-h2 kn-h2-blue">Jakość, którą czuć — noc po nocy.</h2>
       <p>Gęsta, przewiewna dzianina i starannie wyprofilowana powierzchnia nie są tu dla wyglądu — <strong>każda strefa ma swoją rolę</strong>. Środek delikatnie przyjmuje głowę, brzegi podpierają szyję, a struktura zachowuje kształt nawet po miesiącach codziennego używania.</p>
-      <p>Poszewkę można zdjąć i wyprać w pralce, a pianka jest <strong>hipoalergiczna i odporna na roztocza</strong> — dzięki czemu poduszka pozostaje świeża, czysta i gotowa na każdą noc. Bez wgnieceń, bez odkształceń, bez kompromisów.</p>
+      <p>Dzianina jest przewiewna, a pianka <strong>hipoalergiczna i odporna na roztocza</strong> — dzięki czemu poduszka pozostaje świeża, czysta i gotowa na każdą noc. Bez wgnieceń, bez odkształceń, bez kompromisów.</p>
       <p><strong>Poduszka, która po roku wygląda — i podpiera — jak pierwszego dnia.</strong></p>
     </div>
   </div>
