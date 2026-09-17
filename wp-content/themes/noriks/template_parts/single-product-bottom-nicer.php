@@ -39,6 +39,8 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-pal' );
     } elseif ( noriks_is_type( 'red' ) ) {
         get_template_part( 'template_parts/product-bottom/why-red' );
+    } elseif ( noriks_is_type( 'kneeheat' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-kneeheat' );
     }
 }
 ?>
@@ -764,6 +766,7 @@ endif;
   if ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) { $rv_fallback_title = 'NORIKS FIT Woman koszulka modelująca'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('pal') ) { $rv_fallback_title = 'NORIKS Pal laska do chodzenia'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('red') ) { $rv_fallback_title = 'NORIKS RedRelief terapia czerwonym światłem'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') ) { $rv_fallback_title = 'NORIKS KneeHeat ogrzewacz i masażer kolana'; }
 
   // Include review pools
   if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) {
@@ -774,6 +777,8 @@ endif;
     include get_stylesheet_directory() . '/auto_reviews/PL_pal.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('red') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_red.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_kneeheat.php';
   } else
   if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_cloath.php';
@@ -1200,7 +1205,8 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
         noriks_is_type('snug') ||
         noriks_is_type('kompwom') ||
         noriks_is_type('pal') ||
-        noriks_is_type('red')
+        noriks_is_type('red') ||
+        noriks_is_type('kneeheat')
   );
   // fotografije osoba: samo na odjeci (majice, bokserice, kompleti), ne na ortopedskim pomagalima
   $avatar_pool = $noriks_no_photos ? array() : get_review_avatar_pool($avatar_type);
@@ -2068,12 +2074,49 @@ $red_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$is_kneeheat = ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') );
+$kneeheat_faq = array(
+  array(
+    'questioon' => 'Jak właściwie działa urządzenie?',
+    'answer'    => 'Ciepło do <strong>42 °C</strong> rozszerza naczynia krwionośne i ułatwia dopływ krwi do głębszych tkanek. Rytmiczna kompresja powietrzna wypycha nagromadzony płyn i przywraca świeżą krew, a wibracje <strong>60 Hz</strong> rozluźniają sztywność wokół stawu. Wszystkie trzy terapie działają jednocześnie.',
+  ),
+  array(
+    'questioon' => 'Na jakie dolegliwości jest przeznaczony?',
+    'answer'    => 'Na przewlekłe, stopniowo narastające dolegliwości — sztywne, bolące lub obrzęknięte kolano, które pojawia się z wiekiem i obciążeniem. Przy świeżym urazie, niedawnej operacji lub zaburzeniach krążenia najpierw skonsultuj się z lekarzem.',
+  ),
+  array(
+    'questioon' => 'Ile trwa jedna sesja?',
+    'answer'    => '<strong>12 minut.</strong> Urządzenie uruchamia się jednym przyciskiem i samo wyłącza się na koniec sesji.',
+  ),
+  array(
+    'questioon' => 'Kiedy poczuję różnicę?',
+    'answer'    => 'Wiele osób czuje, że kolano jest luźniejsze już po pierwszej sesji. Wyraźniejsza zmiana przychodzi zwykle po <strong>7–14 dniach</strong> codziennego stosowania.',
+  ),
+  array(
+    'questioon' => 'Czy mogę go używać na oba kolana?',
+    'answer'    => 'Tak. Opaska pasuje na lewą i prawą nogę — jeśli dokuczają obie, uruchom sesję na każdej.',
+  ),
+  array(
+    'questioon' => 'Czym różni się od urządzenia TENS lub termoforu?',
+    'answer'    => 'TENS maskuje sygnał bólu, a termofor ogrzewa tylko powierzchnię i stygnie po kilku minutach. KneeHeat łączy długotrwałe ciepło, kompresję i wibracje, aby działać na głębsze tkanki.',
+  ),
+  array(
+    'questioon' => 'Czy trzeba go ładować?',
+    'answer'    => 'Tak, urządzenie jest bezprzewodowe i ładuje się dołączonym kablem USB-C. Jedno ładowanie wystarcza na kilka sesji.',
+  ),
+  array(
+    'questioon' => 'Czy pasuje na każdy rozmiar nogi?',
+    'answer'    => 'Paski są regulowane, a w zestawie jest też pasek przedłużający dla większych obwodów nogi.',
+  ),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_snug && $is_info ) { return $snug_faq; }
   if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
   if ( $is_pal && $is_info ) { return $pal_faq; }
   if ( $is_red && $is_info ) { return $red_faq; }
+  if ( $is_kneeheat && $is_info ) { return $kneeheat_faq; }
   if ( $is_hyd_faq && $is_info ) { return $hyd_faq; }
   if ( $is_cloud_faq && $is_info ) { return $cloud_faq; }
   if ( $is_cloath_faq && $is_info ) { return $cloath_faq; }
