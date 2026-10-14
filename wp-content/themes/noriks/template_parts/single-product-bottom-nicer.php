@@ -757,7 +757,7 @@ endif;
                      : ( $is_jastuk_page ? 'Poduszka ortopedyczna NORIKS ErgoSit'
                      : ( $is_leakboxers_page ? 'Bokserki chłonne NORIKS'
                      : ( $is_kompmajice_page ? 'Koszulka kompresyjna NORIKS FIT'
-                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna Siva Majica' ) ) ) ) ) ) ) ) );
+                     : ( $is_norikshers_review_page ? 'NORIKS HERS' : 'Jedna szara koszulka' ) ) ) ) ) ) ) ) );
   if ( function_exists('noriks_is_type') && noriks_is_type('controlpro') ) { $rv_fallback_title = 'NORIKS ControlPro trenażer dna miednicy'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('hyd') ) { $rv_fallback_title = 'NORIKS HYD'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) { $rv_fallback_title = 'NORIKS Cloud'; }
