@@ -10,6 +10,7 @@ include(get_template_directory() . '/functions/pack-switcher.php'); // wybor roz
 include(get_template_directory() . '/functions/flash-deals-banner.php'); // traka sezonske rasprodaje
 include(get_template_directory() . '/functions/size-chart-once.php'); // tabela velikosti samo enkrat
 include(get_template_directory() . '/functions/checkout_mods.php');
+include(get_template_directory() . '/functions/klaviyo-email-links.php'); // Klaviyo maili: obnova kosarice + samodejni kupon
 include(get_template_directory() . '/functions/out-of-stock-notice.php'); // obvestilo ni na zalogi
 include(get_template_directory() . '/functions/phone-validate.php');
 include(get_template_directory() . '/functions/shop-filter-links.php'); // filtri kategorij brez YITH vticnika // nezno preverjanje telefonske stevilke
