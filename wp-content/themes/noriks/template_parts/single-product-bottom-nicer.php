@@ -35,6 +35,8 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-snug' );
     } elseif ( noriks_is_type( 'kompwom' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kompwom' );
+    } elseif ( noriks_is_type( 'bowl' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-bowl' );
     } elseif ( noriks_is_type( 'pal' ) ) {
         get_template_part( 'template_parts/product-bottom/why-pal' );
     } elseif ( noriks_is_type( 'red' ) ) {
@@ -765,6 +767,7 @@ endif;
   if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) { $rv_fallback_title = 'NORIKS Snug poduszka na całe ciało'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) { $rv_fallback_title = 'NORIKS FIT Woman koszulka modelująca'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('pal') ) { $rv_fallback_title = 'NORIKS Pal laska do chodzenia'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('bowl') ) { $rv_fallback_title = 'NORIKS Bowl ortopedyczna miska dla psa'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('red') ) { $rv_fallback_title = 'NORIKS RedRelief terapia czerwonym światłem'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') ) { $rv_fallback_title = 'NORIKS KneeHeat ogrzewacz i masażer kolana'; }
 
@@ -773,6 +776,8 @@ endif;
     include get_stylesheet_directory() . '/auto_reviews/PL_snug.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_kompwom.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('bowl') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_bowl.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('pal') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_pal.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('red') ) {
@@ -1204,6 +1209,7 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
         noriks_is_type('cloud') ||
         noriks_is_type('snug') ||
         noriks_is_type('kompwom') ||
+        noriks_is_type('bowl') ||
         noriks_is_type('pal') ||
         noriks_is_type('red') ||
         noriks_is_type('kneeheat')
@@ -1216,7 +1222,7 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
     // Izdelki z lastnim imenom v karticah mnenj ne smejo dobiti nakljucnega izdelka iz kataloga.
   $rv_own_name = ( function_exists('noriks_is_type') && (
       noriks_is_type('cloud') || noriks_is_type('cloath') || noriks_is_type('hyd') || noriks_is_type('snug')
-   || noriks_is_type('kompwom') || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat')
+   || noriks_is_type('kompwom') || noriks_is_type('bowl') || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat')
    || noriks_is_type('controlpro') || noriks_is_type('kidsnest') || noriks_is_type('ortopedski-jastuk')
    || noriks_is_type('bunion') || noriks_is_type('fisiorest') || noriks_is_type('ortopas')
    || noriks_is_type('norikshers') || noriks_is_type('kompresijske-nogavice') ) );
@@ -2005,6 +2011,24 @@ $kompwom_faq = array(
   ),
 );
 
+$is_bowl = ( function_exists('noriks_is_type') && noriks_is_type('bowl') );
+$bowl_faq = array(
+  array('questioon' => 'Dla jakich psów jest ta miska?',
+    'answer'    => 'Dla <strong>małych ras</strong> — jamnik, buldog francuski, sznaucer, mops, maltańczyk i podobne. Miska ma średnicę 15 cm i pojemność około 430 ml.'),
+  array('questioon' => 'Do czego służy nachylenie 15°?',
+    'answer'    => 'Miska jest pochylona w stronę psa, więc karma zsuwa się do niego, a głowa i szyja są w naturalniejszej pozycji. Pies nie musi wpychać nosa w róg miski ani zginać szyi do podłogi.'),
+  array('questioon' => 'Dlaczego jest podniesiona?',
+    'answer'    => 'Stojak o wysokości 11 cm podnosi miskę bliżej wzrostu psa, więc je on na stojąco, mniej zginając szyję i grzbiet. Jest to szczególnie wygodne dla starszych psów.'),
+  array('questioon' => 'Czy mogę używać jej na wodę?',
+    'answer'    => 'Tak. Miska jest ze stali nierdzewnej i nadaje się zarówno na karmę, jak i na wodę. Wielu właścicieli bierze dwie — jedną na karmę, drugą na wodę.'),
+  array('questioon' => 'Jak się ją czyści?',
+    'answer'    => 'Opłucz miskę ciepłą wodą z płynem do naczyń. Gładka stal nie wchłania zapachów i nie zatrzymuje resztek karmy jak plastik.'),
+  array('questioon' => 'Czy ślizga się po podłodze?',
+    'answer'    => 'Stojak jest stabilny i nie przewraca się, gdy pies je. Na bardzo gładkich podłogach polecamy podkładkę pod stojak.'),
+  array('questioon' => 'Czy mogę ją zwrócić?',
+    'answer'    => 'Tak, masz <strong>30 dni</strong> na zwrot pieniędzy. Wystarczy e-mail, bez formularzy.'),
+);
+
 $is_pal = ( function_exists('noriks_is_type') && noriks_is_type('pal') );
 $pal_faq = array(
   array(
@@ -2117,10 +2141,11 @@ $kneeheat_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$faq_pick = function( $title, $list ) use ( $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_snug && $is_info ) { return $snug_faq; }
   if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
+  if ( $is_bowl && $is_info ) { return $bowl_faq; }
   if ( $is_pal && $is_info ) { return $pal_faq; }
   if ( $is_red && $is_info ) { return $red_faq; }
   if ( $is_kneeheat && $is_info ) { return $kneeheat_faq; }
