@@ -14,26 +14,28 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
  *       potrzebne obrazy PL (polskie).
  * ------------------------------------------------------------------ */
 $opz_vid_dir      = get_template_directory_uri() . '/img/ortopas-videos/';
+// Videi se zamenjajo pod istim imenom, zato jim dodamo verzijo - brez tega brskalnik vrti staro datoteko iz predpomnilnika.
+$opz_vid_v        = '?v=20261026';
 $opz_img_collage  = 'https://noriks.com/hr/wp-content/uploads/2026/10/ortopas-hr-9.webp'; // 1) zadowoleni klienci (obraz) — TODO PL image
-$opz_video_relief = $opz_vid_dir . 'relief.mp4';                                          // 2) naturalna ulga (wideo)
-$opz_video_cause  = $opz_vid_dir . 'cause.mp4';                                           // 3) prawdziwa przyczyna (wideo)
+$opz_video_relief = $opz_vid_dir . 'relief.mp4' . $opz_vid_v;                                          // 2) naturalna ulga (wideo)
+$opz_video_cause  = $opz_vid_dir . 'cause.mp4' . $opz_vid_v;                                           // 3) prawdziwa przyczyna (wideo)
 $opz_img_indik    = get_template_directory_uri() . '/img/ortopas/ortopas-indikacije.png'; // lokalizirana grafika indikacij // lokalizirana grafika indikacij // 5) jak działa (obraz) — TODO PL image
-$opz_video_feat   = $opz_vid_dir . 'features.mp4';                                        // 6) innowacyjne cechy (wideo)
+$opz_video_feat   = $opz_vid_dir . 'features.mp4' . $opz_vid_v;                                        // 6) innowacyjne cechy (wideo)
 
 /* Karty (okrągłe wideo) — 4) sekcja z 3 kartami */
 $opz_cards = array(
     array(
-        'video' => $opz_vid_dir . 'card-1.mp4',
+        'video' => $opz_vid_dir . 'card-1.mp4' . $opz_vid_v,
         'title' => 'Łagodzi dolegliwości',
         'text'  => 'Może zapewnić szybką ulgę przy rwie kulszowej i bólu pleców',
     ),
     array(
-        'video' => $opz_vid_dir . 'card-2.mp4',
+        'video' => $opz_vid_dir . 'card-2.mp4' . $opz_vid_v,
         'title' => 'Odciążenie odcinka lędźwiowego',
         'text'  => 'Stabilizuje i prostuje dolną część pleców',
     ),
     array(
-        'video' => $opz_vid_dir . 'card-3.mp4',
+        'video' => $opz_vid_dir . 'card-3.mp4' . $opz_vid_v,
         'title' => 'Sprawdzona metoda',
         'text'  => 'Oparta na celowanej technologii kompresyjnej',
     ),
