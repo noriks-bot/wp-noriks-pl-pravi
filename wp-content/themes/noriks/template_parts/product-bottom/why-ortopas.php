@@ -54,19 +54,19 @@ $opz_cmp_rows = array(
 /* Opinie ze zdjęciem — 8) sekcja */
 $opz_reviews = array(
     array(
-        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-1.webp',
+        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-1.webp?v=20261026',
         'title' => 'Duża pomoc przy bólu dolnej części pleców',
         'text'  => 'Pas NORIKS naprawdę bardzo ułatwił mi życie. Działa dokładnie tak, jak obiecuje. Znów mogę się schylać bez bólu.',
         'name'  => 'Elżbieta M.',
     ),
     array(
-        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-2.jpg',
+        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-2.webp?v=20261026',
         'title' => 'Miękki i wygodny',
         'text'  => 'Mój fizjoterapeuta polecił mi pas na ból pleców. Wcześniej wypróbowałem też inne pasy, ale ten jest znacznie wygodniejszy przy siedzeniu i schylaniu się. Mimo to zapewnia doskonałe podparcie!',
         'name'  => 'Julia W.',
     ),
     array(
-        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-3.webp',
+        'img'   => get_template_directory_uri() . '/img/ortopas-reviews/review-3.webp?v=20261026',
         'title' => 'Rewelacja!',
         'text'  => 'Pomaga mi siedzieć prosto i mam wrażenie, że chodzę bardziej wyprostowany. Bóle znacznie się zmniejszyły i wreszcie mogę wstać bez bólu nawet po dłuższym siedzeniu. Noszę pas około 2–3 godzin dziennie – głównie w pracy.',
         'name'  => 'Jan D.',
@@ -187,7 +187,7 @@ $opz_no  = '<svg class="opz-no" viewBox="0 0 24 24" width="20" height="20" aria-
           <tr>
             <th class="opz-th-feat"></th>
             <th class="opz-th-brand">NORIKS</th>
-            <th class="opz-th-alt">Fizjo</th>
+            <th class="opz-th-alt">Fizjoterapia</th>
           </tr>
         </thead>
         <tbody>
