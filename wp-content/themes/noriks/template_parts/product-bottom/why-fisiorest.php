@@ -18,7 +18,8 @@ $fis_science = array(
 );
 $fis_v = get_template_directory_uri() . '/img/fisiorest-videos/';
 $fis_i = get_template_directory_uri() . '/img/fisiorest/';
-$fis_hero_video = $fis_v . 'hero-v2.mp4';
+$fis_ver = '?v=20261027';
+$fis_hero_video = $fis_v . 'hero-v2.mp4' . $fis_ver;
 
 // 3) Polecane przez ekspertów
 $fis_experts = array(
@@ -35,16 +36,16 @@ $fis_ugc = array(
 );
 // 5) ThermoTrac 3-w-1
 $fis_thermo = array(
-    array( 'vid' => $fis_v.'v10.mp4', 'title' => 'Terapia trakcyjna' ),
-    array( 'vid' => $fis_v.'v07.mp4', 'title' => 'Terapia wibracyjna' ),
-    array( 'vid' => $fis_v.'v05.mp4', 'title' => 'Terapia ciepłem' ),
+    array( 'vid' => $fis_v.'v10.mp4' . $fis_ver, 'title' => 'Terapia trakcyjna' ),
+    array( 'vid' => $fis_v.'v07.mp4' . $fis_ver, 'title' => 'Terapia wibracyjna' ),
+    array( 'vid' => $fis_v.'v05.mp4' . $fis_ver, 'title' => 'Terapia ciepłem' ),
 );
 // 6) Cztery ulepszenia
 $fis_upgrades = array(
-    array( 't' => 'Akumulator',                   'd' => 'Zabierz ją wszędzie — bateria 2500 mAh wystarcza nawet na 2 godziny.' , 'ico' => 'battery-v2.png' ),
-    array( 't' => 'Poszewka z jedwabiu morwowego', 'd' => 'Otulona chłodzącym jedwabiem dla miękkiego, luksusowego uczucia.' , 'ico' => 'silk-v2.png' ),
-    array( 't' => 'Wyłączenie po 30 min',         'd' => 'Cztery 30-minutowe sesje na jednym ładowaniu, bez zmartwień.' , 'ico' => 'timer-v2.png' ),
-    array( 't' => 'Regulowane ciepło',           'd' => 'Podgrzewanie do 50 °C z zaawansowaną technologią ThermoTrac.' , 'ico' => 'heat-v2.png' ),
+    array( 't' => 'Akumulator',                   'd' => 'Zabierz ją wszędzie — bateria 2500 mAh wystarcza nawet na 2 godziny.' , 'ico' => 'battery-v2.png?v=20261027' ),
+    array( 't' => 'Poszewka z jedwabiu morwowego', 'd' => 'Otulona chłodzącym jedwabiem dla miękkiego, luksusowego uczucia.' , 'ico' => 'silk-v2.png?v=20261027' ),
+    array( 't' => 'Wyłączenie po 30 min',         'd' => 'Cztery 30-minutowe sesje na jednym ładowaniu, bez zmartwień.' , 'ico' => 'timer-v2.png?v=20261027' ),
+    array( 't' => 'Regulowane ciepło',           'd' => 'Podgrzewanie do 50 °C z zaawansowaną technologią ThermoTrac.' , 'ico' => 'heat-v2.png?v=20261027' ),
 );
 ?>
 
@@ -151,14 +152,14 @@ $fis_upgrades = array(
       <h2 class="fis-h2">Zaprojektowane przez inżynierów. Wykonane według standardów fizjoterapii</h2>
       <p>Zainwestowaliśmy ponad 50 000 € i 2 lata prac rozwojowych, aby NORIKS był czymś więcej niż tylko masażerem karku. To kompleksowe urządzenie do terapii szyi, które naprawdę leczy przyczynę. Każde zamówienie przechodzi dokładną kontrolę jakości, aby dotrzeć w idealnym stanie.</p>
     </div>
-    <div class="fis-row2-media"><video src="<?php echo esc_url( $fis_v.'hero-v2.mp4' ); ?>" muted autoplay loop playsinline preload="metadata"></video></div>
+    <div class="fis-row2-media"><video src="<?php echo esc_url( $fis_v.'hero-v2.mp4' . $fis_ver ); ?>" muted autoplay loop playsinline preload="metadata"></video></div>
   </div>
 </section>
 
 <!-- ============ 8) 14x ceneje ============ -->
 <section class="fis-cheaper">
   <div class="fis-wrap fis-row2">
-    <div class="fis-row2-media"><img src="<?php echo esc_url( $fis_i.'fis-produkt-kvadrat.jpg' ); ?>" alt="NORIKS FisioRest" loading="lazy"></div>
+    <div class="fis-row2-media"><img src="<?php echo esc_url( $fis_i.'fis-produkt-kvadrat.jpg' . $fis_ver ); ?>" alt="NORIKS FisioRest" loading="lazy"></div>
     <div class="fis-row2-copy">
       <p class="fis-eyebrow">BEZPIECZNA I RELAKSUJĄCA TERAPIA</p>
       <h2 class="fis-h2">14× taniej niż cotygodniowe wizyty</h2>
