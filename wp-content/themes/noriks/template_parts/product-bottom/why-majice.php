@@ -105,13 +105,14 @@ $mj_col = get_template_directory_uri() . '/img/majica-barve/';
 <section class="nk-cmp"><div class="fis-wrap"><h2 class="fis-h2 fis-center">NORIKS kontra inne marki</h2><p class="nk-cmp-sub">Nie wszystkie koszulki są takie same. Oto dlaczego nasze się opłacają.</p>
 <div class="nk-cmp-card">
 <div class="nk-cmp-row nk-cmp-head"><div></div><div><div class="nk-cmp-brand">NORIKS</div><div class="nk-cmp-price">36,50–54,50 zł</div><div class="nk-cmp-note">za sztukę, zależnie od pakietu</div></div><div><div class="nk-cmp-brand">Inne marki</div><div class="nk-cmp-price">120–170 zł</div><div class="nk-cmp-note">za sztukę</div></div></div>
-<div class="nk-cmp-row"><div>Krój, który podkreśla klatkę i ramiona</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>Stałe rozmiary od S do 4XL</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>Dłuższy krój, brzuch pozostaje zakryty</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>Miękka, lekka i przewiewna tkanina</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>Zachowuje formę i kolor po praniu</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>Bez drapiącej metki przy karku</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
-<div class="nk-cmp-row"><div>30 dni na darmową wymianę rozmiaru</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Pochlebny krój na klatkę i ramiona</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Spójne rozmiary od S do 3XL</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Dodatkowa długość, aby brzuch pozostał zakryty</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Super miękka tkanina - lekka, oddychająca i niesamowicie wygodna</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Zachowuje kształt, nawet po wielu praniach</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Elegancki, stylowy i ponadczasowy design</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Bez irytujących, swędzących metek na szyi</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
+<div class="nk-cmp-row"><div>Gwarancja idealnego dopasowania</div><div><span class="nk-yes">✓</span></div><div><span class="nk-no">✕</span></div></div>
 </div>
 <p class="nk-cmp-foot">Najniższa cena 36,50 zł za sztukę w pakiecie 3+3 GRATIS.</p>
 </div></section>
