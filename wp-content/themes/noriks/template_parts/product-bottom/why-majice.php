@@ -370,9 +370,9 @@ $mj_col = get_template_directory_uri() . '/img/majica-barve/';
       var ctl = document.createElement('div');
       ctl.className = 'nk-sc';
       ctl.innerHTML =
-        '<button type="button" class="nk-sc-btn" data-dir="-1" aria-label="Prethodno">' + CH + '</button>' +
+        '<button type="button" class="nk-sc-btn" data-dir="-1" aria-label="Poprzedni">' + CH + '</button>' +
         '<div class="nk-sc-bar"><i></i></div>' +
-        '<button type="button" class="nk-sc-btn" data-dir="1" aria-label="Sljedece">' +
+        '<button type="button" class="nk-sc-btn" data-dir="1" aria-label="Następny">' +
           CH.replace('<svg ', '<svg style="transform:rotate(180deg)" ') + '</button>';
       row.parentNode.insertBefore(ctl, row.nextSibling);
 
