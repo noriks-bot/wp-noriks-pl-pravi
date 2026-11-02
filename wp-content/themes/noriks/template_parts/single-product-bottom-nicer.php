@@ -37,6 +37,8 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kompwom' );
     } elseif ( noriks_is_type( 'bowl' ) ) {
         get_template_part( 'template_parts/product-bottom/why-bowl' );
+    } elseif ( noriks_is_type( 'winecooler' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-winecooler' );
     } elseif ( noriks_is_type( 'pal' ) ) {
         get_template_part( 'template_parts/product-bottom/why-pal' );
     } elseif ( noriks_is_type( 'red' ) ) {
@@ -350,6 +352,10 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
 
           Nie jesteś sam w poszukiwaniu siedzenia bez bólu.
 
+          <?php elseif ( function_exists('noriks_is_type') && noriks_is_type('winecooler') ): ?>
+
+          Nie tylko Tobie wino w kieliszku zbyt szybko się ogrzewa.
+
           <?php elseif ( !has_term( array( 'bokserice', 'bokserice-sastavi-paket' ), 'product_cat', get_the_ID() ) ): ?>
 
           <?php echo get_field("singlepp_content_standard_reviews_t2","options"); ?>
@@ -362,7 +368,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
           
           
           </h1>
-    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('slim') ): ?>Tysiące kobiet nosi już NORIKS Slim – bieliznę modelującą, która wygładza sylwetkę i zostaje na miejscu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ): ?>Tysiące fachowców pracuje już w skarpetach NORIKS Tradesman – miękka amortyzacja, wzmocniona pięta i taśma pod łuk stopy.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Tysiące fachowców już pracuje w skarpetach NORIKS SlabProof – strefowa amortyzacja tam, gdzie uderza beton, wzmocniona pięta i palce oraz suche stopy przez całą zmianę.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>Tysiące osób używa już NORIKS FisioRest, aby zmniejszyć ból i napięcie karku – trakcja, wibracje i ciepło w jednym urządzeniu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>Tysiące osób nosi już korektor haluksów NORIKS dla mniejszego bólu i prostszego ustawienia palucha – w domu, przed telewizorem albo podczas snu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>Tysiące osób nosi już pas ortopedyczny NORIKS dla mniejszego bólu i stabilniejszych pleców – w pracy, przy dźwiganiu i podczas długiego siedzenia.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>Tysiące mężczyzn nosi już skarpety uciskowe NORIKS dla lżejszych i mniej zmęczonych nóg – w pracy, w podróży i na treningu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
+    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('slim') ): ?>Tysiące kobiet nosi już NORIKS Slim – bieliznę modelującą, która wygładza sylwetkę i zostaje na miejscu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ): ?>Tysiące fachowców pracuje już w skarpetach NORIKS Tradesman – miękka amortyzacja, wzmocniona pięta i taśma pod łuk stopy.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Tysiące fachowców już pracuje w skarpetach NORIKS SlabProof – strefowa amortyzacja tam, gdzie uderza beton, wzmocniona pięta i palce oraz suche stopy przez całą zmianę.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>Tysiące osób używa już NORIKS FisioRest, aby zmniejszyć ból i napięcie karku – trakcja, wibracje i ciepło w jednym urządzeniu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>Tysiące osób nosi już korektor haluksów NORIKS dla mniejszego bólu i prostszego ustawienia palucha – w domu, przed telewizorem albo podczas snu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>Tysiące osób nosi już pas ortopedyczny NORIKS dla mniejszego bólu i stabilniejszych pleców – w pracy, przy dźwiganiu i podczas długiego siedzenia.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>Tysiące mężczyzn nosi już skarpety uciskowe NORIKS dla lżejszych i mniej zmęczonych nóg – w pracy, w podróży i na treningu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('winecooler') ): ?>Tysiące osób już chłodzi wino z NORIKS WineCooler – prętem ze stali nierdzewnej z nalewakiem, bez wiaderka z lodem i bez rozwodnionego wina.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
     </div>
   </section>
   </div>
@@ -463,6 +469,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
   if ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) { $rv_fallback_title = 'NORIKS FIT Woman koszulka modelująca'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('pal') ) { $rv_fallback_title = 'NORIKS Pal laska do chodzenia'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('bowl') ) { $rv_fallback_title = 'NORIKS Bowl ortopedyczna miska dla psa'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('winecooler') ) { $rv_fallback_title = 'NORIKS WineCooler schładzacz do wina'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('red') ) { $rv_fallback_title = 'NORIKS RedRelief terapia czerwonym światłem'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') ) { $rv_fallback_title = 'NORIKS KneeHeat ogrzewacz i masażer kolana'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ) { $rv_fallback_title = 'NORIKS SlabProof™ Skarpety Robocze'; }
@@ -476,6 +483,8 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
     include get_stylesheet_directory() . '/auto_reviews/PL_kompwom.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('bowl') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_bowl.php';
+  } elseif ( function_exists('noriks_is_type') && noriks_is_type('winecooler') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_winecooler.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('pal') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_pal.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('red') ) {
@@ -913,7 +922,7 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
         noriks_is_type('cloud') ||
         noriks_is_type('snug') ||
         noriks_is_type('kompwom') ||
-        noriks_is_type('bowl') ||
+        ( noriks_is_type('bowl') || noriks_is_type('winecooler') ) ||
         noriks_is_type('pal') ||
         noriks_is_type('red') ||
         noriks_is_type('kneeheat') ||
@@ -934,7 +943,7 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
     // Izdelki z lastnim imenom v karticah mnenj ne smejo dobiti nakljucnega izdelka iz kataloga.
   $rv_own_name = ( function_exists('noriks_is_type') && (
       noriks_is_type('cloud') || noriks_is_type('cloath') || noriks_is_type('hyd') || noriks_is_type('snug')
-   || noriks_is_type('kompwom') || noriks_is_type('bowl') || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat') || noriks_is_type('slabproof') || noriks_is_type('tradesman') || noriks_is_type('slim')
+   || noriks_is_type('kompwom') || ( noriks_is_type('bowl') || noriks_is_type('winecooler') ) || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat') || noriks_is_type('slabproof') || noriks_is_type('tradesman') || noriks_is_type('slim')
    || noriks_is_type('controlpro') || noriks_is_type('kidsnest') || noriks_is_type('ortopedski-jastuk')
    || noriks_is_type('bunion') || noriks_is_type('fisiorest') || noriks_is_type('ortopas')
    || noriks_is_type('norikshers') || noriks_is_type('kompresijske-nogavice') ) );
@@ -1915,7 +1924,21 @@ $kneeheat_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_slim, $slim_faq, $is_tradesman, $tradesman_faq, $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$is_winecooler = ( function_exists('noriks_is_type') && noriks_is_type('winecooler') );
+$winecooler_faq = array(
+  array('questioon' => 'Jak działa oferta na kilka sztuk?',
+    'answer'    => 'Po prostu wybierz ofertę <strong>2x szt.</strong>, <strong>4x szt.</strong> lub <strong>6x szt.</strong> — do koszyka trafi wybrana liczba schładzaczy do wina, a rabat naliczy się automatycznie.'),
+  array('questioon' => 'Jakie metody płatności mogę wybrać?',
+    'answer'    => 'U nas zapłacisz przez Apple Pay, Google Pay, Mastercard i Visa.'),
+  array('questioon' => 'Jak to działa?',
+    'answer'    => 'Włóż pręt chłodzący do zamrażarki na co najmniej 1 godzinę. Schłodzony pręt wsuń do butelki wina. Upij łyk, żeby zrobić trochę miejsca, i ciesz się idealnie schłodzonym winem przy każdym nalaniu.'),
+  array('questioon' => 'Informacje o dostawie',
+    'answer'    => 'Darmowa dostawa przy zamówieniach powyżej 300 zł. Czas dostawy wynosi 5–12 dni roboczych od daty wysyłki.'),
+  array('questioon' => 'Zasady zwrotu',
+    'answer'    => 'Prawo do zwrotu w ciągu 30 dni. Jeśli nie jesteś w pełni zadowolony z zakupu, skontaktuj się z nami w ciągu 30 dni od otrzymania zamówienia, a chętnie pomożemy w zwrocie towaru lub pieniędzy.'),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_winecooler, $winecooler_faq, $is_slim, $slim_faq, $is_tradesman, $tradesman_faq, $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_snug && $is_info ) { return $snug_faq; }
   if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
@@ -1923,6 +1946,7 @@ $faq_pick = function( $title, $list ) use ( $is_slim, $slim_faq, $is_tradesman, 
   if ( $is_slim && $is_info ) { return $slim_faq; }
   if ( $is_slabproof && $is_info ) { return $slabproof_faq; }
   if ( $is_bowl && $is_info ) { return $bowl_faq; }
+  if ( $is_winecooler && $is_info ) { return $winecooler_faq; }
   if ( $is_pal && $is_info ) { return $pal_faq; }
   if ( $is_red && $is_info ) { return $red_faq; }
   if ( $is_kneeheat && $is_info ) { return $kneeheat_faq; }
