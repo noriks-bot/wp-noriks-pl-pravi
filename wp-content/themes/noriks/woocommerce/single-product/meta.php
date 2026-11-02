@@ -516,6 +516,10 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
                 <strong>NORIKS FIT Woman</strong> to koszulka modelująca, w której splot jest wpleciony w samą tkaninę, a nie na niej nadrukowany. Szeroki pas przechodzi przez brzuch i biodra, a drugi przez plecy.<br><br>Kompresja rozkłada się na szerokość, zamiast ściskać w jednym punkcie, więc nic się nie wrzyna. Brzuch pozostaje wygładzony, talia węższa, a plecy dostają podparcie, które pomaga stać prosto.<br><br>Dzianina jest bezszwowa, cienka i matowa — znika pod koszulą, marynarką albo dopasowaną sukienką. Nie roluje się w ciągu dnia i nie odznacza się pod ubraniem.<br><br>Pierz w pralce w 30 °C, bez wybielaczy, prasowania i suszarki. Dostępna w trzech kolorach (czarny, ciemnoszary, różowy) i rozmiarach od S do 3XL. Jeśli jesteś między dwoma rozmiarami, weź większy.
 
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slim', $current_product_id) ): ?>
+
+                <strong>NORIKS Slim</strong> to majtki modelujące z wysokim stanem. Szeroki pas przechodzi na krzyż przez brzuch i biegnie dalej na biodra i plecy, więc kompresja rozkłada się wokół całej talii, a nie ściska w jednej linii.<br><br>Brzuch jest wygładzony, talia wygląda na węższą, a ubrania leżą prościej — bez fałd nad spodniami i bez brzegu odznaczającego się pod sukienką.<br><br>Dzianina jest cienka, miękka i przewiewna, z elastycznymi siateczkowymi wstawkami i bawełnianą wkładką. Majtki nie rolują się w dół i nie zsuwają w ciągu dnia, więc zakładasz je rano i zapominasz o nich do wieczora.<br><br>Dostępne są w sześciu kolorach (czarny, cielisty, granatowy, liliowy, fuksja i śliwkowy) i rozmiarach od XS do 5XL. Rozmiar wybieraj według obwodu talii; jeśli jesteś między dwoma rozmiarami, weź większy.
+
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ): ?>
 
                 NORIKS Tradesman to grube skarpety robocze z bambusa dla każdego, kto cały dzień stoi i chodzi w butach roboczych – na budowie, w magazynie, w warsztacie albo zimą na dworze. Miękka amortyzacja łagodzi każdy krok na betonie i zamarzniętej ziemi, wzmocniona pięta i palce wytrzymują sztywne buty, a taśma pod łuk stopy i podwójny ściągacz trzymają skarpetę na miejscu przez całą zmianę.<br><br><strong>Skład:</strong> 56 % liocelu z bambusa, 38 % nylonu, 6 % elastanu – naturalnie odporne na przykre zapachy, odprowadzają wilgoć i są bardzo miękkie dla skóry. <strong>Wykonanie:</strong> wsparcie kostki 360°, taśma pod łuk stopy, amortyzacja, wentylacja z siateczki, podwójny ściągacz z uszkiem, wzmocniona pięta. Wysokość: klasyczna (crew), ok. 18 cm od pięty do brzegu.<br><br><strong>Rozmiary (rozmiar buta EU):</strong> M 39–42, L 42,5–46, XL 46,5–49,5. Kolory: czarny i biały. <strong>Pielęgnacja:</strong> pierz na zimno, susz na powietrzu.<br><br>Z NORIKS masz 30 dni na zwrot pieniędzy, darmową dostawę powyżej 300 zł i płatność przy odbiorze.
@@ -721,6 +725,33 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         
                   <img class="js-open-size-chart" style="cursor:pointer;" src="/hr/wp-content/uploads/2025/11/Nogavice_tabela_velikosti.jpg">
                   
+    <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slim', $current_product_id) ): ?>
+
+          <div class="slm-size">
+            <p style="margin:0 0 14px;line-height:1.6;">Rozmiar wybieraj według <strong>obwodu talii</strong>, a nie zwykłego rozmiaru ubrań. Jeśli jesteś między dwoma rozmiarami, weź <strong>większy</strong>.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead>
+                <tr style="background:#a3336b;color:#fff;">
+                  <th style="padding:9px 10px;text-align:left;">Rozmiar</th>
+                  <th style="padding:9px 10px;text-align:left;">Rozmiar EU</th>
+                  <th style="padding:9px 10px;text-align:left;">Obwód talii</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                foreach ( noriks_slim_sizes() as $i => $r ) :
+                  $bg = ( $i % 2 ) ? '#fbf2f6' : '#fff'; ?>
+                  <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #f1e3ea;">
+                    <td style="padding:9px 10px;font-weight:700;"><?php echo esc_html( $r[0] ); ?></td>
+                    <td style="padding:9px 10px;"><?php echo esc_html( $r[1] ); ?></td>
+                    <td style="padding:9px 10px;"><?php echo esc_html( $r[2] ); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <p style="margin:14px 0 0;line-height:1.6;"><strong>Jak zmierzyć:</strong> owiń centymetr wokół najwęższego miejsca tułowia, tuż nad pępkiem. Centymetr powinien być poziomo i przylegać, ale nie ściskać.</p>
+          </div>
+
     <?php elseif( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ): ?>
 
           <div class="noriks-size">
