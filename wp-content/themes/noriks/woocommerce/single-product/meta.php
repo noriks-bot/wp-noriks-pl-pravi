@@ -516,6 +516,10 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
                 <strong>NORIKS FIT Woman</strong> to koszulka modelująca, w której splot jest wpleciony w samą tkaninę, a nie na niej nadrukowany. Szeroki pas przechodzi przez brzuch i biodra, a drugi przez plecy.<br><br>Kompresja rozkłada się na szerokość, zamiast ściskać w jednym punkcie, więc nic się nie wrzyna. Brzuch pozostaje wygładzony, talia węższa, a plecy dostają podparcie, które pomaga stać prosto.<br><br>Dzianina jest bezszwowa, cienka i matowa — znika pod koszulą, marynarką albo dopasowaną sukienką. Nie roluje się w ciągu dnia i nie odznacza się pod ubraniem.<br><br>Pierz w pralce w 30 °C, bez wybielaczy, prasowania i suszarki. Dostępna w trzech kolorach (czarny, ciemnoszary, różowy) i rozmiarach od S do 3XL. Jeśli jesteś między dwoma rozmiarami, weź większy.
 
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ): ?>
+
+                NORIKS Tradesman to grube skarpety robocze z bambusa dla każdego, kto cały dzień stoi i chodzi w butach roboczych – na budowie, w magazynie, w warsztacie albo zimą na dworze. Miękka amortyzacja łagodzi każdy krok na betonie i zamarzniętej ziemi, wzmocniona pięta i palce wytrzymują sztywne buty, a taśma pod łuk stopy i podwójny ściągacz trzymają skarpetę na miejscu przez całą zmianę.<br><br><strong>Skład:</strong> 56 % liocelu z bambusa, 38 % nylonu, 6 % elastanu – naturalnie odporne na przykre zapachy, odprowadzają wilgoć i są bardzo miękkie dla skóry. <strong>Wykonanie:</strong> wsparcie kostki 360°, taśma pod łuk stopy, amortyzacja, wentylacja z siateczki, podwójny ściągacz z uszkiem, wzmocniona pięta. Wysokość: klasyczna (crew), ok. 18 cm od pięty do brzegu.<br><br><strong>Rozmiary (rozmiar buta EU):</strong> M 39–42, L 42,5–46, XL 46,5–49,5. Kolory: czarny i biały. <strong>Pielęgnacja:</strong> pierz na zimno, susz na powietrzu.<br><br>Z NORIKS masz 30 dni na zwrot pieniędzy, darmową dostawę powyżej 300 zł i płatność przy odbiorze.
+
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
 
                 <strong>NORIKS SlabProof</strong> to skarpety robocze zrobione dla ludzi, którzy cały dzień stoją na betonie. Buty robocze chronią stopę, ale jej nie amortyzują — beton nic nie oddaje, więc każdy krok idzie w pięty, kolana i plecy. Jedyne, co może złagodzić to uderzenie, to skarpeta.<br><br>Dlatego mają <strong>strefową amortyzację</strong>: gęste poduszki pod piętą i przodostopiem, dokładnie tam, gdzie uderza beton, a cienką dzianinę wszędzie indziej, więc but nie robi się za ciasny. Pięta i palce są wzmocnione podwójnie dzianym nylonem, w dwóch miejscach, gdzie skarpety najszybciej puszczają.<br><br>Przewiewna siateczka na grzbiecie stopy i dzianina odprowadzająca pot utrzymują stopy suche przez całą zmianę. Mieszanka jest bez wełny, więc nic nie drapie, a stopa się nie przegrzewa.<br><br>Szeroki prążkowany ściągacz trzyma skarpetę w górze bez uciskania łydki, głęboka kieszeń na piętę z języczkiem nie pozwala jej zsuwać się do buta, a taśma wokół łuku stopy trzyma stopę, żeby się nie ślizgała.<br><br>Dostępne w kolorze czarnym, w rozmiarach M (EU 39–42), L (EU 43–45) i XL (EU 46–49). Obowiązuje <strong>30 dni na zwrot pieniędzy</strong>, a dostawa jest darmowa przy zamówieniach powyżej 300 zł.
@@ -717,6 +721,35 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         
                   <img class="js-open-size-chart" style="cursor:pointer;" src="/hr/wp-content/uploads/2025/11/Nogavice_tabela_velikosti.jpg">
                   
+    <?php elseif( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ): ?>
+
+          <div class="noriks-size">
+            <p style="margin:0 0 14px;line-height:1.6;">Rozmiar wybierz według swojego <strong>rozmiaru buta (EU)</strong>.</p>
+            <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead>
+                <tr style="background:#a9683f;color:#fff;">
+                  <th style="padding:9px 8px;text-align:left;">Rozmiar</th>
+                  <th style="padding:9px 8px;text-align:left;">Rozmiar buta (EU) – męski</th>
+                  <th style="padding:9px 8px;text-align:left;">Rozmiar buta (EU) – damski</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ( noriks_tradesman_sizes() as $i => $r ) :
+                  $bg = ( $i % 2 ) ? '#fdf8f5' : '#fff'; ?>
+                  <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #eee;">
+                    <?php foreach ( $r as $j => $c ) : ?>
+                    <td style="padding:9px 8px;<?php echo $j ? '' : 'font-weight:700;white-space:nowrap;'; ?>"><?php echo esc_html( $c ); ?></td>
+                    <?php endforeach; ?>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            </div>
+            <p style="margin:12px 0 0;line-height:1.6;">Jesteś między rozmiarami? Weź większy.</p>
+            <p style="margin:14px 0 0;line-height:1.6;">Jeśli rozmiar nie pasuje, masz 30 dni na zwrot lub wymianę.</p>
+          </div>
+
     <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
 
           <div class="noriks-size">
@@ -813,7 +846,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
 
     <!-- 3 - savjeti za pranje--> <!-- ukryte też na kidsnest -->
-    <?php if ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) )) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
+    <?php if ( ( ! ( function_exists('noriks_is_type') && ( noriks_is_type('ortopas', $current_product_id) || noriks_is_type('bunion', $current_product_id) || noriks_is_type('fisiorest', $current_product_id) || noriks_is_type('norikshers', $current_product_id) || noriks_is_type('kidsnest', $current_product_id) || noriks_is_type('ortopedski-jastuk', $current_product_id) ) )  && ! ( function_exists('noriks_is_type') && noriks_is_type('kneefix', $current_product_id) || noriks_is_type('controlpro', $current_product_id) ) ) && ! ( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ) ) : // brak porad dot. prania dla pas/bunion/fisiorest/norikshers/kidsnest/ortopedski jastuk ?>
     <div class="accordion-item">
       <div class="accordion-header" onclick="toggleAccordion(this)">
         <h3><?php echo get_field("singlepp_acc_h_2","options"); ?></h3>

@@ -45,6 +45,8 @@ if ( function_exists( 'noriks_is_type' ) ) {
         get_template_part( 'template_parts/product-bottom/why-kneeheat' );
     } elseif ( noriks_is_type( 'slabproof' ) ) {
         get_template_part( 'template_parts/product-bottom/why-slabproof' );
+    } elseif ( noriks_is_type( 'tradesman' ) ) {
+        get_template_part( 'template_parts/product-bottom/why-tradesman' );
     }
 }
 ?>
@@ -300,7 +302,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
       <!--<h4 style="" class="highlight"><?php echo get_field("singlepp_content_standard_reviews_t1","options"); ?></h4>-->
       <h1 style="color:black;     margin-bottom: 4px;">
           
-          <?php if ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Nie tylko ciebie palą stopy po zmianie na betonie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>
+          <?php if ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ): ?>Nie tylko ty po całej zmianie w butach roboczych marzysz, żeby wreszcie dać odpocząć stopom.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Nie tylko ciebie palą stopy po zmianie na betonie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>
 
           Nie tylko Ty szukasz ulgi w napięciu karku.
 
@@ -358,7 +360,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
           
           
           </h1>
-    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Tysiące fachowców już pracuje w skarpetach NORIKS SlabProof – strefowa amortyzacja tam, gdzie uderza beton, wzmocniona pięta i palce oraz suche stopy przez całą zmianę.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>Tysiące osób używa już NORIKS FisioRest, aby zmniejszyć ból i napięcie karku – trakcja, wibracje i ciepło w jednym urządzeniu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>Tysiące osób nosi już korektor haluksów NORIKS dla mniejszego bólu i prostszego ustawienia palucha – w domu, przed telewizorem albo podczas snu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>Tysiące osób nosi już pas ortopedyczny NORIKS dla mniejszego bólu i stabilniejszych pleców – w pracy, przy dźwiganiu i podczas długiego siedzenia.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>Tysiące mężczyzn nosi już skarpety uciskowe NORIKS dla lżejszych i mniej zmęczonych nóg – w pracy, w podróży i na treningu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
+    <p class="note" style="color: black; margin-top: 0px; margin-bottom: 5px;"><?php if ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ): ?>Tysiące fachowców pracuje już w skarpetach NORIKS Tradesman – miękka amortyzacja, wzmocniona pięta i taśma pod łuk stopy.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ): ?>Tysiące fachowców już pracuje w skarpetach NORIKS SlabProof – strefowa amortyzacja tam, gdzie uderza beton, wzmocniona pięta i palce oraz suche stopy przez całą zmianę.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('fisiorest') ): ?>Tysiące osób używa już NORIKS FisioRest, aby zmniejszyć ból i napięcie karku – trakcja, wibracje i ciepło w jednym urządzeniu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('bunion') ): ?>Tysiące osób nosi już korektor haluksów NORIKS dla mniejszego bólu i prostszego ustawienia palucha – w domu, przed telewizorem albo podczas snu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopas') ): ?>Tysiące osób nosi już pas ortopedyczny NORIKS dla mniejszego bólu i stabilniejszych pleców – w pracy, przy dźwiganiu i podczas długiego siedzenia.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-nogavice') ): ?>Tysiące mężczyzn nosi już skarpety uciskowe NORIKS dla lżejszych i mniej zmęczonych nóg – w pracy, w podróży i na treningu.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('norikshers') ): ?>Tysiące kobiet już używa silikonowych pasków kolagenowych HERS dla gładszej, jędrniejszej i młodziej wyglądającej skóry.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('leakboxers') ): ?>Tysiące mężczyzn nosi już bokserki chłonne NORIKS dla suchości i pewności siebie – bez wkładek i pieluch.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kompresijske-majice') ): ?>Tysiące mężczyzn nosi już koszulkę kompresyjną NORIKS dla wygładzonego brzucha, lepszej postawy i większej pewności siebie.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('kidsnest') ): ?>Tysiące rodziców zamieniło już zwykłą poduszkę na NORIKS KidsNest – cichsze noce, oddychanie przez nos i sen, który naprawdę regeneruje.<?php elseif ( function_exists('noriks_is_type') && noriks_is_type('ortopedski-jastuk') ): ?>Tysiące klientów korzysta już z poduszki ortopedycznej NORIKS ErgoSit, aby siedzieć bez bólu kości ogonowej, pleców i bioder – w aucie, biurze i w domu.<?php else: ?><?php echo get_field("singlepp_content_standard_reviews_t3","options"); ?><?php endif; ?></p>
     </div>
   </section>
   </div>
@@ -462,6 +464,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
   if ( function_exists('noriks_is_type') && noriks_is_type('red') ) { $rv_fallback_title = 'NORIKS RedRelief terapia czerwonym światłem'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('kneeheat') ) { $rv_fallback_title = 'NORIKS KneeHeat ogrzewacz i masażer kolana'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ) { $rv_fallback_title = 'NORIKS SlabProof™ Skarpety Robocze'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ) { $rv_fallback_title = 'Skarpety robocze NORIKS Tradesman'; }
 
   // Include review pools
   if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) {
@@ -478,6 +481,8 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
     include get_stylesheet_directory() . '/auto_reviews/PL_kneeheat.php';
   } elseif ( function_exists('noriks_is_type') && noriks_is_type('slabproof') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_slabproof.php';
+} elseif ( function_exists('noriks_is_type') && noriks_is_type('tradesman') ) {
+    include get_stylesheet_directory() . '/auto_reviews/PL_tradesman.php';
   } else
   if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) {
     include get_stylesheet_directory() . '/auto_reviews/PL_cloath.php';
@@ -907,7 +912,8 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
         noriks_is_type('pal') ||
         noriks_is_type('red') ||
         noriks_is_type('kneeheat') ||
-        noriks_is_type('slabproof')
+        noriks_is_type('slabproof') ||
+        noriks_is_type('tradesman')
   );
   // fotografije osoba: samo na odjeci (majice, bokserice, kompleti), ne na ortopedskim pomagalima
   // MAJICE i BOKSERICE: recenzije BEZ fotografija - isti uvjet kao nove why sekcije.
@@ -922,7 +928,7 @@ function assign_unique_avatars_first_n(array $reviews, array $avatar_pool, strin
     // Izdelki z lastnim imenom v karticah mnenj ne smejo dobiti nakljucnega izdelka iz kataloga.
   $rv_own_name = ( function_exists('noriks_is_type') && (
       noriks_is_type('cloud') || noriks_is_type('cloath') || noriks_is_type('hyd') || noriks_is_type('snug')
-   || noriks_is_type('kompwom') || noriks_is_type('bowl') || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat') || noriks_is_type('slabproof')
+   || noriks_is_type('kompwom') || noriks_is_type('bowl') || noriks_is_type('pal') || noriks_is_type('red') || noriks_is_type('kneeheat') || noriks_is_type('slabproof') || noriks_is_type('tradesman')
    || noriks_is_type('controlpro') || noriks_is_type('kidsnest') || noriks_is_type('ortopedski-jastuk')
    || noriks_is_type('bunion') || noriks_is_type('fisiorest') || noriks_is_type('ortopas')
    || noriks_is_type('norikshers') || noriks_is_type('kompresijske-nogavice') ) );
@@ -1711,6 +1717,26 @@ $kompwom_faq = array(
   ),
 );
 
+$is_tradesman = ( function_exists('noriks_is_type') && noriks_is_type('tradesman') );
+$tradesman_faq = array(
+  array('questioon' => 'Z czego są zrobione?',
+    'answer'    => '56 % liocelu z bambusa, 38 % nylonu i 6 % elastanu. Bez bawełny – nylon jest wzmocniony na pięcie i palcach, gdzie skarpety ścierają się najbardziej. Są naturalnie odporne na przykre zapachy, odprowadzają wilgoć i są bardzo miękkie dla skóry.'),
+  array('questioon' => 'Jaki rozmiar wybrać?',
+    'answer'    => 'Według rozmiaru buta (EU). Męskie: M 39–42, L 42,5–46, XL 46,5–49,5. Damskie: M 37,5–40,5, L 41–44. Jesteś między rozmiarami? Weź większy.'),
+  array('questioon' => 'Czy stopy zostaną suche?',
+    'answer'    => 'Bambus przez całą zmianę odprowadza wilgoć ze skóry, a wentylacja z siateczki wypuszcza pot na zewnątrz. Nie zatrzymują pocenia, ale trzymają je pod kontrolą – także w ciężkich butach roboczych.'),
+  array('questioon' => 'Czy nie zsuną się w butach?',
+    'answer'    => 'Nie. Podwójny ściągacz z uszkiem do podciągania i taśma pod łuk stopy trzymają skarpetę na miejscu – bez marszczenia i zsuwania przez całą zmianę.'),
+  array('questioon' => 'Czy wytrzymają długie zmiany?',
+    'answer'    => 'Tak. Miękka amortyzacja i wzmocniona pięta łagodzą każdy krok – dla tych, którzy są 8–12 godzin na nogach na betonie, żwirze albo nierównym terenie.'),
+  array('questioon' => 'Jaka jest wysokość?',
+    'answer'    => 'Klasyczna wysokość (crew) – ok. 18 cm od pięty do brzegu ściągacza.'),
+  array('questioon' => 'Jak je prać?',
+    'answer'    => 'Pierz na zimno i susz na powietrzu. Tkanina z bambusa zachowuje miękkość i kształt nawet po wielu praniach.'),
+  array('questioon' => 'Czy mogę je zwrócić?',
+    'answer'    => 'Tak. Masz 30 dni na zwrot pieniędzy. Dostawa jest darmowa przy zamówieniach powyżej 300 zł, a płacisz przy odbiorze, gdy paczka dotrze.'),
+);
+
 $is_slabproof = ( function_exists('noriks_is_type') && noriks_is_type('slabproof') );
 $slabproof_faq = array(
   array('questioon' => 'Jaki rozmiar zamówić? Mam dużą stopę.',
@@ -1861,10 +1887,11 @@ $kneeheat_faq = array(
   ),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+$faq_pick = function( $title, $list ) use ( $is_tradesman, $tradesman_faq, $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_snug && $is_info ) { return $snug_faq; }
   if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
+  if ( $is_tradesman && $is_info ) { return $tradesman_faq; }
   if ( $is_slabproof && $is_info ) { return $slabproof_faq; }
   if ( $is_bowl && $is_info ) { return $bowl_faq; }
   if ( $is_pal && $is_info ) { return $pal_faq; }
