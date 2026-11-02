@@ -516,6 +516,10 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
                 <strong>NORIKS FIT Woman</strong> to koszulka modelująca, w której splot jest wpleciony w samą tkaninę, a nie na niej nadrukowany. Szeroki pas przechodzi przez brzuch i biodra, a drugi przez plecy.<br><br>Kompresja rozkłada się na szerokość, zamiast ściskać w jednym punkcie, więc nic się nie wrzyna. Brzuch pozostaje wygładzony, talia węższa, a plecy dostają podparcie, które pomaga stać prosto.<br><br>Dzianina jest bezszwowa, cienka i matowa — znika pod koszulą, marynarką albo dopasowaną sukienką. Nie roluje się w ciągu dnia i nie odznacza się pod ubraniem.<br><br>Pierz w pralce w 30 °C, bez wybielaczy, prasowania i suszarki. Dostępna w trzech kolorach (czarny, ciemnoszary, różowy) i rozmiarach od S do 3XL. Jeśli jesteś między dwoma rozmiarami, weź większy.
 
+         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
+
+                <strong>NORIKS SlabProof</strong> to skarpety robocze zrobione dla ludzi, którzy cały dzień stoją na betonie. Buty robocze chronią stopę, ale jej nie amortyzują — beton nic nie oddaje, więc każdy krok idzie w pięty, kolana i plecy. Jedyne, co może złagodzić to uderzenie, to skarpeta.<br><br>Dlatego mają <strong>strefową amortyzację</strong>: gęste poduszki pod piętą i przodostopiem, dokładnie tam, gdzie uderza beton, a cienką dzianinę wszędzie indziej, więc but nie robi się za ciasny. Pięta i palce są wzmocnione podwójnie dzianym nylonem, w dwóch miejscach, gdzie skarpety najszybciej puszczają.<br><br>Przewiewna siateczka na grzbiecie stopy i dzianina odprowadzająca pot utrzymują stopy suche przez całą zmianę. Mieszanka jest bez wełny, więc nic nie drapie, a stopa się nie przegrzewa.<br><br>Szeroki prążkowany ściągacz trzyma skarpetę w górze bez uciskania łydki, głęboka kieszeń na piętę z języczkiem nie pozwala jej zsuwać się do buta, a taśma wokół łuku stopy trzyma stopę, żeby się nie ślizgała.<br><br>Dostępne w kolorze czarnym, w rozmiarach M (EU 39–42), L (EU 43–45) i XL (EU 46–49). Obowiązuje <strong>30 dni na zwrot pieniędzy</strong>, a dostawa jest darmowa przy zamówieniach powyżej 300 zł.
+
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('bowl', $current_product_id) ): ?>
 
                 <strong>NORIKS Bowl</strong> to podniesiona miska na karmę i wodę przeznaczona dla małych psów. Miska stoi na stalowym stojaku o wysokości 11 cm i jest pochylona o 15°, dzięki czemu pies je na stojąco, z głową w naturalniejszej pozycji, zamiast zginać szyję aż do podłogi.<br><br>Miska jest płytka (5 cm), więc wąsy nie uderzają o krawędź, a karma nie wypycha się na zewnątrz. Średnica wynosi 15 cm, a pojemność około 430 ml — wystarczy na posiłek lub wodę dla małego psa.<br><br>Zarówno miska, jak i stojak wykonane są ze stali nierdzewnej. Gładka powierzchnia nie wchłania zapachów i nie zatrzymuje resztek karmy jak plastik; wystarczy opłukać ją ciepłą wodą z płynem do naczyń.<br><br>Nadaje się dla małych ras, takich jak jamnik, buldog francuski, sznaucer, mops i maltańczyk.
@@ -713,6 +717,31 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         
                   <img class="js-open-size-chart" style="cursor:pointer;" src="/hr/wp-content/uploads/2025/11/Nogavice_tabela_velikosti.jpg">
                   
+    <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
+
+          <div class="noriks-size">
+            <p style="margin:0 0 14px;line-height:1.6;">Zamów <strong>swój zwykły rozmiar buta</strong>. Dzianina się rozciąga, więc każdy rozmiar pasuje na kilka numerów.</p>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;">
+              <thead>
+                <tr style="background:#d2632e;color:#fff;">
+                  <th style="padding:9px 10px;text-align:left;">Rozmiar</th>
+                  <th style="padding:9px 10px;text-align:left;">Rozmiar buta EU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                foreach ( noriks_slabproof_sizes() as $i => $r ) :
+                  $bg = ( $i % 2 ) ? '#faf7f0' : '#fff'; ?>
+                  <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #eee;">
+                    <td style="padding:9px 10px;font-weight:700;"><?php echo esc_html( $r[0] ); ?></td>
+                    <td style="padding:9px 10px;"><?php echo esc_html( $r[1] ); ?></td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+            <p style="margin:14px 0 0;line-height:1.6;"><strong>Pomiędzy dwoma rozmiarami?</strong> Weź większy — poduszka pod piętą i taśma wokół łuku stopy układają się na miejscu tylko wtedy, gdy skarpeta nie jest za mała.</p>
+          </div>
+
     <?php elseif( function_exists('noriks_is_type') && noriks_is_type('kompwom', $current_product_id) ): ?>
 
           <div class="kwm-size">
@@ -791,7 +820,11 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
         <div class="toggle">+</div>
       </div>
       <div class="accordion-content">
-             <?php if( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
+             <?php if( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
+
+                Pranie w pralce na zimno, razem z odzieżą roboczą. Suszenie w suszarce w niskiej temperaturze. Bez prania ręcznego, suszenia na sznurku i specjalnego detergentu.
+
+             <?php elseif( function_exists('noriks_is_type') && noriks_is_type( 'leakboxers', $current_product_id ) ): ?>
 
                 Pierz w 30–40 °C, w programie dla tkanin delikatnych. Bez płynu zmiękczającego i wybielacza. Susz na powietrzu. Zachowują chłonność przez setki prań.
 
