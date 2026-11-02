@@ -27,7 +27,7 @@ $sl_img  = function( $file, $alt ) use ( $sl, $sl_path ) {
 <!-- 1) BEZ / S NORIKS SLIM — slika lijevo -->
 <section class="nsl-sec nsl-tint">
   <div class="nsl-wrap nsl-row2">
-    <div class="nsl-media"><?php echo $sl_img( 'slm-05-usporedba.jpg', 'Bez i z majtkami modelującymi NORIKS Slim' ); ?></div>
+    <div class="nsl-media"><?php echo $sl_img( 'slm-05-usporedba.jpg', 'Bez majtek modelujących i w majtkach NORIKS Slim' ); ?></div>
     <div class="nsl-copy">
       <p class="nsl-kicker">Różnicę widać od razu</p>
       <h2 class="nsl-h2">Bielizna modelująca, w której <em>ubrania leżą o wiele lepiej</em></h2>

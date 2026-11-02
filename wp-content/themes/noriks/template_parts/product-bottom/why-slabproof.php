@@ -139,7 +139,7 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
         <div class="wslabproof__pog"><strong>30 dni</strong><span>na zwrot pieniędzy</span></div>
         <div class="wslabproof__pog"><strong>Darmowa dostawa</strong><span>powyżej 300 zł</span></div>
         <div class="wslabproof__pog"><strong>Płatność za pobraniem</strong><span>płacisz, gdy paczka dotrze</span></div>
-        <div class="wslabproof__pog"><strong>120.000 klientów</strong><span>średnia ocena 4,8</span></div>
+        <div class="wslabproof__pog"><strong>120 000 klientów</strong><span>średnia ocena 4,8</span></div>
       </div>
     </div>
   </div>

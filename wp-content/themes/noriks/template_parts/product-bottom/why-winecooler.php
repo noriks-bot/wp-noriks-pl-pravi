@@ -116,7 +116,7 @@ $nwc_testimonials = array(
     <div class="nwc-rev">
       <?php foreach ( $nwc_testimonials as $t ) : ?>
       <article class="nwc-rev__card">
-        <span class="nwc-rate__stars" aria-label="5 na 5 gwiazdek">★★★★★</span>
+        <span class="nwc-rate__stars" aria-label="5 z 5 gwiazdek">★★★★★</span>
         <h3><?php echo esc_html( $t[0] ); ?></h3>
         <p><?php echo esc_html( $t[1] ); ?></p>
         <cite><?php echo esc_html( $t[2] ); ?></cite>

@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <div id="custom-size-chart-modal" class="kwsc" role="dialog" aria-modal="true" aria-labelledby="kwsc-title">
   <div class="kwsc-box">
   <div class="kwsc-bar">
-    <h2 id="kwsc-title">Tablica rozmiarów</h2>
+    <h2 id="kwsc-title">Tabela rozmiarów</h2>
     <span id="close-size-chart-x" role="button" tabindex="0" aria-label="Zamknij">&times;</span>
   </div>
 

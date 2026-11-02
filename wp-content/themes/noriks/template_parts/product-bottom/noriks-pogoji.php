@@ -30,7 +30,7 @@ $npg_el      = array(
 	array( '<path d="M4 12a8 8 0 1 0 2.4-5.7"/><path d="M4 4v4.5h4.5"/><path d="M12 8v4l2.6 2"/>', '30 dni', 'na zwrot pieniędzy' ),
 	array( '<path d="M2.5 6.5h11v9h-11z"/><path d="M13.5 9.5h4l3 3.2v2.8h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>', 'Darmowa dostawa', 'powyżej 300 zł' ),
 	array( '<rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v5M18 9.5v5"/>', 'Płatność przy odbiorze', 'płacisz, gdy paczka dotrze' ),
-	array( '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.2c2.9.3 5 2.8 5 5.8"/>', '120.000 klientów', 'średnia ocena 4,8' ),
+	array( '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.6"/><path d="M16 14.2c2.9.3 5 2.8 5 5.8"/>', '120 000 klientów', 'średnia ocena 4,8' ),
 );
 ?>
 <div class="npg" style="--npg-ink:<?php echo esc_attr( $npg_ink ); ?>;--npg-krog:<?php echo esc_attr( $npg_krog ); ?>">
