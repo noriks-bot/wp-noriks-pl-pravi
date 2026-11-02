@@ -7,7 +7,7 @@
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 $noriks_st = array(
     'uvod'    => 'Rozmiar wybierz według swojego <strong>rozmiaru buta (EU)</strong>.',
-    'glava'   => array( 'Rozmiar', 'Rozmiar buta (EU) – męski', 'Rozmiar buta (EU) – damski' ),
+    'glava'   => array( 'Rozmiar buta (EU)' ),
     'vrstice' => function_exists( 'noriks_tradesman_sizes' ) ? noriks_tradesman_sizes() : array(),
     'opomba'  => 'Jesteś między rozmiarami? Weź większy.',
 );

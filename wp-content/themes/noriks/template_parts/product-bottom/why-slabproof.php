@@ -15,7 +15,7 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
         <h2 class="wslabproof__h2">Skarpeta robocza z amortyzacją, <em>krojona poniżej kostki</em></h2>
         <p class="wslabproof__p">NORIKS SlabProof to robocza skarpeta z poduszką na beton, krojona poniżej kostki. Zrobiona do butów roboczych, sneakersów ochronnych ze stalowym podnoskiem i upalnych dni w krótkich spodenkach, kiedy wysoka skarpeta tylko przeszkadza.</p>
         <p class="wslabproof__p">Pod stopą jest ta sama poduszka co w wyższym modelu: gęsta pod piętą i przodostopiem, tam gdzie beton uderza najmocniej. Na grzbiecie stopy jest część z siateczki, pięta i palce są wzmocnione, a podwyższony języczek na pięcie sprawia, że tył buta nie obciera skóry.</p>
-        <p class="wslabproof__p">Skarpeta jest czarna i występuje w trzech rozmiarach: M, L i XL. Pierze się ją w pralce na zimno i suszy w suszarce w niskiej temperaturze, razem z odzieżą roboczą — bez prania ręcznego i specjalnego detergentu.</p>
+        <p class="wslabproof__p">Skarpeta jest czarna i występuje w trzech rozmiarach: 39–42, 43–45 i 46–49. Pierze się ją w pralce na zimno i suszy w suszarce w niskiej temperaturze, razem z odzieżą roboczą — bez prania ręcznego i specjalnego detergentu.</p>
         <p class="wslabproof__zak">Poduszka na beton, w kroju do niskich butów roboczych.</p>
       </div>
     </div>

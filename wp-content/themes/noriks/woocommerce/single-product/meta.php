@@ -522,7 +522,7 @@ $is_mixed_bundle = has_term( array( 'komplety','orto-starter','pakiety-startowe'
 
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('tradesman', $current_product_id) ): ?>
 
-                NORIKS Tradesman to grube skarpety robocze z bambusa dla każdego, kto cały dzień stoi i chodzi w butach roboczych – na budowie, w magazynie, w warsztacie albo zimą na dworze. Miękka amortyzacja łagodzi każdy krok na betonie i zamarzniętej ziemi, wzmocniona pięta i palce wytrzymują sztywne buty, a taśma pod łuk stopy i podwójny ściągacz trzymają skarpetę na miejscu przez całą zmianę.<br><br><strong>Skład:</strong> 56 % liocelu z bambusa, 38 % nylonu, 6 % elastanu – naturalnie odporne na przykre zapachy, odprowadzają wilgoć i są bardzo miękkie dla skóry. <strong>Wykonanie:</strong> wsparcie kostki 360°, taśma pod łuk stopy, amortyzacja, wentylacja z siateczki, podwójny ściągacz z uszkiem, wzmocniona pięta. Wysokość: klasyczna (crew), ok. 18 cm od pięty do brzegu.<br><br><strong>Rozmiary (rozmiar buta EU):</strong> M 39–42, L 42,5–46, XL 46,5–49,5. Kolory: czarny i biały. <strong>Pielęgnacja:</strong> pierz na zimno, susz na powietrzu.<br><br>Z NORIKS masz 30 dni na zwrot pieniędzy, darmową dostawę powyżej 300 zł i płatność przy odbiorze.
+                NORIKS Tradesman to grube skarpety robocze z bambusa dla każdego, kto cały dzień stoi i chodzi w butach roboczych – na budowie, w magazynie, w warsztacie albo zimą na dworze. Miękka amortyzacja łagodzi każdy krok na betonie i zamarzniętej ziemi, wzmocniona pięta i palce wytrzymują sztywne buty, a taśma pod łuk stopy i podwójny ściągacz trzymają skarpetę na miejscu przez całą zmianę.<br><br><strong>Skład:</strong> 56 % liocelu z bambusa, 38 % nylonu, 6 % elastanu – naturalnie odporne na przykre zapachy, odprowadzają wilgoć i są bardzo miękkie dla skóry. <strong>Wykonanie:</strong> wsparcie kostki 360°, taśma pod łuk stopy, amortyzacja, wentylacja z siateczki, podwójny ściągacz z uszkiem, wzmocniona pięta. Wysokość: klasyczna (crew), ok. 18 cm od pięty do brzegu.<br><br><strong>Rozmiary (rozmiar buta EU):</strong> 39–42, 43–45, 46–49. Kolor: czarny. <strong>Pielęgnacja:</strong> pierz na zimno, susz na powietrzu.<br><br>Z NORIKS masz 30 dni na zwrot pieniędzy, darmową dostawę powyżej 300 zł i płatność przy odbiorze.
 
          <?php elseif( function_exists('noriks_is_type') && noriks_is_type('slabproof', $current_product_id) ): ?>
 
@@ -764,9 +764,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
             <table style="width:100%;border-collapse:collapse;font-size:14px;">
               <thead>
                 <tr style="background:#a9683f;color:#fff;">
-                  <th style="padding:9px 8px;text-align:left;">Rozmiar</th>
-                  <th style="padding:9px 8px;text-align:left;">Rozmiar buta (EU) – męski</th>
-                  <th style="padding:9px 8px;text-align:left;">Rozmiar buta (EU) – damski</th>
+                  <th style="padding:9px 8px;text-align:left;">Rozmiar buta (EU)</th>
                 </tr>
               </thead>
               <tbody>
@@ -792,7 +790,6 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
             <table style="width:100%;border-collapse:collapse;font-size:14px;">
               <thead>
                 <tr style="background:#d2632e;color:#fff;">
-                  <th style="padding:9px 10px;text-align:left;">Rozmiar</th>
                   <th style="padding:9px 10px;text-align:left;">Rozmiar buta EU</th>
                 </tr>
               </thead>
@@ -802,7 +799,6 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
                   $bg = ( $i % 2 ) ? '#faf7f0' : '#fff'; ?>
                   <tr style="background:<?php echo $bg; ?>;border-bottom:1px solid #eee;">
                     <td style="padding:9px 10px;font-weight:700;"><?php echo esc_html( $r[0] ); ?></td>
-                    <td style="padding:9px 10px;"><?php echo esc_html( $r[1] ); ?></td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
