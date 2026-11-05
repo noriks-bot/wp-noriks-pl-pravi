@@ -8,7 +8,7 @@ $auto_reviews_en = array(
     array("name" => "Piotr L.", "text" => "Próbowałem wszystkich możliwych marek. Te są najlepsze. Amortyzację naprawdę czuć."),
     array("name" => "Andrzej M.", "text" => "Pięć miesięcy codziennego noszenia i dalej jak nowe. Warte każdej złotówki."),
     array("name" => "Grzegorz N.", "text" => "Myślałem, że problem jest w butach. Okazało się, że po prostu potrzebuję dobrych skarpet."),
-    array("name" => "Michał B.", "text" => "Poduszka pod piętą jest genialna. Czuć ją na betonie od pierwszego dnia."),
+    array("name" => "Michał B.", "text" => "Poduszka pod piętą jest genialna. Czuć ją w pracy od pierwszego dnia."),
     array("name" => "Stanisław W.", "text" => "Już się nie pocę w butach roboczych. Te skarpety naprawdę oddychają."),
     array("name" => "Jacek Ż.", "text" => "Kupiłem dwie pary, domówiłem jeszcze cztery. Niczego innego mi nie trzeba."),
     array("name" => "Dariusz F.", "text" => "Wreszcie skarpeta, która nie rozpada się po miesiącu. Wzmocniona pięta naprawdę działa."),
@@ -16,5 +16,5 @@ $auto_reviews_en = array(
     array("name" => "Zbigniew R.", "text" => "Wzmocniona pięta i palce, poduszka pod piętą. Porządne skarpety robocze."),
     array("name" => "Mariusz D.", "text" => "Wygodnie się noszą, nie uciskają, nie zsuwają się. Wszystko, czego potrzebuję."),
     array("name" => "Adam J.", "text" => "Pięć gwiazdek. Zamówiłem trzy pary od razu po tym, jak przetestowałem pierwszą."),
-    array("name" => "Łukasz G.", "text" => "Pracuję na betonie cały dzień. Wreszcie skarpety, które są wygodne do końca zmiany."),
+    array("name" => "Łukasz G.", "text" => "Cały dzień jestem w pracy na nogach. Wreszcie skarpety, które są wygodne do końca zmiany."),
 );

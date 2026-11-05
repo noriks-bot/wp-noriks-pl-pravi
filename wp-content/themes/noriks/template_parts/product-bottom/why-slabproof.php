@@ -13,22 +13,22 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
       <div class="wslabproof__tekst">
         <div class="wslabproof__kicker">NISKI KRÓJ</div>
         <h2 class="wslabproof__h2">Skarpeta robocza z amortyzacją, <em>krojona poniżej kostki</em></h2>
-        <p class="wslabproof__p">NORIKS SlabProof to robocza skarpeta z poduszką na beton, krojona poniżej kostki. Zrobiona do butów roboczych, sneakersów ochronnych ze stalowym podnoskiem i upalnych dni w krótkich spodenkach, kiedy wysoka skarpeta tylko przeszkadza.</p>
-        <p class="wslabproof__p">Pod stopą jest ta sama poduszka co w wyższym modelu: gęsta pod piętą i przodostopiem, tam gdzie beton uderza najmocniej. Na grzbiecie stopy jest część z siateczki, pięta i palce są wzmocnione, a podwyższony języczek na pięcie sprawia, że tył buta nie obciera skóry.</p>
+        <p class="wslabproof__p">NORIKS SlabProof to robocza skarpeta z poduszką na cały dzień na nogach, krojona poniżej kostki. Zrobiona do butów roboczych, sneakersów ochronnych ze stalowym podnoskiem i upalnych dni w krótkich spodenkach, kiedy wysoka skarpeta tylko przeszkadza.</p>
+        <p class="wslabproof__p">Pod stopą jest ta sama poduszka co w wyższym modelu: gęsta pod piętą i przodostopiem, tam gdzie krok uderza najmocniej. Na grzbiecie stopy jest część z siateczki, pięta i palce są wzmocnione, a podwyższony języczek na pięcie sprawia, że tył buta nie obciera skóry.</p>
         <p class="wslabproof__p">Skarpeta jest czarna i występuje w trzech rozmiarach: 39–42, 43–45 i 46–49. Pierze się ją w pralce na zimno i suszy w suszarce w niskiej temperaturze, razem z odzieżą roboczą — bez prania ręcznego i specjalnego detergentu.</p>
-        <p class="wslabproof__zak">Poduszka na beton, w kroju do niskich butów roboczych.</p>
+        <p class="wslabproof__zak">Poduszka na każdy dzień pracy, w kroju do niskich butów roboczych.</p>
       </div>
     </div>
   </section>
 
   <section class="wslabproof__s">
     <div class="wslabproof__v wslabproof__v--rev">
-      <div class="wslabproof__media"><img src="<?php echo esc_url( $wdir . 'slabproof-05.webp' ); ?>" alt="Amortyzacja dokładnie tam, gdzie beton uderza najmocniej" loading="eager" decoding="async"></div>
+      <div class="wslabproof__media"><img src="<?php echo esc_url( $wdir . 'slabproof-05.webp' ); ?>" alt="Amortyzacja dokładnie tam, gdzie krok uderza najmocniej" loading="eager" decoding="async"></div>
       <div class="wslabproof__tekst">
         <div class="wslabproof__kicker">STREFOWA AMORTYZACJA</div>
-        <h2 class="wslabproof__h2">Amortyzacja dokładnie tam, gdzie <em>beton uderza najmocniej</em></h2>
+        <h2 class="wslabproof__h2">Amortyzacja dokładnie tam, gdzie <em>krok uderza najmocniej</em></h2>
         <p class="wslabproof__p">Amortyzacji nie wymyśliliśmy my. Ale NORIKS SlabProof to skarpeta, której amortyzacja jest zrobiona pod podłogę, na której stoisz cały dzień: gęsta tam, gdzie uderza pięta i przodostopie, a cienka wszędzie indziej, żeby nigdy nie wypełniała buta i nie ściskała stopy.</p>
-        <p class="wslabproof__p">Gęste poduszki są pod piętą i pod przodostopiem, dokładnie w miejscach, w które beton bije najmocniej przy każdym kroku. Na reszcie stopy skarpeta jest cienka, więc łagodzi krok, a but nie robi się ciasny. Poduszki są rozmieszczone według miejsc uderzeń, a nie równo na całej stopie.</p>
+        <p class="wslabproof__p">Gęste poduszki są pod piętą i pod przodostopiem, dokładnie w miejscach, które przy każdym kroku przyjmują najmocniejsze uderzenie. Na reszcie stopy skarpeta jest cienka, więc łagodzi krok, a but nie robi się ciasny. Poduszki są rozmieszczone według miejsc uderzeń, a nie równo na całej stopie.</p>
         <p class="wslabproof__p">Niski krój poniżej kostki jest zrobiony do butów roboczych, sneakersów ochronnych ze stalowym podnoskiem i upalnych dni w krótkich spodenkach. Pod stopą jest ta sama strefowa amortyzacja co w wyższym modelu, tylko skarpeta kończy się poniżej kostki. Języczek na pięcie dodatkowo chroni piętę przed krawędzią niskiego buta.</p>
         <p class="wslabproof__zak">Gęsto pod piętą i przodostopiem, cienko wszędzie indziej.</p>
       </div>
@@ -69,10 +69,10 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
       <div class="wslabproof__tekst">
         <div class="wslabproof__kicker">TO NIE WINA BUTÓW</div>
         <h2 class="wslabproof__h2">To nigdy nie była <em>wina butów</em></h2>
-        <p class="wslabproof__p">Buty ochronne są zrobione, żeby chronić palce, a nie amortyzować stopę. To ich robota. Ale beton nie ustępuje ani o milimetr, a każdy krok musi gdzieś pójść. Kiedy but nie daje już rady, zostaje skarpeta.</p>
-        <p class="wslabproof__p">Ten sam but, ten sam beton. Zmieniła się tylko skarpeta. Dwunastogodzinne zmiany na betonie są jak jazda ciężarówką bez amortyzatorów — a jedyne, co może złagodzić to uderzenie, to mniej więcej dwa i pół centymetra skarpety.</p>
+        <p class="wslabproof__p">Buty ochronne są zrobione, żeby chronić palce, a nie amortyzować stopę. To ich robota. Ale twarda podłoga nie ustępuje ani o milimetr, a każdy krok musi gdzieś pójść. Kiedy but nie daje już rady, zostaje skarpeta.</p>
+        <p class="wslabproof__p">Ten sam but, ta sama praca. Zmieniła się tylko skarpeta. Dwunastogodzinne zmiany na nogach są jak jazda ciężarówką bez amortyzatorów — a jedyne, co może złagodzić to uderzenie, to mniej więcej dwa i pół centymetra skarpety.</p>
         <p class="wslabproof__p">Dlatego NORIKS SlabProof jest zrobiony tak, żeby te dwa i pół centymetra były jak trzeba: gęsta poduszka pod piętą i przodostopiem, a reszta cienka i przewiewna.</p>
-        <p class="wslabproof__zak">Ten sam but, ten sam beton — tylko inna skarpeta.</p>
+        <p class="wslabproof__zak">Ten sam but, ta sama praca — tylko inna skarpeta.</p>
       </div>
     </div>
   </section>
@@ -97,10 +97,10 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
       <div class="wslabproof__tekst">
         <div class="wslabproof__kicker">PORÓWNANIE</div>
         <h2 class="wslabproof__h2">Nie wszystkie skarpety robocze <em>są zrobione tak samo</em></h2>
-        <p class="wslabproof__p">Tani multipak, droga para z wełny albo skarpeta zrobiona na beton, na którym naprawdę stoisz. Porównaliśmy je w tym, co liczy się w pracy: brak dziur po roku na betonie, amortyzacja tam, gdzie uderza beton, świeżość w bucie roboczym. Każdą z tych rzeczy widać dopiero po kilku tygodniach w pracy.</p>
+        <p class="wslabproof__p">Tani multipak, droga para z wełny albo skarpeta zrobiona do pracy, którą naprawdę wykonujesz. Porównaliśmy je w tym, co liczy się w pracy: brak dziur po roku pracy, amortyzacja tam, gdzie uderza krok, świeżość w bucie roboczym. Każdą z tych rzeczy widać dopiero po kilku tygodniach w pracy.</p>
         <p class="wslabproof__p">Patrzyliśmy też na to, żeby nie było swędzenia od wełny ani przegrzewania i żeby tył buta nie obcierał pięty. Tani multipak jest tani, a potem kupujesz znowu; wełna ma wyższą cenę; NORIKS SlabProof kupujesz raz na długo.</p>
         <p class="wslabproof__p">Dobra wełna jest trwała, to jej przyznajemy. Ale latem drapie, a w bucie roboczym grzeje. NORIKS SlabProof jest zrobiony na podłogę, na której stoisz, a nie na górski szlak.</p>
-        <p class="wslabproof__zak">Zrobiona na beton, a nie na góry.</p>
+        <p class="wslabproof__zak">Zrobiona do pracy, a nie na góry.</p>
       </div>
     </div>
   </section>
@@ -111,8 +111,8 @@ $wdir = get_template_directory_uri() . '/img/slabproof/';
       <div class="wslabproof__tekst">
         <div class="wslabproof__kicker">KTO JE ROBI</div>
         <h2 class="wslabproof__h2">Nie wymyślił ich handlarz skarpetami, tylko <em>elektryk</em></h2>
-        <p class="wslabproof__p">Za tą skarpetą stoi elektryk z dwudziestoma dwoma latami stażu, głównie na dużych budowach: szpitale, magazyny, centra dystrybucyjne. Betonowe posadzki i dni po dwanaście godzin. Latami pracował na nogach, na tym samym betonie co ty.</p>
-        <p class="wslabproof__p">Mając dwadzieścia lat, tego nie czujesz. Mając czterdzieści pięć, masz stopy wykończone do obiadu i zużywasz paczkę skarpet miesięcznie — przetarte pięty, mokro do południa. Skarpety robiły się coraz cieńsze i krótsze, pełne dziur po miesiącu, a nikt nie robił skarpety dla faceta, który cały dzień stoi na betonie.</p>
+        <p class="wslabproof__p">Za tą skarpetą stoi elektryk z dwudziestoma dwoma latami stażu, głównie na dużych budowach: szpitale, magazyny, centra dystrybucyjne. Twarde posadzki i dni po dwanaście godzin. Latami pracował na nogach, tak samo jak ty.</p>
+        <p class="wslabproof__p">Mając dwadzieścia lat, tego nie czujesz. Mając czterdzieści pięć, masz stopy wykończone do obiadu i zużywasz paczkę skarpet miesięcznie — przetarte pięty, mokro do południa. Skarpety robiły się coraz cieńsze i krótsze, pełne dziur po miesiącu, a nikt nie robił skarpety dla faceta, który cały dzień pracuje na nogach.</p>
         <p class="wslabproof__p">Dlatego zrobił własną: wzmocnioną tam, gdzie zawsze pęka, suchą i taką, która zostaje na miejscu. Przez rok nosił ją w pracy, zanim była gotowa dla innych.</p>
         <p class="wslabproof__zak">Zrobione przez fachowca, dla fachowców.</p>
       </div>
