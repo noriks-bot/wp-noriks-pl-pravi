@@ -1,8 +1,8 @@
 <?php
-// Review pool for the NORIKS FisioRest neck traction device.
+// Review pool for the NORIKS NeckRelax neck traction device.
 // Text-only (no images), Polish.
 $auto_reviews_en = array(
-    array("name" => "Marta N.",     "text" => "Po całym dniu przy komputerze kark był jak z betonu. Wieczorna sesja z FisioRest naprawdę rozluźnia napięcie."),
+    array("name" => "Marta N.",     "text" => "Po całym dniu przy komputerze kark był jak z betonu. Wieczorna sesja z NeckRelax naprawdę rozluźnia napięcie."),
     array("name" => "Paweł K.",     "text" => "Połączenie ciepła, wibracji i trakcji działa. Ból szyi ustępuje już po kilkunastu minutach."),
     array("name" => "Agnieszka W.", "text" => "Kupiłam z powodu ciągłych napięć w karku. Sen jest głębszy, a poranna sztywność mniejsza."),
     array("name" => "Robert M.",    "text" => "Trakcja robi różnicę. Czuję, jak kręgi się rozciągają i głowa wraca do naturalnej pozycji."),

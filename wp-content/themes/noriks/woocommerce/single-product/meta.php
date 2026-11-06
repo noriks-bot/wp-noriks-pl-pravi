@@ -587,7 +587,7 @@ To, co wyróżnia nasze koszulki, to klasyczny design i dbałość o detale. Tra
 
         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('fisiorest', $current_product_id) ): ?>
 
-                NORIKS FisioRest to terapeutyczna poduszka na szyję, która łączy trakcję, ciepło i masaż wibracyjny w ergonomicznej konstrukcji z pianki pamięciowej. Delikatnie rozciąga szyję pod odpowiednim kątem, odciąża odcinek szyjny kręgosłupa oraz ciepłem i masażem rozluźnia napięcie mięśniowe. Bezprzewodowa, ładowana i otulona miękkim, chłodzącym jedwabiem — bezpieczna także do snu.
+                NORIKS NeckRelax to terapeutyczna poduszka na szyję, która łączy trakcję, ciepło i masaż wibracyjny w ergonomicznej konstrukcji z pianki pamięciowej. Delikatnie rozciąga szyję pod odpowiednim kątem, odciąża odcinek szyjny kręgosłupa oraz ciepłem i masażem rozluźnia napięcie mięśniowe. Bezprzewodowa, ładowana i otulona miękkim, chłodzącym jedwabiem — bezpieczna także do snu.
 
         <?php elseif( function_exists('noriks_is_type') && noriks_is_type('bunion', $current_product_id) ): ?>
 
@@ -980,7 +980,7 @@ Wystarczy, że napiszesz do nas maila z informacją, że chcesz wymiany, a my od
         'kidsnest' => array( 'noriks-kidsnest.pdf', 'NORIKS KidsNest — dziecięca poduszka ortopedyczna' ),
         'kneefix' => array( 'noriks-kneefix.pdf', 'NORIKS KneeFix — orteza ortopedyczna na kolano' ),
         'ortopedski-jastuk' => array( 'noriks-ergosit.pdf', 'NORIKS ErgoSit — poduszka ortopedyczna do siedzenia' ),
-        'fisiorest' => array( 'noriks-fisiorest.pdf', 'NORIKS FisioRest — urządzenie na kark' ),
+        'fisiorest' => array( 'noriks-fisiorest.pdf', 'NORIKS NeckRelax — urządzenie na kark' ),
         'bunion' => array( 'noriks-bunion-fix.pdf', 'NORIKS Bunion Fix — korektor haluksów' ),
         'ortopas' => array( 'noriks-ortopas.pdf', 'Pas ortopedyczny NORIKS na plecy' ),
     );

@@ -48,7 +48,7 @@ function noriks_manuals_list() {
         array(
             'file'  => 'noriks-fisiorest.pdf',
             'sku'   => 'NORIKS-FISIOREST',
-            'title' => 'NORIKS FisioRest — urządzenie na kark',
+            'title' => 'NORIKS NeckRelax — urządzenie na kark',
             'sub'   => 'Trakcja, ciepło i masaż wibracyjny w sesji od 15 do 30 minut.',
         ),
         array(
