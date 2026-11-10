@@ -87,7 +87,7 @@ $nwc_testimonials = array(
 
 <section class="fis-eng"><div class="fis-wrap fis-row2"><div class="fis-row2-copy"><h2 class="fis-h2">Elegancki prezent dla miłośników wina</h2><p>Czarny kartonik NORIKS jest gotowy do wręczenia – na święta, urodziny lub jako upominek dla gospodarza. Wystarczy go podarować.</p></div><div class="fis-row2-media nk-media nk-wide"><video src="<?php echo esc_url( $nwc ); ?>winecooler-gift.mp4" muted autoplay loop playsinline preload="metadata"></video></div></div></section>
 
-<section class="fis-cheaper"><div class="fis-wrap fis-row2"><div class="fis-row2-media nk-media"><img src="<?php echo esc_url( $nwc ); ?>winecooler-3-kusy.jpg" alt="NORIKS WineCooler" loading="lazy"></div><div class="fis-row2-copy"><p class="fis-eyebrow">OPŁACALNY ZAKUP</p><h2 class="fis-h2">3 sztuki: jedna dla Ciebie, dwie na prezent</h2><p>Jeden WineCooler kosztuje <span data-price="1">105 zł</span>. W zestawie 3 szt. płacisz <span data-price="3">235 zł</span>, czyli tylko <span data-price="3-unit">78,33 zł</span> za sztukę. Z 30 dniami na zwrot pieniędzy.</p></div></div></section>
+<section class="fis-cheaper"><div class="fis-wrap fis-row2"><div class="fis-row2-media nk-media"><img src="<?php echo esc_url( $nwc ); ?>winecooler-3-kusy.jpg" alt="NORIKS WineCooler" loading="lazy"></div><div class="fis-row2-copy"><p class="fis-eyebrow">OPŁACALNY ZAKUP</p><h2 class="fis-h2">3 sztuki: jedna dla Ciebie, dwie na prezent</h2><p>Jeden WineCooler kosztuje <span data-price="1">125 zł</span>. W zestawie 3 szt. płacisz <span data-price="3">235 zł</span>, czyli tylko <span data-price="3-unit">78,33 zł</span> za sztukę. Z 30 dniami na zwrot pieniędzy.</p></div></div></section>
 
 <!-- 5) ODLIČNO 4,8 / 5 -->
 <section class="nwc-sec nwc-tint">
