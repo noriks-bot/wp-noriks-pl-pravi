@@ -82,7 +82,7 @@ function noriks_inpost_isci( $q, $limit = 25 ) {
 	if ( ! is_readable( $pot ) ) { return array(); }
 
 	$q = trim( mb_strtolower( $q, 'UTF-8' ) );
-	if ( $q === '' ) { return array(); }
+	if ( $q === '' ) { return noriks_inpost_prva( $limit ); }
 	$q = noriks_inpost_brez_sumnikov( $q );
 	// vec besed: vse morajo biti v zadetku ("warszawa krakowiakow", "01-494" ...)
 	$deli = preg_split( '/\s+/', $q, -1, PREG_SPLIT_NO_EMPTY );
@@ -100,6 +100,26 @@ function noriks_inpost_isci( $q, $limit = 25 ) {
 			if ( strpos( $iskalno, $del ) === false ) { $vse = false; break; }
 		}
 		if ( ! $vse ) { continue; }
+		$m = noriks_inpost_vrstica( $vrstica );
+		if ( $m ) { $ven[] = $m; }
+		if ( count( $ven ) >= $limit ) { break; }
+	}
+	fclose( $f );
+	return $ven;
+}
+
+/**
+ * Prvih $limit mest s seznama — kar kupec vidi, preden kaj natipka.
+ * Datoteka je urejena po postni stevilki, zato so na vrhu varsavska mesta
+ * (enako kot pri konkurenci).
+ */
+function noriks_inpost_prva( $limit = 150 ) {
+	$pot = noriks_inpost_datoteka();
+	if ( ! is_readable( $pot ) ) { return array(); }
+	$ven = array();
+	$f = @fopen( $pot, 'r' );
+	if ( ! $f ) { return array(); }
+	while ( ( $vrstica = fgets( $f ) ) !== false ) {
 		$m = noriks_inpost_vrstica( $vrstica );
 		if ( $m ) { $ven[] = $m; }
 		if ( count( $ven ) >= $limit ) { break; }
@@ -144,10 +164,11 @@ add_action( 'rest_api_init', function () {
 		'methods'             => 'GET',
 		'permission_callback' => '__return_true',
 		'callback'            => function ( $zahteva ) {
-			$q = (string) $zahteva->get_param( 'q' );
-			if ( mb_strlen( $q, 'UTF-8' ) < 2 ) { return rest_ensure_response( array() ); }
+			$q = trim( (string) $zahteva->get_param( 'q' ) );
+			if ( $q !== '' && mb_strlen( $q, 'UTF-8' ) < 2 ) { return rest_ensure_response( array() ); }
+			$limit = ( $q === '' ) ? 150 : 25;
 			$ven = array();
-			foreach ( noriks_inpost_isci( $q, 25 ) as $m ) {
+			foreach ( noriks_inpost_isci( $q, $limit ) as $m ) {
 				$ven[] = array(
 					'id'     => $m['id'],
 					'naziv'  => $m['naziv'],
@@ -546,7 +567,7 @@ function noriks_inpost_slog_in_skripta() {
 	    $(sel).selectWoo({
 	      placeholder: 'Wybierz Paczkomat / PaczkoPunkt',
 	      width: '100%',
-	      minimumInputLength: 2,
+	      minimumInputLength: 0,
 	      language: {
 	        inputTooShort: function(){ return 'Wpisz kod pocztowy, ulicę lub miasto…'; },
 	        searching:     function(){ return 'Szukam…'; },

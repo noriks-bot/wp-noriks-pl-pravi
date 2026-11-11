@@ -69,7 +69,9 @@ def main(izhod):
         vrstica = [str(x).replace('\t', ' ').replace('\n', ' ').strip() for x in vrstica]
         isk = brez_sumnikov(' '.join([vrstica[0], vrstica[1], vrstica[2], vrstica[10]]).lower())
         vrstice.append('\t'.join(vrstica[:10] + [isk]))
-    vrstice.sort()
+    # po postni stevilki: tako so na vrhu seznama varsavska mesta, kar kupec
+    # vidi takoj ob odprtju izbirnika (iskanje in iskanje po sifri sta neodvisna)
+    vrstice.sort(key=lambda r: (r.split('\t')[8], r.split('\t')[0]))
     with open(izhod, 'w', encoding='utf-8') as f:
         f.write('\n'.join(vrstice) + '\n')
     print('prejetih %d, zapisanih %d, preskocenih %d' % (len(vse), len(vrstice), preskoceni))
