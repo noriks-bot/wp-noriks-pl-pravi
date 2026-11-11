@@ -312,9 +312,15 @@ function noriks_inpost_ponudbe() {
 	$izbrani  = ( function_exists( 'WC' ) && WC()->session ) ? (array) WC()->session->get( 'chosen_shipping_methods' ) : array();
 	$trenutni = isset( $izbrani[0] ) ? (string) $izbrani[0] : '';
 
-	/* Na dom pokazemo eno samo kartico — tisto, ki jo WooCommerce ze uporablja. */
+	/* Na dom pokazemo eno samo kartico — najcenejso. Tako kupec nikoli ne vidi
+	   placljive dostave, ce je brezplacna ze dosezena. */
 	if ( $doma ) {
-		$kljuc_doma = isset( $doma[ $trenutni ] ) ? $trenutni : key( $doma );
+		$kljuc_doma = null;
+		foreach ( $doma as $k => $r ) {
+			if ( $kljuc_doma === null || (float) $r->get_cost() < (float) $doma[ $kljuc_doma ]->get_cost() ) {
+				$kljuc_doma = $k;
+			}
+		}
 		$doma = array( $kljuc_doma => $doma[ $kljuc_doma ] );
 	}
 	$vse = $doma + $pac;
