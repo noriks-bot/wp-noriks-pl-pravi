@@ -33,6 +33,33 @@ privzeta.
 
 ## 2. Metakocka
 
+**Kako Metakocka loči GLS od InPosta.** Metakocka ima preslikavo dostavnih
+služb: v Nastavitve → povezava s spletno trgovino klikneš **»Preberi dostavne
+službe«**, kar prebere nazive načinov dostave iz WooCommerce, nato pa vsakemu
+določiš **vrsto dostave** v Metakocki
+([navodila](https://metakocka.freshdesk.com/sl/support/solutions/articles/3000086935-spletne-trgovine-preslikava-dostavne-slu%C5%BEbe)).
+Za PL torej:
+
+| Naziv načina v WooCommerce | Vrsta dostave v Metakocki |
+|---|---|
+| `Standardowa 2–5 dni – InPost` | GLS Poland |
+| `Darmowa 2–5 dni – InPost` | GLS Poland |
+| **`InPost Paczkomat`** | InPost Poland |
+
+> Obstoječa načina za dostavo na dom se **imenujeta** »… – InPost«, čeprav
+> voziš z GLS. Preslikava je po točnem nazivu, zato to deluje, je pa pri
+> mapiranju zavajajoče. Če ju preimenuješ v »… – GLS«, je treba preslikavo v
+> Metakocki nastaviti znova.
+
+**Dve opozorili iz njihove dokumentacije:**
+- Pri več vrstah dostave v eni trgovini je treba **Metakocko vnaprej
+  obvestiti**, ker ti morajo na računu vklopiti dodatno funkcionalnost.
+- Pri GLS paketomatih **COD (plačilo po povzetju) v paketomat ni dovoljeno**.
+  Pri InPostu »za pobraniem« v Paczkomat deluje, a to pred zagonom potrdi pri
+  Metakocki oz. InPostu — PL trg je pretežno COD.
+
+### Povezava in šifra paketomata
+
 1. **Povezava z InPostom.** Dodatne nastavitve → Dostavne službe → Novo →
    **InPost Poland** → uporabniško ime in geslo, ki ju dobiš od InPosta, in
    določi vrsto dostave.
