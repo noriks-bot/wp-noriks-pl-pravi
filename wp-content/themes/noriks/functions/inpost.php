@@ -44,7 +44,7 @@ const NORIKS_INPOST_META  = '_inpost';
 /** Meta polje, po katerem Metakocka prepozna paketomat. Ne spreminjaj. */
 const NORIKS_INPOST_MK    = '_parcel_shop_id';
 /** Napis na kartici na blagajni (kupcu). */
-const NORIKS_INPOST_NAPIS = 'Paczkomat / PaczkoPunkt';
+const NORIKS_INPOST_NAPIS = 'Odbiór w Paczkomat / PaczkoPunkt';
 /** Napis na kartici za dostavo na naslov. */
 const NORIKS_INPOST_DOMA  = 'Dostawa do domu';
 /** Privzeti naziv nacina dostave (preslikava na vrsto dostave v Metakocki). */
@@ -470,14 +470,13 @@ function noriks_inpost_slog_in_skripta() {
 	   .hs-delivery-type-container / .delivery-type / .pl-inpost, vkljucno
 	   z mobilnim). Tu samo poskrbimo, da daljsi poljski napis ne stisne
 	   kartice: visina se prilagodi vsebini, obe kartici ostaneta enaki. */
-	.hs-delivery-type-container.pl-inpost .container__buttons { align-items: stretch; }
-	.hs-delivery-type-container.pl-inpost .delivery-type {
-		height: auto !important; min-height: 0 !important; padding: 8px 10px !important; }
+	.hs-delivery-type-container.pl-inpost .delivery-type { height: 100px !important; padding: 0 !important; }
 	.hs-delivery-type-container.pl-inpost .delivery-type p {
-		font-size: 14px !important; line-height: 1.2; margin: 4px 0 0 !important; }
+		font-size: 15px !important; line-height: 18px !important; margin: 0 !important; }
 	.hs-delivery-type-container.pl-inpost .delivery-type img {
-		max-width: 62px !important; max-height: 24px !important; width: auto !important;
-		object-fit: contain; margin: 0 !important; }
+		max-width: 70px !important; max-height: 52px !important; width: auto !important;
+		padding: 5px !important; margin: 0 !important; object-fit: contain; }
+	.hs-delivery-type-container.pl-inpost .hs-delivery-machine img { max-width: 55px !important; }
 
 	/* kljukica v bloku "Dostawa" (CSS teme jo meri prek "label svg") */
 	#custom_shipping .checkedlabel svg { width: 19px !important; height: 14px !important;
