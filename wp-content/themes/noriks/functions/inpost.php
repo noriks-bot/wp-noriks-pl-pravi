@@ -175,6 +175,9 @@ add_action( 'rest_api_init', function () {
 					'naslov' => $m['naslov'],
 					'tip'    => $m['tip'],
 					'ure'    => $m['ure'],
+					'ulica'  => $m['ulica'],
+					'kod'    => $m['kod'],
+					'mesto'  => $m['mesto'],
 				);
 			}
 			return rest_ensure_response( $ven );
@@ -562,6 +565,17 @@ function noriks_inpost_skripta() {
 	    return !!a && a.getAttribute('data-inpost') === '1';
 	  }
 
+	  /* Skrita polja naslova napolnimo z naslovom paketomata: tako narocilo ni
+	     brez naslova in preverjanje hisne stevilke ter postne stevilke uspe. */
+	  function napolniNaslov(m){
+	    if (!m) { return; }
+	    var v = {billing_address_1: m.ulica || m.naslov, billing_address_2: 'BB',
+	             billing_postcode: m.kod || '', billing_city: m.mesto || ''};
+	    Object.keys(v).forEach(function(id){
+	      var e = el(id); if (e && v[id]) { e.value = v[id]; e.dispatchEvent(new Event('change', {bubbles:true})); }
+	    });
+	  }
+
 	  function osvezi(){
 	    var pac = jePac();
 	    vrsticeNaslova().forEach(function(e){ e.style.display = pac ? 'none' : ''; });
@@ -582,6 +596,7 @@ function noriks_inpost_skripta() {
 	  });
 
 	  function izbrano(m){
+	    napolniNaslov(m);
 	    el('npac_naziv').textContent  = m.naziv;
 	    el('npac_naslov').textContent = m.naslov;
 	    el('npac_tip').textContent    = m.tip;
