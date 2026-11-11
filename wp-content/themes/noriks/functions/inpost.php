@@ -448,11 +448,16 @@ add_filter( 'woocommerce_form_field', function ( $polje, $kljuc ) {
 	return $polje;
 }, 10, 2 );
 
-/** Slog in skripta izbirnika (enkrat). */
+/**
+ * Slog izbirnika (enkrat) + prijava skripte v nogo.
+ * Skripta mora v nogo: v obrazcu bi tekla, preden WooCommerce nalozi
+ * jQuery.selectWoo, in izbirnik bi padel na rezervno besedilno polje.
+ */
 function noriks_inpost_slog_in_skripta() {
 	static $enkrat = false;
 	if ( $enkrat ) { return; }
 	$enkrat = true;
+	add_action( 'wp_footer', 'noriks_inpost_skripta', 99 );
 	?>
 	<style>
 	/* Kartice nacinov dostave imajo slog ze v temi (vgrajen CSS blagajne:
@@ -489,7 +494,12 @@ function noriks_inpost_slog_in_skripta() {
 	.npac-tab td { padding: 10px 12px; font-weight: 700; border-bottom: 1px solid #ededed; }
 	.npac-tab tr:last-child th, .npac-tab tr:last-child td { border-bottom: 0; }
 	</style>
+	<?php
+}
 
+/** Skripta izbirnika — v nogi, ko sta jQuery in selectWoo ze nalozena. */
+function noriks_inpost_skripta() {
+	?>
 	<script>
 	(function(){
 	  var koren = <?php echo wp_json_encode( esc_url_raw( rest_url( 'noriks/v1/inpost' ) ) ); ?>;
