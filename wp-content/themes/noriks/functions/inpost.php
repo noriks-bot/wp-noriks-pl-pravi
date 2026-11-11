@@ -519,6 +519,9 @@ function noriks_inpost_skripta() {
 	<script>
 	(function(){
 	  var koren = <?php echo wp_json_encode( esc_url_raw( rest_url( 'noriks/v1/inpost' ) ) ); ?>;
+	  /* WooCommerce nalozi selectWoo z "defer", zato se ga ob zagonu te
+	     skripte se ni. Pocakamo nanj, sicer pade izbirnik na rezervno polje. */
+	  function zazeni(){
 	  var $ = window.jQuery;
 	  function el(id){ return document.getElementById(id); }
 
@@ -656,6 +659,12 @@ function noriks_inpost_skripta() {
 	  });
 
 	  osvezi();
+	  }
+	  var cakam = 0;
+	  (function cakaj(){
+	    if ( ( window.jQuery && window.jQuery.fn && window.jQuery.fn.selectWoo ) || ++cakam > 60 ) { zazeni(); }
+	    else { setTimeout( cakaj, 100 ); }
+	  })();
 	})();
 	</script>
 	<?php
