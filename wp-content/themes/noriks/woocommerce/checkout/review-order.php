@@ -45,7 +45,20 @@ defined( 'ABSPATH' ) || exit;
 
       <!-- Shipping -->
       <div class="c--darkgray review-section-container review-addons shipping_order_review">
-        <div class="review-addons-title"><div>Standardowa dostawa - InPost</div></div>
+        <div class="review-addons-title"><div><?php
+          /* Napis sledi dejansko izbranemu nacinu dostave. */
+          $npac = function_exists( 'noriks_inpost_izbran' ) && noriks_inpost_izbran();
+          if ( $npac ) {
+            echo 'Paczkomat / PaczkoPunkt';
+            $pid = function_exists( 'noriks_inpost_seja_id' ) ? noriks_inpost_seja_id() : '';
+            $pm  = $pid !== '' ? noriks_inpost_mesto( $pid ) : null;
+            if ( $pm ) {
+              echo '<br><small>' . esc_html( $pm['naziv'] ) . ', ' . esc_html( $pm['naslov'] ) . '</small>';
+            }
+          } else {
+            echo 'Standardowa dostawa - InPost';
+          }
+        ?></div></div>
                 <div class="review-addons-price review-sale-price" id="noriks-shipping-price"><?php
           $shipping_total = (float) WC()->cart->get_shipping_total();
           if ( $shipping_total > 0 ) {

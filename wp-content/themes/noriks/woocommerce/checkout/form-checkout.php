@@ -33,6 +33,14 @@ if ( WC()->cart->is_empty() ) return;
         <!-- SHIPPING -->
         <div id="custom_shipping">
           <h3>Dostawa - InPost</h3>
+          <?php
+          /* Nacini dostave: na dom (privzeto) + InPost paczkomat z izbirnikom.
+             Logika je v functions/inpost.php; brez vklopljenega paketomata
+             izrise isto kartico kot prej. */
+          if ( function_exists( 'noriks_inpost_nacini' ) ) {
+            noriks_inpost_nacini();
+          } else {
+          ?>
           <ul class="shipping_method_custom">
             <li class="standard-shipping shipping-tab">
               <input name="shipping_method[0]" data-index="0" id="shipping_method_0_standard_custom"
@@ -53,6 +61,7 @@ if ( WC()->cart->is_empty() ) return;
               </label>
             </li>
           </ul>
+          <?php } ?>
           <div class="delivery-from-eu-warehouse">
             <img decoding="async" class="delivery-from-eu-warehouse__icon" src="https://images.vigo-shop.com/general/flags/eu-warehouse.svg">
             <span class="delivery-from-eu-warehouse__text">Magazyn w UE</span>
@@ -117,7 +126,7 @@ jQuery(function($){
   var days=['niedziela','poniedziałek','wtorek','środa','czwartek','piątek','sobota'];
   function addBiz(d,n){var r=new Date(d);while(n>0){r.setDate(r.getDate()+1);if(r.getDay()!==0&&r.getDay()!==6)n--;}return r;}
   var now=new Date(),from=addBiz(now,2),to=addBiz(now,5);
-  $('#js-delivery-dates').text(days[from.getDay()]+', '+from.getDate()+'.'+(from.getMonth()+1)+'. - '+days[to.getDay()]+', '+to.getDate()+'.'+(to.getMonth()+1)+'.');
+  $('#js-delivery-dates, .js-delivery-dates').text(days[from.getDay()]+', '+from.getDate()+'.'+(from.getMonth()+1)+'. - '+days[to.getDay()]+', '+to.getDate()+'.'+(to.getMonth()+1)+'.');
 
   /* Shipping price — read from WC after checkout update */
   /* Update order review when clicking payment method label */
