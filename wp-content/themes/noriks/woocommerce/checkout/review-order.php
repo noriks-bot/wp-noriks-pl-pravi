@@ -56,7 +56,7 @@ defined( 'ABSPATH' ) || exit;
               echo '<br><small>' . esc_html( $pm['naziv'] ) . ', ' . esc_html( $pm['naslov'] ) . '</small>';
             }
           } else {
-            echo 'Standardowa dostawa - InPost';
+            echo 'Standardowa dostawa - GLS';
           }
         ?></div></div>
                 <div class="review-addons-price review-sale-price" id="noriks-shipping-price"><?php

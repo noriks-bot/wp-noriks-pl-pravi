@@ -44,7 +44,7 @@ const NORIKS_INPOST_META  = '_inpost';
 /** Meta polje, po katerem Metakocka prepozna paketomat. Ne spreminjaj. */
 const NORIKS_INPOST_MK    = '_parcel_shop_id';
 /** Napis na kartici na blagajni (kupcu). */
-const NORIKS_INPOST_NAPIS = 'Odbiór w Paczkomat / PaczkoPunkt';
+const NORIKS_INPOST_NAPIS = 'Paczkomat / PaczkoPunkt';
 /** Napis na kartici za dostavo na naslov. */
 const NORIKS_INPOST_DOMA  = 'Dostawa do domu';
 /** Privzeti naziv nacina dostave (preslikava na vrsto dostave v Metakocki). */
@@ -290,7 +290,9 @@ function noriks_inpost_seja_id() {
  * ------------------------------------------------------------------ */
 
 const NORIKS_INPOST_LOGO     = 'https://images.vigo-shop.com/pl/shipping-method-icons/parcel_machine_PL.svg';
-const NORIKS_INPOST_LOGO_DOM = 'https://images.vigo-shop.com/pl/shipping-method-icons/home_PL.svg';
+/* Na dom vozi GLS, v paketomat InPost — zato locena logotipa. */
+const NORIKS_INPOST_LOGO_DOM = 'https://images.vigo-shop.com/general/curriers/gls.png';
+const NORIKS_INPOST_LOGO_PAC = 'https://images.vigo-shop.com/general/curriers/inpost.png';
 
 /** Ponudbe dostave, locene na "na dom" in "paketomat". */
 function noriks_inpost_ponudbe() {
@@ -344,7 +346,7 @@ function noriks_inpost_izbira() {
 			<div class="delivery-type hs-delivery-home enabled<?php echo $je_pac ? '' : ' active'; ?>"
 				data-rate="<?php echo esc_attr( $kljuc_doma ); ?>" data-inpost="0">
 				<p><?php echo esc_html( NORIKS_INPOST_DOMA ); ?></p>
-				<img decoding="async" src="<?php echo esc_url( NORIKS_INPOST_LOGO_DOM ); ?>" alt="Dostawa do domu">
+				<img decoding="async" src="<?php echo esc_url( NORIKS_INPOST_LOGO_DOM ); ?>" alt="GLS">
 			</div>
 			<?php endif; ?>
 			<div class="delivery-type hs-delivery-machine enabled<?php echo $je_pac ? ' active' : ''; ?>"
@@ -406,7 +408,7 @@ function noriks_inpost_nacini() {
 
 	$ponudba = $p['vse'][ $p['izbran'] ];
 	$cena    = (float) $ponudba->get_cost();
-	noriks_inpost_kartica( $cena );
+	noriks_inpost_kartica( $cena, noriks_inpost_je_kljuc( $p['izbran'] ) );
 }
 
 /** Ko WooCommerce ne vrne ponudb: ista kartica kot prej. */
@@ -415,7 +417,7 @@ function noriks_inpost_rezervna_kartica() {
 	noriks_inpost_kartica( $cena );
 }
 
-function noriks_inpost_kartica( $cena ) {
+function noriks_inpost_kartica( $cena, $je_pac = false ) {
 	?>
 	<ul class="shipping_method_custom">
 		<li class="standard-shipping shipping-tab is-on">
@@ -430,7 +432,8 @@ function noriks_inpost_kartica( $cena ) {
 							echo $cena > 0 ? esc_html( number_format( $cena, 2, ',', ' ' ) . ' zł' ) : 'Bezpłatnie';
 						?></span>
 						<span class="delivery_img"><img decoding="async" class="poczta_polska standard"
-							src="https://images.vigo-shop.com/general/curriers/inpost.png"/></span>
+							id="npac_dostawa_logo"
+							src="<?php echo esc_url( $je_pac ? NORIKS_INPOST_LOGO_PAC : NORIKS_INPOST_LOGO_DOM ); ?>"/></span>
 					</div>
 				</div>
 			</label>
@@ -465,7 +468,13 @@ function noriks_inpost_slog_in_skripta() {
 	<style>
 	/* Kartice nacinov dostave imajo slog ze v temi (vgrajen CSS blagajne:
 	   .hs-delivery-type-container / .delivery-type / .pl-inpost, vkljucno
-	   z mobilnim). Tu ga ne podvajamo. */
+	   z mobilnim). Tu samo poskrbimo, da daljsi poljski napis ne stisne
+	   kartice: visina se prilagodi vsebini, obe kartici ostaneta enaki. */
+	.hs-delivery-type-container.pl-inpost .container__buttons { align-items: stretch; }
+	.hs-delivery-type-container.pl-inpost .delivery-type {
+		height: auto !important; min-height: 76px; padding: 10px 10px 12px !important; }
+	.hs-delivery-type-container.pl-inpost .delivery-type p { line-height: 1.25; margin: 6px 0 0 !important; }
+	.hs-delivery-type-container.pl-inpost .delivery-type img { margin: 0 !important; }
 
 	/* kljukica v bloku "Dostawa" (CSS teme jo meri prek "label svg") */
 	#custom_shipping .checkedlabel svg { width: 19px !important; height: 14px !important;
@@ -581,6 +590,10 @@ function noriks_inpost_skripta() {
 	    vrsticeNaslova().forEach(function(e){ e.style.display = pac ? 'none' : ''; });
 	    if (polje) polje.style.display = pac ? '' : 'none';
 	    if (okvir) okvir.style.display = (pac && sel && sel.value) ? '' : 'none';
+	    var logo = el('npac_dostawa_logo');
+	    if (logo) logo.src = pac
+	      ? <?php echo wp_json_encode( NORIKS_INPOST_LOGO_PAC ); ?>
+	      : <?php echo wp_json_encode( NORIKS_INPOST_LOGO_DOM ); ?>;
 	    if (napaka) napaka.hidden = true;
 	    if (polje) polje.classList.toggle('is-filled', !!(sel && sel.value));
 	  }

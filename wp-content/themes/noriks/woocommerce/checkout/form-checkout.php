@@ -32,7 +32,7 @@ if ( WC()->cart->is_empty() ) return;
 
         <!-- SHIPPING -->
         <div id="custom_shipping">
-          <h3>Dostawa - InPost</h3>
+          <h3>Dostawa</h3>
           <?php
           /* Nacini dostave: na dom (privzeto) + InPost paczkomat z izbirnikom.
              Logika je v functions/inpost.php; brez vklopljenega paketomata
