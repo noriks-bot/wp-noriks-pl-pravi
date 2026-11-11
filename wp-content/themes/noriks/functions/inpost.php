@@ -352,7 +352,7 @@ function noriks_inpost_izbira() {
 			<div class="delivery-type hs-delivery-machine enabled<?php echo $je_pac ? ' active' : ''; ?>"
 				data-rate="<?php echo esc_attr( $kljuc_pac ); ?>" data-inpost="1">
 				<p><?php echo esc_html( NORIKS_INPOST_NAPIS ); ?></p>
-				<img decoding="async" style="max-width:55px;" src="<?php echo esc_url( NORIKS_INPOST_LOGO ); ?>" alt="InPost">
+				<img decoding="async" src="<?php echo esc_url( NORIKS_INPOST_LOGO ); ?>" alt="InPost">
 			</div>
 		</div>
 		<input type="hidden" name="shipping_method[0]" id="npac_rate" value="<?php echo esc_attr( $p['izbran'] ); ?>">
@@ -472,9 +472,12 @@ function noriks_inpost_slog_in_skripta() {
 	   kartice: visina se prilagodi vsebini, obe kartici ostaneta enaki. */
 	.hs-delivery-type-container.pl-inpost .container__buttons { align-items: stretch; }
 	.hs-delivery-type-container.pl-inpost .delivery-type {
-		height: auto !important; min-height: 76px; padding: 10px 10px 12px !important; }
-	.hs-delivery-type-container.pl-inpost .delivery-type p { line-height: 1.25; margin: 6px 0 0 !important; }
-	.hs-delivery-type-container.pl-inpost .delivery-type img { margin: 0 !important; }
+		height: auto !important; min-height: 0 !important; padding: 8px 10px !important; }
+	.hs-delivery-type-container.pl-inpost .delivery-type p {
+		font-size: 14px !important; line-height: 1.2; margin: 4px 0 0 !important; }
+	.hs-delivery-type-container.pl-inpost .delivery-type img {
+		max-width: 62px !important; max-height: 24px !important; width: auto !important;
+		object-fit: contain; margin: 0 !important; }
 
 	/* kljukica v bloku "Dostawa" (CSS teme jo meri prek "label svg") */
 	#custom_shipping .checkedlabel svg { width: 19px !important; height: 14px !important;
