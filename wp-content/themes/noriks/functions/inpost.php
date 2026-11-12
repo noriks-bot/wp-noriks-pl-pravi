@@ -39,16 +39,6 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-/*
- * TRDO STIKALO: v wp-config.php dodaj
- *     define( 'NORIKS_INPOST_IZKLOP', true );
- * in modul se sploh ne nalozi — blagajna dela tocno tako kot pred nadgradnjo.
- * Vsakdanje stikalo je sicer preprostejse: v WooCommerce -> Wysyłka -> strefa
- * Poland izklopi (ali odstrani) nacin "InPost Paczkomat". Brez njega ta
- * datoteka ne spremeni blagajne.
- */
-if ( defined( 'NORIKS_INPOST_IZKLOP' ) && NORIKS_INPOST_IZKLOP ) { return; }
-
 const NORIKS_INPOST_ID    = 'noriks_inpost';
 const NORIKS_INPOST_META  = '_inpost';
 /** Meta polje, po katerem Metakocka prepozna paketomat. Ne spreminjaj. */
@@ -59,6 +49,18 @@ const NORIKS_INPOST_NAPIS = 'Paczkomat / PaczkoPunkt';
 const NORIKS_INPOST_DOMA  = 'Dostawa do domu';
 /** Privzeti naziv nacina dostave (preslikava na vrsto dostave v Metakocki). */
 const NORIKS_INPOST_NAZIV = 'InPost Paczkomat';
+const NORIKS_INPOST_LOGO     = 'https://images.vigo-shop.com/pl/shipping-method-icons/parcel_machine_PL.svg';
+/* Na dom vozi GLS, v paketomat InPost — zato locena logotipa. */
+const NORIKS_INPOST_LOGO_DOM = 'https://images.vigo-shop.com/general/curriers/gls.png';
+const NORIKS_INPOST_LOGO_PAC = 'https://images.vigo-shop.com/general/curriers/inpost.png';
+
+/*
+ * STIKALO: functions/paketomati-stikalo.php (en sam vnos v temi).
+ * Ce je izklopljeno, se ta modul sploh ne nalozi in blagajna dela natanko
+ * tako kot pred nadgradnjo (dostava na dom z GLS).
+ */
+if ( ! function_exists( 'noriks_inpost_vklopljen' ) || ! noriks_inpost_vklopljen() ) { return; }
+
 
 /* ------------------------------------------------------------------ *
  * 1) Podatki o mestih
@@ -299,10 +301,6 @@ function noriks_inpost_seja_id() {
  *    vkljucno z mobilnim) — tu ga ne podvajamo.
  * ------------------------------------------------------------------ */
 
-const NORIKS_INPOST_LOGO     = 'https://images.vigo-shop.com/pl/shipping-method-icons/parcel_machine_PL.svg';
-/* Na dom vozi GLS, v paketomat InPost — zato locena logotipa. */
-const NORIKS_INPOST_LOGO_DOM = 'https://images.vigo-shop.com/general/curriers/gls.png';
-const NORIKS_INPOST_LOGO_PAC = 'https://images.vigo-shop.com/general/curriers/inpost.png';
 
 /** Ponudbe dostave, locene na "na dom" in "paketomat". */
 function noriks_inpost_ponudbe() {
