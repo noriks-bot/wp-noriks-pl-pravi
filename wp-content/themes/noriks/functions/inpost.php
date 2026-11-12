@@ -39,6 +39,16 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/*
+ * TRDO STIKALO: v wp-config.php dodaj
+ *     define( 'NORIKS_INPOST_IZKLOP', true );
+ * in modul se sploh ne nalozi — blagajna dela tocno tako kot pred nadgradnjo.
+ * Vsakdanje stikalo je sicer preprostejse: v WooCommerce -> Wysyłka -> strefa
+ * Poland izklopi (ali odstrani) nacin "InPost Paczkomat". Brez njega ta
+ * datoteka ne spremeni blagajne.
+ */
+if ( defined( 'NORIKS_INPOST_IZKLOP' ) && NORIKS_INPOST_IZKLOP ) { return; }
+
 const NORIKS_INPOST_ID    = 'noriks_inpost';
 const NORIKS_INPOST_META  = '_inpost';
 /** Meta polje, po katerem Metakocka prepozna paketomat. Ne spreminjaj. */
@@ -410,7 +420,9 @@ function noriks_inpost_izbirnik() {
 /** Blok "Dostawa" v drugem stolpcu: datumi, cena, logotip prevoznika. */
 function noriks_inpost_nacini() {
 	$p = noriks_inpost_ponudbe();
-	if ( ! $p['vse'] ) { noriks_inpost_rezervna_kartica(); return; }
+	/* Izklopljeno (nacina InPost ni v coni) ali brez ponudb: izrisemo natanko
+	   tisto kartico, kot je bila na blagajni pred to nadgradnjo. */
+	if ( ! $p['vse'] || ! $p['pac'] ) { noriks_inpost_rezervna_kartica(); return; }
 
 	$ponudba = $p['vse'][ $p['izbran'] ];
 	$cena    = (float) $ponudba->get_cost();
@@ -420,14 +432,18 @@ function noriks_inpost_nacini() {
 /** Ko WooCommerce ne vrne ponudb: ista kartica kot prej. */
 function noriks_inpost_rezervna_kartica() {
 	$cena = ( function_exists( 'WC' ) && WC()->cart ) ? (float) WC()->cart->get_shipping_total() : 0;
-	noriks_inpost_kartica( $cena );
+	noriks_inpost_kartica( $cena, false, true );
 }
 
-function noriks_inpost_kartica( $cena, $je_pac = false ) {
+function noriks_inpost_kartica( $cena, $je_pac = false, $kot_prej = false ) {
 	?>
 	<ul class="shipping_method_custom">
-		<li class="standard-shipping shipping-tab is-on">
-			<label class="checkedlabel">
+		<li class="standard-shipping shipping-tab<?php echo $kot_prej ? '' : ' is-on'; ?>">
+			<?php if ( $kot_prej ) : ?>
+			<input name="shipping_method[0]" data-index="0" id="shipping_method_0_standard_custom"
+				value="standard" class="shipping_method shipping_method_field" type="radio" checked>
+			<?php endif; ?>
+			<label<?php echo $kot_prej ? ' for="shipping_method_0_standard_custom"' : ''; ?> class="checkedlabel">
 				<?php echo noriks_inpost_kljukica(); ?>
 				<div class="outer-wrapper">
 					<div class="inner-wrapper-dates">

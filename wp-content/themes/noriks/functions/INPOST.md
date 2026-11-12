@@ -17,6 +17,29 @@ mest — tako kot ima vigoshop.pl.
 Slog kartic je že v temi (vgrajen CSS blagajne `.hs-delivery-type-container`,
 `.pl-inpost`, vključno z mobilnim) — modul ga ne podvaja.
 
+## 0. Stikalo za vklop/izklop
+
+Kodo lahko mirno das na produkcijo, ne da bi kupci karkoli videli.
+
+**Vsakdanje stikalo — en klik v WooCommerce:**
+WooCommerce → Ustawienia → Wysyłka → strefa **Poland** → pri načinu
+**InPost Paczkomat** odkljukaj/obkljukaj *Omogočeno*.
+
+- **izklopljeno** → na blagajni ni kartic za izbiro, ni izbirnika paketomatov,
+  blok »Dostawa« je natanko tak kot pred nadgradnjo (ista koda, isti radio).
+  Dostava na dom z GLS dela po starem.
+- **vklopljeno** → kartici *Dostawa do domu* / *Paczkomat / PaczkoPunkt* in
+  izbirnik paketomata.
+
+**Trdo stikalo** (če ne želiš niti registriranega načina dostave) — v
+`wp-config.php`:
+
+```php
+define( 'NORIKS_INPOST_IZKLOP', true );
+```
+
+Takrat se modul sploh ne naloži: ni načina dostave, ni REST poti, ni sloga.
+
 ## 1. Vklop v WooCommerce (brez tega se nič ne spremeni)
 
 WooCommerce → Ustawienia → **Wysyłka** → strefa **Poland** → Dodaj metodę →
