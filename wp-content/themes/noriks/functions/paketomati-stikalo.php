@@ -20,7 +20,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-$noriks_inpost_stikalo = false;
+$noriks_inpost_stikalo = array( 'devpl.noriks.com' );
 
 /** Ali so paketomati vklopljeni na tej strani? */
 function noriks_inpost_vklopljen() {
