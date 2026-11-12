@@ -476,19 +476,19 @@ function noriks_inpost_slog_in_skripta() {
 	   .hs-delivery-type-container / .delivery-type / .pl-inpost, vkljucno
 	   z mobilnim). Tu samo poskrbimo, da daljsi poljski napis ne stisne
 	   kartice: visina se prilagodi vsebini, obe kartici ostaneta enaki. */
-	/* Visina se prilagodi vsebini (fiksnih 100px je daljsi poljski napis
-	   prelil cez rob), obe kartici pa ostaneta enako visoki. */
+	/* Enake proporcije kot na CZ: nizki kartici (~70px), napis v eni vrstici.
+	   Visina je prilagodljiva, da se daljsi napis nikoli ne prelije cez rob. */
 	.hs-delivery-type-container.pl-inpost .container__buttons { align-items: stretch; }
 	.hs-delivery-type-container.pl-inpost .delivery-type {
-		height: auto !important; min-height: 100px; padding: 10px 8px !important;
-		box-sizing: border-box; overflow: hidden; }
+		height: auto !important; min-height: 69px; padding: 8px !important;
+		box-sizing: border-box; }
 	.hs-delivery-type-container.pl-inpost .delivery-type p {
-		font-size: 15px !important; line-height: 18px !important; margin: 0 !important;
+		font-size: 14px !important; line-height: 18px !important; margin: 4px 0 0 !important;
 		width: 100%; }
 	.hs-delivery-type-container.pl-inpost .delivery-type img {
-		max-width: 70px !important; max-height: 44px !important; width: auto !important;
-		padding: 5px !important; margin: 0 !important; object-fit: contain; }
-	.hs-delivery-type-container.pl-inpost .hs-delivery-machine img { max-width: 55px !important; }
+		max-width: 72px !important; max-height: 32px !important; width: auto !important;
+		padding: 3px !important; margin: 0 !important; object-fit: contain; }
+	.hs-delivery-type-container.pl-inpost .hs-delivery-machine img { max-width: 56px !important; }
 
 	/* kljukica v bloku "Dostawa" (CSS teme jo meri prek "label svg") */
 	#custom_shipping .checkedlabel svg { width: 19px !important; height: 14px !important;
