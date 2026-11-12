@@ -609,10 +609,17 @@ function noriks_inpost_skripta() {
 	    return !!a && a.getAttribute('data-inpost') === '1';
 	  }
 
-	  /* Skrita polja naslova napolnimo z naslovom paketomata: tako narocilo ni
-	     brez naslova in preverjanje hisne stevilke ter postne stevilke uspe. */
+	  /* Skrita polja naslova napolnimo z naslovom paketomata (tako narocilo ni
+	     brez naslova in preverjanje uspe), a si kupcev naslov zapomnimo in ga
+	     vrnemo, ce se premisli in izbere dostavo na dom. */
+	  var imenaNaslova = ['billing_address_1','billing_address_2','billing_postcode','billing_city'];
+	  var shranjenNaslov = null;
+
 	  function napolniNaslov(m){
 	    if (!m) { return; }
+	    if (shranjenNaslov === null) {
+	      shranjenNaslov = imenaNaslova.map(function(id){ var e = el(id); return e ? e.value : ''; });
+	    }
 	    var v = {billing_address_1: m.ulica || m.naslov, billing_address_2: 'BB',
 	             billing_postcode: m.kod || '', billing_city: m.mesto || ''};
 	    Object.keys(v).forEach(function(id){
@@ -620,9 +627,19 @@ function noriks_inpost_skripta() {
 	    });
 	  }
 
+	  function vrniNaslov(){
+	    if (shranjenNaslov === null) { return; }
+	    imenaNaslova.forEach(function(id, i){
+	      var e = el(id);
+	      if (e) { e.value = shranjenNaslov[i]; e.dispatchEvent(new Event('change', {bubbles:true})); }
+	    });
+	    shranjenNaslov = null;
+	  }
+
 	  function osvezi(){
 	    var pac = jePac();
 	    vrsticeNaslova().forEach(function(e){ e.style.display = pac ? 'none' : ''; });
+	    if ( ! pac ) { vrniNaslov(); }
 	    if (polje) polje.style.display = pac ? '' : 'none';
 	    if (okvir) okvir.style.display = (pac && sel && sel.value) ? '' : 'none';
 	    var logo = el('npac_dostawa_logo');
