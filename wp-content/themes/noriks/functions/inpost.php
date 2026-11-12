@@ -358,6 +358,7 @@ function noriks_inpost_izbira() {
 	$kljuc_pac  = key( $p['pac'] );
 	$je_pac     = noriks_inpost_je_kljuc( $p['izbran'] );
 	?>
+	<!-- npac 2026-11-12-c -->
 	<div class="hs-delivery-type-container pl-inpost">
 		<div class="container__title">Metoda dostawy</div>
 		<div class="container__buttons">
