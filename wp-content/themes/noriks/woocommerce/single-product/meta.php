@@ -983,6 +983,20 @@ Wystarczy, że napiszesz do nas maila z informacją, że chcesz wymiany, a my od
         'fisiorest' => array( 'noriks-fisiorest.pdf', 'NORIKS NeckRelax — urządzenie na kark' ),
         'bunion' => array( 'noriks-bunion-fix.pdf', 'NORIKS Bunion Fix — korektor haluksów' ),
         'ortopas' => array( 'noriks-ortopas.pdf', 'Pas ortopedyczny NORIKS na plecy' ),
+        'slim' => array( 'noriks-slim.pdf', 'NORIKS Slim — modelujące majtki z wysokim stanem' ),
+        'red' => array( 'noriks-redrelief.pdf', 'NORIKS RedRelief — terapia czerwonym światłem na nadgarstek' ),
+        'pal' => array( 'noriks-pal.pdf', 'NORIKS Pal — laska z drugim uchwytem' ),
+        'cloath' => array( 'noriks-polar-cloth.pdf', 'Polar NORIKS Cloth XXL — ściereczka do czyszczenia samą wodą' ),
+        'slabproof' => array( 'noriks-slabproof.pdf', 'NORIKS SlabProof — skarpety robocze z amortyzacją' ),
+        'controlpro' => array( 'noriks-controlpro.pdf', 'NORIKS ControlPro — trenażer mięśni dna miednicy' ),
+        'tradesman' => array( 'noriks-tradesman.pdf', 'NORIKS Tradesman — skarpety robocze z amortyzacją i wsparciem łuku stopy' ),
+        'bowl' => array( 'noriks-bowl.pdf', 'NORIKS Bowl — ortopedyczna miska dla psa z pochyleniem 15°' ),
+        'cloud' => array( 'noriks-cloud.pdf', 'NORIKS Cloud — ortopedyczna poduszka między kolana' ),
+        'kneeheat' => array( 'noriks-kneeheat.pdf', 'NORIKS KneeHeat — ogrzewanie, kompresja i masaż kolana' ),
+        'mamafit' => array( 'noriks-mamafit.pdf', 'NORIKS MamaFit — poporodowe majtki kompresyjne 360°' ),
+        'snug' => array( 'noriks-snug.pdf', 'NORIKS Snug — poduszka na całe ciało w kształcie litery S' ),
+        'hyd' => array( 'noriks-hyd.pdf', 'NORIKS HYD — butelka na wodę wodorową z elektrolizą PEM' ),
+        'winecooler' => array( 'noriks-winecooler.pdf', 'NORIKS WineCooler — schładzacz do wina z nalewakiem' ),
     );
     $noriks_manual = null;
     if ( function_exists('noriks_is_type') ) {

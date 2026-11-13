@@ -75,6 +75,90 @@ function noriks_manuals_list() {
             'title' => 'NORIKS KidsNest — dziecięca poduszka ortopedyczna',
             'sub'   => 'Trzy rozmiary, które rosną razem z dzieckiem i wspierają prawidłowe ułożenie głowy.',
         ),
+        array(
+            'file'  => 'noriks-slim.pdf',
+            'sku'   => 'NORIKS-SLIM',
+            'title' => 'NORIKS Slim — modelujące majtki z wysokim stanem',
+            'sub'   => 'Krzyżowany pas 360°, wysoki stan i bezszwowa dzianina do codziennego noszenia.',
+        ),
+        array(
+            'file'  => 'noriks-redrelief.pdf',
+            'sku'   => 'NORIKS-RED',
+            'title' => 'NORIKS RedRelief — terapia czerwonym światłem na nadgarstek',
+            'sub'   => 'Podwójna długość fali 660 nm i 850 nm, 48 podwójnych diod LED, sesja 15 minut.',
+        ),
+        array(
+            'file'  => 'noriks-pal.pdf',
+            'sku'   => 'NORIKS-PAL',
+            'title' => 'NORIKS Pal — laska z drugim uchwytem',
+            'sub'   => 'Drugi uchwyt do wstawania, cztery nóżki, latarka i alarm. Składana i regulowana na wysokość.',
+        ),
+        array(
+            'file'  => 'noriks-polar-cloth.pdf',
+            'sku'   => 'NORIKS-CLOATH',
+            'title' => 'Polar NORIKS Cloth XXL — ściereczka do czyszczenia samą wodą',
+            'sub'   => 'Format 60 × 40 cm, dwustronne wykonanie, wchłania do 600 ml wody. Bez sprayów i bez chemii.',
+        ),
+        array(
+            'file'  => 'noriks-slabproof.pdf',
+            'sku'   => 'NORIKS-SLABPROOF',
+            'title' => 'NORIKS SlabProof — skarpety robocze z amortyzacją',
+            'sub'   => 'Niski krój pod kostkę, strefowa amortyzacja pod piętą i przodostopiem.',
+        ),
+        array(
+            'file'  => 'noriks-controlpro.pdf',
+            'sku'   => 'NORIKS-CONTROLPRO',
+            'title' => 'NORIKS ControlPro — trenażer mięśni dna miednicy',
+            'sub'   => 'Ćwiczenie z oporem między kolanami: trzy serie po dziesięć ściśnięć dziennie, bez wkładania i bez aplikacji.',
+        ),
+        array(
+            'file'  => 'noriks-tradesman.pdf',
+            'sku'   => 'NORIKS-SLABPROOF-2',
+            'title' => 'NORIKS Tradesman — skarpety robocze z amortyzacją i wsparciem łuku stopy',
+            'sub'   => 'Bambus, strefowa amortyzacja, taśma pod łukiem stopy i podwójny ściągacz na długie zmiany w butach roboczych.',
+        ),
+        array(
+            'file'  => 'noriks-bowl.pdf',
+            'sku'   => 'NORIKS-BOWL',
+            'title' => 'NORIKS Bowl — ortopedyczna miska dla psa z pochyleniem 15°',
+            'sub'   => 'Podniesiona na 11 cm i pochylona o 15° — pies je w bardziej naturalnej pozycji, bez zginania szyi do podłogi.',
+        ),
+        array(
+            'file'  => 'noriks-cloud.pdf',
+            'sku'   => 'NORIKS-CLOUD',
+            'title' => 'NORIKS Cloud — ortopedyczna poduszka między kolana',
+            'sub'   => 'Do spania na boku: utrzymuje kolana i biodra w jednej linii, z regulowaną taśmą, która trzyma ją na miejscu przez całą noc.',
+        ),
+        array(
+            'file'  => 'noriks-kneeheat.pdf',
+            'sku'   => 'NORIKS-KNEEHEAT',
+            'title' => 'NORIKS KneeHeat — ogrzewanie, kompresja i masaż kolana',
+            'sub'   => 'Trzy terapie w jednej sesji: ciepło do 42 °C, kompresja powietrzna i wibracje 60 Hz. Sesja trwa 12 minut.',
+        ),
+        array(
+            'file'  => 'noriks-mamafit.pdf',
+            'sku'   => 'NORIKS-SLIM-2',
+            'title' => 'NORIKS MamaFit — poporodowe majtki kompresyjne 360°',
+            'sub'   => 'Wysoki stan i krzyżowa kompresja 360° — wsparcie brzucha z przodu, po bokach i z tyłu.',
+        ),
+        array(
+            'file'  => 'noriks-snug.pdf',
+            'sku'   => 'NORIKS-SNUG',
+            'title' => 'NORIKS Snug — poduszka na całe ciało w kształcie litery S',
+            'sub'   => 'Podpiera ramiona, biodra i kolana jednocześnie. Wymiary 105 × 30 cm, chłodząca poszewka.',
+        ),
+        array(
+            'file'  => 'noriks-hyd.pdf',
+            'sku'   => 'NORIKS-HYD',
+            'title' => 'NORIKS HYD — butelka na wodę wodorową z elektrolizą PEM',
+            'sub'   => 'Zamienia zwykłą wodę w wodorową. Cykl 3 lub 10 minut, trwały filtr, szkło i stal nierdzewna.',
+        ),
+        array(
+            'file'  => 'noriks-winecooler.pdf',
+            'sku'   => 'NORIKS-WINECOOLER',
+            'title' => 'NORIKS WineCooler — schładzacz do wina z nalewakiem',
+            'sub'   => 'Pręt ze stali nierdzewnej, który chłodzi butelkę od środka i nalewa bez kapania.',
+        ),
     );
 }
 
