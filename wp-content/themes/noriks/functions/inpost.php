@@ -358,7 +358,7 @@ function noriks_inpost_izbira() {
 	$kljuc_pac  = key( $p['pac'] );
 	$je_pac     = noriks_inpost_je_kljuc( $p['izbran'] );
 	?>
-	<!-- npac 2026-11-13-a -->
+	<!-- npac 2026-11-13-b -->
 	<div class="hs-delivery-type-container pl-inpost">
 		<div class="container__title">Metoda dostawy</div>
 		<div class="container__buttons">
@@ -511,7 +511,10 @@ function noriks_inpost_slog_in_skripta() {
 		text-align: center !important;
 		height: auto !important; min-height: 69px; padding: 8px !important;
 		box-sizing: border-box; }
+	/* Tema da odstavku "display: flex", zato text-align nanj ne vpliva in
+	   besedilo ostane levo. Zato ga vrnemo v navaden blok. */
 	.hs-delivery-type-container .delivery-type p {
+		display: block !important; justify-content: center !important;
 		font-size: 14px !important; line-height: 18px !important; margin: 4px 0 0 !important;
 		width: 100%; text-align: center !important; }
 	.hs-delivery-type-container .delivery-type img {
