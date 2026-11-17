@@ -1943,7 +1943,28 @@ $winecooler_faq = array(
     'answer'    => 'Prawo do zwrotu w ciągu 30 dni. Jeśli nie jesteś w pełni zadowolony z zakupu, skontaktuj się z nami w ciągu 30 dni od otrzymania zamówienia, a chętnie pomożemy w zwrocie towaru lub pieniędzy.'),
 );
 
-$faq_pick = function( $title, $list ) use ( $is_winecooler, $winecooler_faq, $is_slim, $slim_faq, $is_tradesman, $tradesman_faq, $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
+// NORIKS MamaBelt: pogosta vprasanja (kot HR auto_reviews/FAQ_HR_mamabelt.php).
+$is_mamabelt = ( function_exists('noriks_is_type') && noriks_is_type('mamabelt') );
+$mamabelt_faq = array(
+  array('questioon' => 'Jak zamontować adapter?',
+    'answer'    => 'W czterech krokach: przeciągnij pasek adaptera między siedziskiem a oparciem, poprowadź go pod siedziskiem (tak, aby nie był skręcony), koniec przełóż przez górny i dolny otwór klamry i pociągnij w dół, aby adapter mocno się trzymał.'),
+  array('questioon' => 'Jak potem zapinać pas?',
+    'answer'    => 'Tak jak zwykle – tylko dolną część pasa bezpieczeństwa przed zapięciem przełóż przez haczyk adaptera. Dzięki temu dolna część pasa pozostaje nisko, na udach.'),
+  array('questioon' => 'Czy poluzuje się na siedzeniu?',
+    'answer'    => 'Pasek adaptera ma regulowaną długość i po naciągnięciu mocno trzyma. Wewnętrzna warstwa adaptera jest wykonana ze stali, a zewnętrzna z gumy termoplastycznej.'),
+  array('questioon' => 'Czy będzie pasować do mojego samochodu?',
+    'answer'    => 'Adapter zakłada się na siedzenie, a długość paska można regulować, dlatego pasuje do większości standardowych foteli samochodowych.'),
+  array('questioon' => 'Czy mogę go używać także po ciąży?',
+    'answer'    => 'Tak. Choć został zaprojektowany z myślą o ciąży, sprawdzi się u każdego, komu przeszkadza dolna część pasa na brzuchu.'),
+  array('questioon' => 'Jakie kolory są dostępne?',
+    'answer'    => 'Czarny i różowy.'),
+  array('questioon' => 'Czy jest rabat przy zakupie kilku sztuk?',
+    'answer'    => 'Tak – przy zakupie 2 lub 3 sztuk cena za sztukę jest niższa. Oferty znajdziesz nad przyciskiem zamówienia.'),
+  array('questioon' => 'Co, jeśli nie będzie mi odpowiadać?',
+    'answer'    => 'Masz 30 dni na zwrot pieniędzy. Dostawa jest darmowa przy zamówieniach powyżej 300 zł, a płacisz za pobraniem przy odbiorze paczki.'),
+);
+
+$faq_pick = function( $title, $list ) use ( $is_mamabelt, $mamabelt_faq, $is_winecooler, $winecooler_faq, $is_slim, $slim_faq, $is_tradesman, $tradesman_faq, $is_slabproof, $slabproof_faq, $is_bowl, $bowl_faq, $is_snug, $snug_faq, $is_kompwom, $kompwom_faq, $is_pal, $pal_faq, $is_red, $red_faq, $is_kneeheat, $kneeheat_faq, $is_hyd_faq, $hyd_faq, $is_cloud_faq, $cloud_faq, $is_cloath_faq, $cloath_faq, $is_controlpro_faq, $controlpro_faq, $is_ortopas_faq, $ortopas_faq, $is_bunion_faq, $bunion_faq, $is_fisiorest_faq, $fisiorest_faq, $is_norikshers_faq, $norikshers_faq, $is_leakboxers_faq, $leakboxers_faq, $is_kompmajice_faq, $kompmajice_faq, $is_kidsnest_faq, $kidsnest_faq, $is_jastuk_faq, $jastuk_faq, $is_kneefix_faq, $kneefix_faq ) {
   $is_info = ( stripos( (string) $title, 'produk' ) !== false );
   if ( $is_snug && $is_info ) { return $snug_faq; }
   if ( $is_kompwom && $is_info ) { return $kompwom_faq; }
@@ -1951,6 +1972,7 @@ $faq_pick = function( $title, $list ) use ( $is_winecooler, $winecooler_faq, $is
   if ( $is_slim && $is_info ) { return $slim_faq; }
   if ( $is_slabproof && $is_info ) { return $slabproof_faq; }
   if ( $is_bowl && $is_info ) { return $bowl_faq; }
+  if ( $is_mamabelt && $is_info ) { return $mamabelt_faq; }
   if ( $is_winecooler && $is_info ) { return $winecooler_faq; }
   if ( $is_pal && $is_info ) { return $pal_faq; }
   if ( $is_red && $is_info ) { return $red_faq; }
