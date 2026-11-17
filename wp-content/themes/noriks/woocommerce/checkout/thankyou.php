@@ -20,7 +20,7 @@ $upsell_is_majice = true;
 
 $upsell_product_id = 250; // Crna majica (variable)
 $upsell_name       = 'Czarne koszulki';
-$upsell_qty_prices = array( 1 => 54.99, 3 => 129.99, 6 => 169.99 );
+$upsell_qty_prices = array( 1 => 33.99, 3 => 84.99, 6 => 149.99 );
 $upsell_qty_names  = array( 1 => '1x Czarna koszulka', 3 => '3x Czarne koszulki', 6 => '6x Czarnych koszulek' );
 $upsell_qty_images = array(
     1 => 'https://noriks.com/hr/wp-content/uploads/2025/09/black-1.jpg',

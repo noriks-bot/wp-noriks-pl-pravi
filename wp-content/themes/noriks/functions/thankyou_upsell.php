@@ -343,7 +343,7 @@ function noriks_handle_add_upsell() {
     if ( ! $variation_id || (int) wp_get_post_parent_id( $variation_id ) !== $product_id ) {
         wp_send_json_error( 'Nieprawidłowy wariant' );
     }
-    $qty_prices = array( 1 => 54.99, 3 => 129.99, 6 => 169.99 );
+    $qty_prices = array( 1 => 33.99, 3 => 84.99, 6 => 149.99 );
     if ( ! isset( $qty_prices[ $quantity ] ) ) {
         wp_send_json_error( 'Nieprawidłowa ilość' );
     }
