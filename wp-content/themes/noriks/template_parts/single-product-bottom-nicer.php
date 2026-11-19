@@ -1435,7 +1435,7 @@ $kompmajice_faq = array(
 
 // NORIKS LEAK BOXERS (bokserki na nietrzymanie moczu) — FAQ o produkcie (NORIKS, polski).
 $leakboxers_faq = array(
-  array( 'questioon' => 'Dlaczego ponad 123 000 mężczyzn wybrało NORIKS?', 'answer' => 'NORIKS to najbardziej chłonne bokserki wielorazowe na męskie wyciekanie moczu: mieszczą do 300 ml, mają certyfikat Oeko-Tex® i są wolne od szkodliwych substancji, nadają się do prania i wielokrotnego użytku (ekologiczna alternatywa dla jednorazowych wkładek), zaprojektowane z myślą o całodziennym komforcie i pewności siebie. Aż 87 % klientów zamawia ponownie po pierwszym zakupie.' ),
+  array( 'questioon' => 'Dlaczego ponad 123 000 mężczyzn wybrało NORIKS?', 'answer' => 'NORIKS to najbardziej chłonne bokserki wielorazowe na męskie wyciekanie moczu: mieszczą do 300 ml, są wolne od szkodliwych substancji, nadają się do prania i wielokrotnego użytku (ekologiczna alternatywa dla jednorazowych wkładek), zaprojektowane z myślą o całodziennym komforcie i pewności siebie. Aż 87 % klientów zamawia ponownie po pierwszym zakupie.' ),
   array( 'questioon' => 'Ile chłoną?', 'answer' => 'Do 300 ml — niemal 3 razy więcej niż większość produktów na rynku. Dzięki 7-warstwowemu rdzeniowi PureDry™ płyn jest natychmiast wchłaniany i zamykany głęboko w środku, więc skóra pozostaje sucha, a warstwa zewnętrzna jest wodoodporna.' ),
   array( 'questioon' => 'Czy widać je pod ubraniem?', 'answer' => 'Nie. Bokserki NORIKS są cienkie, dyskretne i elastyczne — wyglądają i czują się jak zwykła bielizna, bez pogrubienia i bez uczucia „pieluchy”.' ),
   array( 'questioon' => 'Jak je prać?', 'answer' => 'Pierz w 30–40 °C, bez płynu zmiękczającego i wybielacza, susz na powietrzu. Zachowują chłonność przez setki prań.' ),
@@ -1478,7 +1478,7 @@ $kneefix_faq = array(
 $kidsnest_faq = array(
   array( 'questioon' => 'Jak szybko zobaczę, że oddychanie przez usta ustaje?', 'answer' => 'Większość rodziców zauważa cichsze oddychanie i mniej przebudzeń z otwartymi ustami w ciągu pierwszych 5–7 nocy. Do 14. nocy u większości dzieci chrapanie się uspokaja, a usta pozostają zamknięte. Pełną różnicę — widocznie lepszą pozycję i spokojniejszy sen — rodzice najczęściej opisują około 21.–30. dnia. Używaj jej każdej nocy.' ),
   array( 'questioon' => 'Dla jakiego wieku jest KidsNest?', 'answer' => 'KidsNest występuje w trzech rozmiarach: 1–3, 3–9 i 9–14 lat. Najważniejsze okno to wiek między 3. a 9. rokiem życia, kiedy podniebienie i żuchwa rozwijają się najintensywniej — ale każdy wiek ma swój rozmiar i swoją korzyść.' ),
-  array( 'questioon' => 'Czy jest bezpieczna? Co jest w środku?', 'answer' => 'KidsNest wykonana jest z hipoalergicznej pianki memory z certyfikatem OEKO-TEX® — bez formaldehydu, metali ciężkich i BPA. Jest odporna na roztocza i przewiewna, a poszewkę można zdjąć i wyprać w pralce.' ),
+  array( 'questioon' => 'Czy jest bezpieczna? Co jest w środku?', 'answer' => 'KidsNest wykonana jest z hipoalergicznej pianki memory — bez formaldehydu, metali ciężkich i BPA. Jest odporna na roztocza i przewiewna, a poszewkę można zdjąć i wyprać w pralce.' ),
   array( 'questioon' => 'Czy moje dziecko naprawdę będzie z niej korzystać?', 'answer' => 'Tak. Ergonomiczny kształt odbiera się jako wsparcie, a nie coś dziwnego — większość dzieci przyzwyczaja się w 1–2 noce. Rodzice często piszą, że po pierwszym tygodniu dzieci nie chcą spać bez niej. Struktura 3-strefowa naturalnie przyjmuje głowę — nie ma „prawidłowego sposobu”, nie ma walki przed snem.' ),
   array( 'questioon' => 'Czy działa, jeśli moje dziecko już oddycha przez usta?', 'answer' => 'Tak — właśnie dla takich dzieci została zaprojektowana. Struktura 3-strefowa pomaga zapobiegać odchylaniu głowy do tyłu, przez które usta otwierają się we śnie. U większości dzieci w ciągu 7–14 nocy usta naturalnie się zamykają i wraca oddychanie przez nos.' ),
   array( 'questioon' => 'Co jeśli mojemu dziecku nie pomoże?', 'answer' => 'Pozwól dziecku spać na KidsNest przez 30 nocy. Jeśli nie zobaczysz różnicy — mniej oddychania przez usta, cichsze noce, spokojniejszy sen — napisz do nas, a zwrócimy pieniądze. Bez pytań i bez drobnego druku.' ),
@@ -1489,7 +1489,7 @@ $jastuk_faq = array(
   array( 'questioon' => 'Jak NORIKS ErgoSit łagodzi ból przy siedzeniu?', 'answer' => 'ErgoSit ma wycięcie na kość ogonową, które eliminuje bezpośredni nacisk na kość ogonową i nerw kulszowy, a anatomiczny kształt z pianki memory o wysokiej gęstości równomiernie rozkłada ciężar na biodra i uda. W ten sposób odciąża wrażliwe punkty i wspiera zdrową, wyprostowaną postawę.' ),
   array( 'questioon' => 'Gdzie mogę używać poduszki?', 'answer' => 'Wszędzie tam, gdzie siedzisz — w samochodzie, na krześle biurowym, krześle do jadalni, wózku inwalidzkim czy w domu. Stabilna antypoślizgowa podstawa utrzymuje ją na miejscu, więc komfort towarzyszy Ci przez cały dzień.' ),
   array( 'questioon' => 'Czy pianka odkształca się z czasem?', 'answer' => 'Nie. ErgoSit wykorzystuje piankę memory o wysokiej gęstości, która zachowuje kształt i jędrność nawet po długim, codziennym użytkowaniu — w przeciwieństwie do tanich poduszek, które szybko się zapadają.' ),
-  array( 'questioon' => 'Czy poszewkę można prać?', 'answer' => 'Tak. Poszewkę można zdjąć i wyprać w pralce, dzięki czemu poduszka pozostaje świeża i czysta. Tkanina jest przewiewna, hipoalergiczna i posiada certyfikat OEKO-TEX®.' ),
+  array( 'questioon' => 'Czy poszewkę można prać?', 'answer' => 'Tak. Poszewkę można zdjąć i wyprać w pralce, dzięki czemu poduszka pozostaje świeża i czysta. Tkanina jest przewiewna i hipoalergiczna.' ),
   array( 'questioon' => 'Czy będzie pasować do mojego krzesła lub fotela?', 'answer' => 'ErgoSit ma uniwersalny kształt i pasuje do większości foteli samochodowych, krzeseł biurowych i kuchennych oraz wózków inwalidzkich. Nie ma rozmiarów — jeden model pasuje wszystkim.' ),
   array( 'questioon' => 'Po jakim czasie poczuję różnicę?', 'answer' => 'Większość użytkowników czuje mniejszy nacisk na kość ogonową i wygodniejsze siedzenie już od pierwszego dnia. Lepsza postawa i mniejszy ból pleców budują się dodatkowo wraz z regularnym użytkowaniem.' ),
   array( 'questioon' => 'Czy istnieje gwarancja zwrotu pieniędzy?', 'answer' => 'Tak, każda NORIKS ErgoSit objęta jest 30-dniową gwarancją komfortu. Jeśli nie poczujesz mniej bólu i więcej komfortu, skontaktuj się z nami, a wszystko załatwimy.' ),
@@ -1609,7 +1609,7 @@ $cloud_faq = array(
   ),
   array(
     'questioon' => 'Z czego zrobiona jest poduszka?',
-    'answer'    => 'Rdzeń to pianka pamięciowa klasy medycznej z perforacjami zapewniającymi przepływ powietrza. Poszewka jest z oddychającej tkaniny, zdejmowana i do prania. Materiały mają certyfikaty OEKO-TEX® STANDARD 100 i CertiPUR-EU.',
+    'answer'    => 'Rdzeń to pianka pamięciowa klasy medycznej z perforacjami zapewniającymi przepływ powietrza. Poszewka jest z oddychającej tkaniny, zdejmowana i do prania. Pianka ma certyfikat CertiPUR-EU.',
   ),
   array(
     'questioon' => 'Czy jest za twarda, czy za miękka?',
