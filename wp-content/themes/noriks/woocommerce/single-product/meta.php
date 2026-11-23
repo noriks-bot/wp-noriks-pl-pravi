@@ -990,7 +990,7 @@ Wystarczy, że napiszesz do nas maila z informacją, że chcesz wymiany, a my od
         'slim' => array( 'noriks-slim.pdf', 'NORIKS Slim — modelujące majtki z wysokim stanem' ),
         'red' => array( 'noriks-redrelief.pdf', 'NORIKS RedRelief — terapia czerwonym światłem na nadgarstek' ),
         'pal' => array( 'noriks-pal.pdf', 'NORIKS Pal — laska z drugim uchwytem' ),
-        'cloath' => array( 'noriks-polar-cloth.pdf', 'Polar NORIKS Cloth XXL — ściereczka do czyszczenia samą wodą' ),
+        'cloath' => array( 'noriks-duodry.pdf', 'NORIKS DuoDry — dwustronna ściereczka z mikrofibry' ),
         'slabproof' => array( 'noriks-slabproof.pdf', 'NORIKS SlabProof — skarpety robocze z amortyzacją' ),
         'controlpro' => array( 'noriks-controlpro.pdf', 'NORIKS ControlPro — trenażer mięśni dna miednicy' ),
         'tradesman' => array( 'noriks-tradesman.pdf', 'NORIKS Tradesman — skarpety robocze z amortyzacją i wsparciem łuku stopy' ),

@@ -1,5 +1,5 @@
 <?php
-// Bazen mnenj za Polar NORIKS Cloth XXL (orto-cloath).
+// Bazen mnenj za NORIKS DuoDry (orto-cloath).
 $auto_reviews_en = array(
     array("name" => "Anna K.", "text" => "Kabinę wycieram co drugi dzień i w końcu nie ma zacieków. Bez żadnego sprayu, tylko woda i ściereczka."),
     array("name" => "Piotr W.", "text" => "Kupiłem zestaw sześciu sztuk. Jedna stale w łazience, jedna w kuchni, jedna w aucie. Do szkła najlepsza."),
@@ -15,6 +15,6 @@ $auto_reviews_en = array(
     array("name" => "Michał Z.", "text" => "Nie zostawia plam nawet na czarnych bateriach, a to był do tej pory największy problem."),
     array("name" => "Barbara T.", "text" => "Okna myję tylko wodą i tą ściereczką. Pierwszy raz bez środka i bez smug."),
     array("name" => "Andrzej C.", "text" => "Jest gruba i ciężka, czuć, że to nie tania mikrofibra. Po dziesięciu praniach nadal taka sama."),
-    array("name" => "Magdalena G.", "text" => "Kupiłam zestaw 3+3 i to się naprawdę opłaca. Jedna zawsze w praniu, druga w użyciu."),
+    array("name" => "Magdalena G.", "text" => "Kupiłam zestaw 6 ściereczek i to się naprawdę opłaca. Jedna zawsze w praniu, druga w użyciu."),
     array("name" => "Robert F.", "text" => "Blat w kuchni wycieram w kilka ruchów i nie ma śladów wody. Po prostu działa."),
 );

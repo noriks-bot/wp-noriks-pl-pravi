@@ -466,7 +466,7 @@ if (  has_term( array( 'koszulki' , 'orto-majica', 'orto-majica-darila'), 'produ
   if ( function_exists('noriks_is_type') && noriks_is_type('controlpro') ) { $rv_fallback_title = 'NORIKS ControlPro trenażer dna miednicy'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('hyd') ) { $rv_fallback_title = 'NORIKS HYD'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('cloud') ) { $rv_fallback_title = 'NORIKS Cloud'; }
-  if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) { $rv_fallback_title = 'Polar NORIKS Cloth XXL'; }
+  if ( function_exists('noriks_is_type') && noriks_is_type('cloath') ) { $rv_fallback_title = 'NORIKS DuoDry'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('snug') ) { $rv_fallback_title = 'NORIKS Snug poduszka na całe ciało'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('kompwom') ) { $rv_fallback_title = 'NORIKS FIT Woman koszulka modelująca'; }
   if ( function_exists('noriks_is_type') && noriks_is_type('pal') ) { $rv_fallback_title = 'NORIKS Pal laska do chodzenia'; }
@@ -1589,7 +1589,7 @@ $cloath_faq = array(
   ),
   array(
     'questioon' => 'Czy nadaje się na prezent?',
-    'answer'    => 'Tak — zestawy 3+3 i 8+4 to jedne z najczęstszych prezentów na parapetówkę i święta. Ściereczka przychodzi równo złożona i gotowa do wręczenia.',
+    'answer'    => 'Tak — zestawy 4 i 6 ściereczek to częsty prezent na parapetówkę i święta. Ściereczki przychodzą równo złożone i gotowe do wręczenia.',
   ),
 );
 

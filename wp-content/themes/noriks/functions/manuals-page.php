@@ -94,10 +94,10 @@ function noriks_manuals_list() {
             'sub'   => 'Drugi uchwyt do wstawania, cztery nóżki, latarka i alarm. Składana i regulowana na wysokość.',
         ),
         array(
-            'file'  => 'noriks-polar-cloth.pdf',
+            'file'  => 'noriks-duodry.pdf',
             'sku'   => 'NORIKS-CLOATH',
-            'title' => 'Polar NORIKS Cloth XXL — ściereczka do czyszczenia samą wodą',
-            'sub'   => 'Format 60 × 40 cm, dwustronne wykonanie, wchłania do 600 ml wody. Bez sprayów i bez chemii.',
+            'title' => 'NORIKS DuoDry — dwustronna ściereczka z mikrofibry',
+            'sub'   => 'Format 60 × 40 cm do łazienki i kuchni. Jedna strona zbiera wodę i brud, druga poleruje.',
         ),
         array(
             'file'  => 'noriks-slabproof.pdf',
