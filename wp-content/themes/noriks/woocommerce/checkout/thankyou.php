@@ -42,7 +42,7 @@ if ( $s1_cards ) {
     $s1_sizes = (array) $s1_first['sizes'];
     // izdelki z izbiro barve (npr. Slim): kupec izbere barvo in velikost
     $s1_colors = ! empty( $s1_first['pick_color'] ) ? (array) $s1_first['colors'] : array();
-    $upsell_title_text = 'Dodaj jeszcze jedną sztukę – cena specjalna';
+    $upsell_title_text = ! empty( $s1_first['bf_test'] ) ? 'Dodaj koszulkę kompresyjną FIT – cena specjalna' : 'Dodaj jeszcze jedną sztukę – cena specjalna';
 } else {
     $upsell_product_id = 250; // Crna majica (variable)
     $upsell_name       = 'Czarne koszulki';
